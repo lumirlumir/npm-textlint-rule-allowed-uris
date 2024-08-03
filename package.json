@@ -1,0 +1,44 @@
+{
+  "name": "textlint-rule-allowed-uris",
+  "version": "0.0.0",
+  "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
+  "main": "build/index.js",
+  "files": ["build"],
+  "keywords": [
+    "textlintrule",
+    "textlint",
+    "lint",
+    "rule",
+    "uri",
+    "url",
+    "checker"],
+  "author": "루밀LuMir <rpfos@naver.com> (https://github.com/lumirlumir)",
+  "license": "MIT",
+  "homepage": "https://github.com/lumirlumir/textlint-rule-allowed-uris",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris"
+  },
+  "bugs": {
+    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris/issues"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "prepublishOnly": "echo todo",
+    "lint-editorconfig": "npx editorconfig-checker",
+    "lint-markdownlint": "npx markdownlint **/*.md"
+  },
+  "peerDependencies": {
+    "textlint": ">= 14.0.4"
+  },
+  "devDependencies": {
+    "editorconfig-checker": "^5.1.8",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "markdownlint-cli": "^0.41.0"
+  },
+  "lint-staged": {
+    "*": "npm run lint-editorconfig",
+    "*.md": "npx markdownlint"
+  }
+}
