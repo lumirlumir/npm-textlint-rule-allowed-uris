@@ -113,14 +113,14 @@ You can also check out the AST Tree of the examples. [Click!](https://textlint.g
 
         ```markdown
         <www.google.com>
-        www.google.com 
+        www.google.com
         ```
 
 ## Contributing
 
 Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcomed.🎉
 
-I recommend you to read [textlint guides](https://textlint.github.io/) before contributing. 
+I recommend you to read [textlint guides](https://textlint.github.io/) before contributing.
 
 And check out the [Installation](#installation) and [Concepts of `textlint-rule-allowed-uris`](#concepts-of-textlint-rule-allowed-uris) guides below. It will help you to understand how this package works.
 
@@ -179,7 +179,7 @@ Detailed node types which are checked by this rule are described below.
     1. `LinkReference` & `Definition`
     1. `ASTNodeTypes.Html`
 
-2. ***Images***
+1. ***Images***
 
     1. `ASTNodeTypes.Image`
     1. `ImageReference` & `Definition`
