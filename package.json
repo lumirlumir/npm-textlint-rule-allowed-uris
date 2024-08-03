@@ -11,7 +11,8 @@
     "rule",
     "uri",
     "url",
-    "checker"],
+    "checker"
+  ],
   "author": "루밀LuMir <rpfos@naver.com> (https://github.com/lumirlumir)",
   "license": "MIT",
   "homepage": "https://github.com/lumirlumir/textlint-rule-allowed-uris",
