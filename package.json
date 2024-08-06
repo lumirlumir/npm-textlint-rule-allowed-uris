@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/index.js",
-  "files": ["build"],
+  "files": [
+    "build",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "textlintrule",
     "textlint",
@@ -15,13 +19,13 @@
   ],
   "author": "루밀LuMir <rpfos@naver.com> (https://github.com/lumirlumir)",
   "license": "MIT",
-  "homepage": "https://github.com/lumirlumir/textlint-rule-allowed-uris",
+  "homepage": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris",
   "repository": {
     "type": "github",
-    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris"
+    "url": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris"
   },
   "bugs": {
-    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris/issues"
+    "url": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/issues"
   },
   "scripts": {
     "prepare": "husky",
