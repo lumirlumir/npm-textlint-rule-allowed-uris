@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Contributing Guides📕
+  - name: 📕Contributing Guides
     url: https://github.com/lumirlumir/npm-textlint-rule-allowed-uris?tab=readme-ov-file#contributing
     about: Contributing Guides for textlint-rule-allowed-uris.
-  - name: Textlint Guides📗
+  - name: 📗Textlint Guides
     url: https://textlint.github.io
     about: Textlint Guides.
-  - name: AST Tree for textlint📘
+  - name: 📘AST Tree for textlint
     url: https://textlint.github.io/astexplorer
     about: AST Tree for textlint.
