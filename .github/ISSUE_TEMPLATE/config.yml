@@ -7,5 +7,5 @@ contact_links:
     url: https://textlint.github.io
     about: Textlint Guides.
   - name: AST Tree for textlint📘
-    url: https://textlint.github.io/astexplorer/
+    url: https://textlint.github.io/astexplorer
     about: AST Tree for textlint.
