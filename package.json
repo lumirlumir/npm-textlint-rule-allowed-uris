@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/index.js",
-  "files": ["build"],
+  "files": [
+    "build",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "textlintrule",
     "textlint",
@@ -15,17 +19,18 @@
   ],
   "author": "루밀LuMir <rpfos@naver.com> (https://github.com/lumirlumir)",
   "license": "MIT",
-  "homepage": "https://github.com/lumirlumir/textlint-rule-allowed-uris",
+  "homepage": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris",
   "repository": {
     "type": "github",
-    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris"
+    "url": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris"
   },
   "bugs": {
-    "url": "https://github.com/lumirlumir/textlint-rule-allowed-uris/issues"
+    "url": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/issues"
   },
   "scripts": {
     "prepare": "husky",
-    "prepublishOnly": "echo todo",
+    "prepublishOnly": "npm run build",
+    "build": "npx babel src -d build",
     "lint-editorconfig": "npx editorconfig-checker",
     "lint-markdownlint": "npx markdownlint **/*.md"
   },
@@ -33,6 +38,9 @@
     "textlint": ">= 14.0.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
     "editorconfig-checker": "^5.1.8",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.8",
