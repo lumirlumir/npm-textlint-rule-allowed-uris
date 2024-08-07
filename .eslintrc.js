@@ -13,7 +13,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
   ],
-  rules: {},
   env: {
     commonjs: true,
     es2024: true,
