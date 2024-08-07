@@ -30,6 +30,12 @@ jobs:
       - name: Set up node_modules
         run: npm ci
 
+      - name: Lint eslint
+        run: npm run lint-eslint --if-present
+
+      - name: Lint prettier
+        run: npm run lint-prettier --if-present
+
       - name: Lint editorconfig
         run: npm run lint-editorconfig --if-present
 

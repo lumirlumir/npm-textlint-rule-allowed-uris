@@ -57,7 +57,11 @@
     "prettier": "^3.3.3"
   },
   "lint-staged": {
-    "*": "npx editorconfig-checker",
+    "*": [
+      "npx prettier --check",
+      "npx editorconfig-checker"
+    ],
+    "*.js": "npx eslint",
     "*.md": "npx markdownlint"
   }
 }
