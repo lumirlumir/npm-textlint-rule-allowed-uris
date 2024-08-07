@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Lint editorconfig
-        run: npm run lint-editorconfig
+        run: npm run lint-editorconfig --if-present
 
       - name: Lint markdownlint
-        run: npm run lint-markdownlint
+        run: npm run lint-markdownlint --if-present

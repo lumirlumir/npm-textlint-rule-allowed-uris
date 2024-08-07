@@ -4,6 +4,9 @@ updates:
   - package-ecosystem: 'npm'
     # Files stored in repository root
     directory: '/'
+    ignore:
+      - dependency-name: 'eslint'
+        versions: ['9']
     schedule:
       interval: 'weekly'
       day: 'monday'
