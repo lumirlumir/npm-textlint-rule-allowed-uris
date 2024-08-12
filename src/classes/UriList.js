@@ -17,13 +17,16 @@
  */
 module.exports = class UriList {
   /**
-   * Private. Stores `{uri: '...', type: '...'}` objects.
+   * Stores `{uri: '...', type: '...'}` objects.
+   *
+   * @private
    */
   #uriList = [];
 
   /**
    * Returns an array of `{uri: '...', type: '...'}` objects.
    *
+   * @public
    * @returns {Array} See example.
    * @example
    * [
@@ -46,6 +49,7 @@ module.exports = class UriList {
   /**
    * Pushes a new `{uri: '...', type: '...'}` object.
    *
+   * @public
    * @param {string} uri The URI. It should be `'string'` type.
    * @param {string} type The type of URI. It should be either `'link'` or `'image'`.
    * @returns {UriList} The current instance of `UriList` to allow for method chaining.
