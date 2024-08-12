@@ -17,6 +17,7 @@ module.exports = {
     commonjs: true,
     es2024: true,
     node: true,
+    mocha: true,
   },
   parserOptions: {
     sourceType: 'module',
