@@ -1,22 +1,16 @@
-name: lint
+name: test
 
 on:
   push:
     branches: [main]
+    paths: ['src/**/*.js', 'tests/**/*.js']
 
   pull_request:
     branches: [main]
+    paths: ['src/**/*.js', 'tests/**/*.js']
 
 jobs:
-  lint:
-    # strategy:
-    #   matrix:
-    #     type:
-    #       - eslint
-    #       - prettier
-    #       - editorconfig
-    #       - markdownlint
-
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,8 +32,5 @@ jobs:
       - name: Set up node_modules
         run: npm ci
 
-      - name: Lint
-        run: npm run lint
-
-      # - name: Lint ${{ matrix.type }}
-      #   run: npm run lint-${{ matrix.type }} --if-present
+      - name: Test
+        run: npm run test

@@ -31,11 +31,14 @@
     "prepare": "husky",
     "prepublishOnly": "npm run build",
     "build": "npx babel src -d build",
-    "test": "npx mocha ./tests/utils --inline-diffs true",
+    "test": "concurrently \"npm:test-*\"",
+    "test-utils": "npx mocha ./tests/utils --inline-diffs true",
+    "lint": "concurrently \"npm:lint-*\"",
     "lint-eslint": "npx eslint . --ext .js",
     "lint-prettier": "npx prettier . --check",
     "lint-editorconfig": "npx editorconfig-checker",
     "lint-markdownlint": "npx markdownlint **/*.md",
+    "fix": "concurrently \"npm:fix-*\"",
     "fix-eslint": "npx eslint . --fix --ext .js",
     "fix-prettier": "npx prettier . --write"
   },
@@ -46,6 +49,7 @@
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
+    "concurrently": "^8.2.2",
     "editorconfig-checker": "^5.1.8",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -70,6 +74,9 @@
       "npx editorconfig-checker"
     ],
     "*.js": "npx eslint",
-    "*.md": "npx markdownlint"
+    "*.md": "npx markdownlint",
+    "{src,tests}/**/*.js": [
+      "npm run test-utils"
+    ]
   }
 }

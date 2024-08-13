@@ -13,6 +13,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.github/workflows/lint.yml
   - source: ./.github/workflows/sync-client.yml
     dest: ./configs/.github/workflows/sync-client.yml
+  - source: ./.github/workflows/test.yml
+    dest: ./configs/.github/workflows/test.yml
   # ./.github
   - source: ./.github/dependabot.yml
     dest: ./configs/.github/dependabot.yml
