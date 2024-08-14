@@ -80,7 +80,7 @@
     ],
     "*.js": "npx eslint",
     "*.md": "npx markdownlint",
-    "{src,tests}/**/*.js": [
+    "{src,tests}/**": [
       "npm run test-tests",
       "npm run test-utils"
     ]
