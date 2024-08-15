@@ -3,7 +3,7 @@ const testCases = require('./getDefinitionNodeUriType.data');
 const getDefinitionNodeUriType = require('../../src/utils/getDefinitionNodeUriType');
 
 /**
- * Test for the `getDefinitionNodeUriType.js`
+ * Tests for the `getDefinitionNodeUriType.js`
  */
 describe('Util getDefinitionNodeUriType strictEqual testing', () => {
   testCases.forEach(testCase => {
