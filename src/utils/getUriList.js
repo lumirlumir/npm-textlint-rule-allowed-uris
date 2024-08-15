@@ -23,6 +23,7 @@ const getUriListImage = node => new UriList().push(node.url, 'image');
 /**
  * Retrieves URI from a given `Definition` node and returns an instance of `UriList`.
  *
+ * @async
  * @param {Object} node `Definition` type node.
  * @param {string} node.url The URI of the node.
  * @returns {Promise<UriList>} A `Promise` that resolves to an instance of `UriList` containing the URI if it is of type `'link'` or `'image'`, otherwise resolves to an empty `UriList`.
@@ -59,6 +60,7 @@ const getUriListHtml = node => {
 /**
  * Retrieves the URI and creates an instance of `UriList` from a given `node`.
  *
+ * @async
  * @param {Object} node The node from which to retrieve the URI.
  * @param {string} node.type The type of the node, which should be `Link`, `Image`, `Definition`, or `Html`.
  * @returns {Promise<UriList>} A `Promise` that resolves to an instance of `UriList` retrieved from the `node`.

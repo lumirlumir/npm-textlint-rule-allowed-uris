@@ -5,8 +5,6 @@ const getUriList = require('./utils/getUriList');
  * The main reporter function that processes the node and reports any issues based on the specified options.
  *
  * @async
- * @function reporter
- * @private
  * @param {Object} context The context object containing the `report`, `locator`, and `RuleError`.
  * @param {function} context.report Function to report errors or issues.
  * @param {function} context.locator Function to locate the position of the node in the source.
@@ -58,8 +56,6 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
 /**
  * The module export function that returns an object mapping node types to the `reporter` function.
  *
- * @function
- * @public
  * @param {Object} context The context object provided to the `reporter`.
  * @param {Object} options Configuration options for the `reporter`.
  * @returns {Object} An object with node type keys mapping to the `reporter` function.

@@ -5,7 +5,7 @@ const axios = require('axios');
 /**
  * Retrieves the MIME type of a given URI.
  *
- * @private
+ * @async
  * @param {string} uri The URI to check. It can be a remote or local URI.
  * @returns {Promise<string>} A promise that resolves to the MIME type of the URI. Defaults to `application/octet-stream` if the MIME type can't be determined.
  */
@@ -22,7 +22,7 @@ const getMimeType = async uri => {
 /**
  * Retrieves the type of a given URI.
  *
- * @public
+ * @async
  * @param {string} uri The URI to check. It can be a remote or local URI.
  * @returns {Promise<string>} A promise that resolves to `'comment'` for empty(` `) or hash-only(`#`) URIs, `'image'` if the URI's MIME type is an image, and `'link'` for other types of URIs.
  */
