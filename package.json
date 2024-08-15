@@ -83,6 +83,7 @@
     "*.md": "npx markdownlint",
     "{src,tests}/**": [
       "npm run test-tests",
+      "npm run test-classes",
       "npm run test-utils"
     ]
   }
