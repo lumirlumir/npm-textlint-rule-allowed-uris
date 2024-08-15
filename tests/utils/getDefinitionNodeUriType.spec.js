@@ -6,12 +6,9 @@ const getDefinitionNodeUriType = require('../../src/utils/getDefinitionNodeUriTy
  * Tests for the `getDefinitionNodeUriType.js`
  */
 describe('Util getDefinitionNodeUriType strictEqual testing', () => {
-  testCases.forEach(testCase => {
-    it(`${testCase.actual} => ${testCase.expected}`, async () => {
-      assert.strictEqual(
-        await getDefinitionNodeUriType(testCase.actual),
-        testCase.expected,
-      );
+  testCases.forEach(({ actual, expected }) => {
+    it(`${actual} => ${expected}`, async () => {
+      assert.strictEqual(await getDefinitionNodeUriType(actual), expected);
     });
   });
 });
