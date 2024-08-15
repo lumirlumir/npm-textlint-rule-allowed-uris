@@ -3,11 +3,11 @@ name: test
 on:
   push:
     branches: [main]
-    paths: ['src/**/*.js', 'tests/**/*.js']
+    paths: ['src/**', 'tests/**']
 
   pull_request:
     branches: [main]
-    paths: ['src/**/*.js', 'tests/**/*.js']
+    paths: ['src/**', 'tests/**']
 
 jobs:
   test:
