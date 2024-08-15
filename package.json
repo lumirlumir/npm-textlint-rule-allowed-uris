@@ -33,6 +33,7 @@
     "build": "npx babel src -d build",
     "test": "concurrently \"npm:test-*\"",
     "test-tests": "npx mocha ./tests --inline-diffs true",
+    "test-classes": "npx mocha ./tests/classes --inline-diffs true",
     "test-utils": "npx mocha ./tests/utils --inline-diffs true",
     "lint": "concurrently \"npm:lint-*\"",
     "lint-eslint": "npx eslint . --ext .js",
