@@ -1,4 +1,5 @@
 const url = require('url');
+const c = require('ansi-colors');
 const mime = require('mime-types');
 const axios = require('axios');
 
@@ -13,7 +14,14 @@ const getMimeType = async uri => {
   try {
     // fetch succeeded. (i.e. Remote URI links)
     return (await axios.head(uri)).headers['content-type'];
-  } catch {
+  } catch (err) {
+    // fetch failed. (Internet connection)
+    if (err.code === 'ENOTFOUND')
+      throw new Error(
+        c.red.bold(
+          'The linting process includes an HTTP request, so an internet connection is required',
+        ),
+      );
     // fetch failed. (i.e. Local URI links)
     return mime.lookup(url.parse(uri).pathname) || 'application/octet-stream';
   }
