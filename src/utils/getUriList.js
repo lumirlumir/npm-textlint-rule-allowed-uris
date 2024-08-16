@@ -47,11 +47,14 @@ const getUriListHtml = node => {
   const uriList = new UriList();
   const $ = cheerio.load(node.value);
 
-  $('a').each((_, a) => {
-    uriList.push($(a).attr('href'), 'link');
-  });
-  $('img').each((_, img) => {
-    uriList.push($(img).attr('src'), 'image');
+  $('a, img').each((_, elem) => {
+    const tag = $(elem).prop('tagName').toLowerCase();
+
+    if (tag === 'a') {
+      uriList.push($(elem).attr('href'), 'link');
+    } else if (tag === 'img') {
+      uriList.push($(elem).attr('src'), 'image');
+    }
   });
 
   return uriList;
