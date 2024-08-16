@@ -60,13 +60,10 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
  * @param {Object} options Configuration options for the `reporter`.
  * @returns {Object} An object with node type keys mapping to the `reporter` function.
  */
-module.exports = (context, options) => {
-  // TODO: Error When it is offline.
-
-  return Object.fromEntries(
+module.exports = (context, options) =>
+  Object.fromEntries(
     ['Link', 'Image', 'Definition', 'Html'].map(type => [
       type,
       async node => reporter(context, options, node),
     ]),
   );
-};
