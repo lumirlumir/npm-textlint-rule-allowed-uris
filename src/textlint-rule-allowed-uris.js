@@ -35,6 +35,7 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
   /* Report process */
   (await getUriList(node)).uriList.forEach(({ uri, type }) => {
     Object.keys(regexes).forEach(key => {
+      // The `some` method returns `true` if any element in the array satisfies the given condition. In the case of an empty array, there are no elements to satisfy the condition, so the method returns `false`. Therefore, calling the `some` method on an empty array will always return `false`.
       if (
         key === 'allowed'
           ? !regexes[key][`${type}s`].some(regex => regex.test(uri))
