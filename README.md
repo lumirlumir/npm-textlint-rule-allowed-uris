@@ -123,7 +123,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
         }
         ```
 
-    - Default value passed: `[.*]`
+    - Default value passed: `[/.*/]`
 
 1. `allowed.images`: `RegExp[]`, Optional
     - Allowed `images` act like an <u>**whitelist**</u>. Only those written on the whitelist can pass through.
@@ -148,7 +148,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
         }
         ```
 
-    - Default value passed: `[.*]`
+    - Default value passed: `[/.*/]`
 
 1. `disallowed.links`: `RegExp[]`, Optional
     - Disallowed `links` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
@@ -245,6 +245,160 @@ npx textlint --rule allowed-uris -f pretty-error file.md
 npx textlint -f pretty-error file.md
 ```
 
+## Sample Outputs
+
+When configured like below.
+
+```javascript
+module.exports = {
+  rules: {
+    "allowed-uris": {
+      allowed: {
+        links: [/google/],
+      },
+    }
+  }
+}
+```
+
+### `-f pretty-error` option
+
+<details>
+<summary> Click to see sample outputs </summary>
+
+```text
+> npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f pretty-error
+
+textlint-rule-allowed-uris: allowed.links
+- problem: 'mailto:example@gmail.com'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:9:1
+        v
+     8.
+     9. example@gmail.com
+    10.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: 'mailto:example@gmail.com'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:15:1
+        v
+    14.
+    15. <example@gmail.com>
+    16.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: ''
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:21:1
+        v
+    20.
+    21. [google]() <!-- empty link -->
+    22.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: '#heading'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:23:1
+        v
+    22.
+    23. [title](#heading) <!-- hash(fragment) -->
+    24.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: '../README.md'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:25:1
+        v
+    24.
+    25. [README.md](../README.md) <!-- relative path -->
+    26.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: 'https://en.wikipedia.org/wiki/File:Example.jpg'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:86:1
+        v
+    85.
+    86. [![example](https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg "Example Image")](https://en.wikipedia.org/wiki/File:Example.jpg)
+    87.
+        ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: '/README.md'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:101:1
+         v
+    100.
+    101. [linkLocal1]: /README.md "Hello README"
+    102.
+         ^
+
+textlint-rule-allowed-uris: allowed.links
+- problem: '/LICENSE'
+- allowed regular expressions: '/google/'
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:103:1
+         v
+    102.
+    103. [neverUsed]: /LICENSE "neverUsed"
+    104.
+         ^
+
+✖ 8 problems (8 errors, 0 warnings)
+```
+
+</details>
+
+### `-f stylish` option
+
+<details>
+<summary> Click to see sample outputs </summary>
+
+```text
+> npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f stylish
+
+textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md
+    9:1  error  allowed.links
+- problem: 'mailto:example@gmail.com'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+   15:1  error  allowed.links
+- problem: 'mailto:example@gmail.com'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+   21:1  error  allowed.links
+- problem: ''
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+   23:1  error  allowed.links
+- problem: '#heading'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+   25:1  error  allowed.links
+- problem: '../README.md'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+   86:1  error  allowed.links
+- problem: 'https://en.wikipedia.org/wiki/File:Example.jpg'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+  101:1  error  allowed.links
+- problem: '/README.md'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+  103:1  error  allowed.links
+- problem: '/LICENSE'
+- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
+
+✖ 8 problems (8 errors, 0 warnings)
+```
+
+</details>
+
+## Q&A
+
+### How to distinguish email links?
+
+Email links like `<example@gmail.com>` are interpreted as `mailto:example@gmail.com`. Therefore, use `/^mailto:/` in regular expressions.
+
 ## Change Log
 
 See [`CHANGELOG.md`](/CHANGELOG.md)
@@ -256,6 +410,8 @@ Thanks for having attention to this package.🙇‍♂️ Issues and PRs are alw
 I recommend you to read [textlint guides](https://textlint.github.io/) before contributing.
 
 And check out the [Installation](#installation) and [Concepts of `textlint-rule-allowed-uris`](#concepts-of-textlint-rule-allowed-uris) guides below. It will help you to understand how this package works.
+
+After that, refer to the comments in source codes. It contains a lot of useful information to help you.
 
 ### Installation
 
