@@ -535,4 +535,24 @@ module.exports = [
     },
     expected: [],
   },
+  /* throws error */
+  {
+    actual: {
+      type: 'Document',
+      raw: '',
+      range: [0, 0],
+      loc: {
+        start: {
+          line: 1,
+          column: 0,
+        },
+        end: {
+          line: 1,
+          column: 0,
+        },
+      },
+      children: [],
+    },
+    expected: [],
+  },
 ];
