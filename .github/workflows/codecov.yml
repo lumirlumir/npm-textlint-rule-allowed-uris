@@ -1,14 +1,12 @@
-name: test
+name: codecov
 
 on:
   push:
     branches: [main]
-
-  pull_request:
-    branches: [main]
+    paths: ['src/**', 'tests/**']
 
 jobs:
-  test:
+  codecov:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,5 +28,10 @@ jobs:
       - name: Set up node_modules
         run: npm ci
 
-      - name: Test
-        run: npm run test
+      - name: Coverage
+        run: npm run coverage
+
+      - name: Upload results to codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
