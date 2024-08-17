@@ -1,14 +1,15 @@
 # textlint-rule-allowed-uris
 
-![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)
 ![lint](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml/badge.svg)
+![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris/graph/badge.svg?token=69BF05THA2)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
 > [!IMPORTANT]
 >
 > 1. This rule only supports **Markdown(`.md`)** files. Note that it does not recognize URIs in **~~Text~~(`.txt`)** files.
-> 1. The linting process includes an HTTP request, so an <u>**internet connection is required**</u>. Otherwise, an error will occur.
+> 1. The linting process includes HTTP requests, so an <u>**internet connection is required**</u>. Otherwise, an error will occur.
 > 1. Note that every URIs should be recognized by Markdown. URIs which are not recognized by Markdown cannot be inspected. For example, URIs without `https://...` or `http://...`.
 >
 >     ```markdown
