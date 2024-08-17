@@ -3,3 +3,7 @@
 
 # production
 /build
+
+# tests
+/.nyc_output
+/coverage
