@@ -8,7 +8,7 @@ A textlint rule for checking **allowed or disallowed URIs** in ***links*** and *
 
 > [!IMPORTANT]
 >
-> 1. This rule only supports **Markdown(`.md`)** files. Note that it does not recognize URIs in **~~Text~~(`.txt`)** files.
+> 1. This rule only supports **Markdown(`.md` or `.mdx`)** files. Note that it does not recognize URIs in **~~Text~~(`.txt`)** files.
 > 1. The linting process includes HTTP requests, so an <u>**internet connection is required**</u>. Otherwise, an error will occur.
 > 1. Note that every URIs should be recognized by Markdown. URIs which are not recognized by Markdown cannot be inspected. For example, URIs without `https://...` or `http://...`.
 >
@@ -200,7 +200,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
     - Default value passed: `[]`
 
-### Example (`textlintrc.js`)
+### Example (`.textlintrc.js`)
 
 ```javascript
 module.exports = {
@@ -399,10 +399,6 @@ textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md
 
 Email links like `<example@gmail.com>` are interpreted as `mailto:example@gmail.com`. Therefore, use `/^mailto:/` in regular expressions.
 
-## Change Log
-
-See [`CHANGELOG.md`](/CHANGELOG.md)
-
 ## Contributing
 
 Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcomed.🎉
@@ -499,6 +495,14 @@ After that, refer to the comments in source codes. It contains a lot of useful i
 #### AST Tree
 
 You can see detailed parsed AST Tree in [here](https://textlint.github.io/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNC4wLjXCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJezwhLS0gxK_EscSZxYJ0LWRpc2FixZYgxbU-CgojIyBMxJBrc8aHxbPFtcW3xYXEssSedcScxYJrLXJhd8aELcaGCmjEpHBzOi8vd8aqLmdvb2fFli7FrW3Gh8SMxZlwxZZAZ8SUxZXGsm_GtArGkcW2xbjFhsSaYcaXb8aZLWLGnGNrZXTGn8ahPMajdMalxqfGqcarxq3Gr8axxrPHk8a2bca4Zca6xrxsxr5tx5PFtMeDxpTFh8SQxYJlx5LGh1vHm8awZV0ox5XHl8aoxqp3xqzGrse1x6cgIkhlbGxvIEfHv8WWIinHsse0xZbHtykgx4IgZcehdHkgxpnHsQpbxKXEjse2KCNoZWHFvm5nyJPIlWjEn2goZsacxrvFl3TIk8aFx7JSRUFETUUubWTHty4uL8i5yLvIvci_ZMirx6ogcsiFYcSlxLkgxIJ0aMidyJXHhMaVyY5mxIbFl8WhLWZ1yIbIncezyIvHtlvGmTFdx7LJqV06IMe5xqbHu8eayabIgciDyIXIh8iJyaYixpDJjMmZxYfJm8mdbsmfxa3IhmHGpcWqyaTGmTJdW8mryJ7Ki8muybDGpMmyx5nHvciQxaLGs8iCyITIhsiIyIrHnGXJvMeByb7HrMSayoHJjsqDZS1zaG9ydGPGl8qKxo0zyo_JqMq0ypLJsceYx7zHvsqgybbKnMm5yp_HtcqiyKx0bWzJl2HJsMmbPSLKusmzypfJtcazIj7KmDwvYcahxokgScSUZ2XGj8qjxpLJv8Sax67EkMewyLcKIVvHoMeix7fLjy91xrhvyKcud2lracWaxb5hLsquZ8apy7hpcMWqaWEvxZfLmMuYOS9FeMa3xrFqcGfIgsyOzJDHsMudYcufyI3JvcujyqXGm8WnyoLJn8mhyaPLqcury63IkVvLusyaZcmqx7LMq8ufyarJr8uwy7LIh8u1y7fLucu7zIbLvnLMgMy4zIPMhcyHzInMh2HMjMyWx6HMkcyTzJXMj82IzJjLnsqhzJ3Hq8Swx4XMoMmcyqjKhMeJbMqHxIVkyJ3Lq8ywZcqMyo7Mr82PyozMs8qUx5jMtcu0ZMu2zILMusu9y7_Mgcu5zITLvMyIbsyKzYXMjc2Mx6IuzJLMlCLNh8eiy5zNj8uEyqTNk8mazKHNl8qqyqzKrsqwyrLMpsyqzY_Ktc2kzKzKtc2nx5bKlc2qzLfNrs2BzLzMvsyCzbTMhs22zbjNhs27zYnNv86BxoPMmcybzZHKk8uHyZfLusyUc8Wgy43MtMuzzpvMuc6dzbHMv86hzYLNt82EzqXMl829zJPLlMaQxb52PjzOsSDOs2POtc2oxqjOms2szL_Nr86ezbLNgM21zYPMi826z4LNvsuUz4ptzrLOtMuOz5DLsc63z5POnMu8z5bOvM2BzqPPgM-czY3Pg2fPny_Ph8eTz7YKIMiUz4vPjc-PzpjNqc-nza3Ouc-qzrvOoM-tz5rNuc6pxaLPnsaGz7rPoM-iz47PpM-_z5HQgc-UzrrMvc-Xzr3Prs-b0IrPss-Fy5fPuMaIxorOq8ewy7fJlSDLisaZx7LMp86myKLOtsy2z6jQg8y70IXNs9CHzr_QnNCtz7LNi8yXzoPMrMiNy6_PpcWX0ILPmNCz0JjMvy9GxZVlOtCdzb7IjtCiIEPGv8WaxJHLoVvGqMqSxoooVGjFvyBiZcitxLlzyJvLuMewy4rGs9GUyLXIntGYya_GiiLRnNGe0aDRosug0aXHj9CoINGpyLTJvNGXL9GZICfRsdGk0bNh0aPRttGn0bnRk8i0J8ie0brEkcqSPD4g0ZvRndKD0aHShdG1xI_Rt9Go0orEkciOW9KOdNKQ0pLRsNKV0Z_Sl9KG0prSiNKh0bzSodKj0oDSgtKn0bTRpNKq0bjSodKM0ZBPyZXEusmsxo1Mb2NhbMyuypDSvtOA04LMsiDJhci6yLzIvsmAypvJuMiIyYbTjcqiW8WpxLlyVc2cypIvTElDRU5TRciC05fEhtOaxarLhM-40I7PvM-j0K_Nq9GDz5XQtNGEzr7OpM-wzbzQjDzHjNCNyJTLimjLjNCSx7rKlsq9yIDLk8uVyabLl8uZ07py07zQj8-M067Ppc-S07HQl86f0LXPmdC30InQudO507vHgc-1ac-ICg}). (Already mentioned above.) Look which kind of types are exist for ***links*** and ***images***.
+
+## Versioning
+
+This project adheres to [Semantic Versioning](https://semver.org/). For details, please refer to the [`CHANGELOG.md`](/CHANGELOG.md) or [tags](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tags).
+
+## Change Log
+
+See [`CHANGELOG.md`](/CHANGELOG.md)
 
 ## License
 
