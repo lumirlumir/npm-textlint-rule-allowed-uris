@@ -30,7 +30,7 @@
   "scripts": {
     "prepare": "husky",
     "prepublishOnly": "npm run build",
-    "build": "npx babel src -d build",
+    "build": "npx babel src -d build --no-comments --compact true --minified",
     "test": "concurrently \"npm:test-*\"",
     "test-tests": "npx mocha ./tests --inline-diffs true",
     "test-classes": "npx mocha ./tests/classes --inline-diffs true",
