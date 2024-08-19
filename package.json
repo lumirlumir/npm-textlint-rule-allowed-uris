@@ -68,7 +68,7 @@
     "mocha": "^10.7.3",
     "nyc": "^17.0.0",
     "prettier": "^3.3.3",
-    "textlint-tester": "^14.0.5"
+    "textlint-tester": "^14.2.0"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
