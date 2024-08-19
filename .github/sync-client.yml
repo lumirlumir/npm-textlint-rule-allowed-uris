@@ -11,6 +11,8 @@ lumirlumir/lumirlumir-configs:
   # ./.github/workflows
   - source: ./.github/workflows/lint.yml
     dest: ./configs/.github/workflows/lint.yml
+  - source: ./.github/workflows/publish.yml
+    dest: ./configs/.github/workflows/publish.yml
   - source: ./.github/workflows/sync-client.yml
     dest: ./configs/.github/workflows/sync-client.yml
   - source: ./.github/workflows/test.yml
@@ -18,6 +20,8 @@ lumirlumir/lumirlumir-configs:
   # ./.github
   - source: ./.github/dependabot.yml
     dest: ./configs/.github/dependabot.yml
+  - source: ./.github/FUNDING.yml
+    dest: ./configs/.github/FUNDING.yml
   - source: ./.github/PULL_REQUEST_TEMPLATE.md
     dest: ./configs/.github/PULL_REQUEST_TEMPLATE.md
   # ./.husky
@@ -33,6 +37,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.eslintignore
   - source: ./.eslintrc.js
     dest: ./configs/.eslintrc.js
+  - source: ./.gitignore
+    dest: ./configs/.gitignore
   - source: ./.markdownlint.json
     dest: ./configs/.markdownlint.json
   - source: ./.markdownlintignore
