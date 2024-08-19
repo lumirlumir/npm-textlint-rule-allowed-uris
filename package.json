@@ -63,12 +63,12 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^15.2.9",
     "markdownlint-cli": "^0.41.0",
     "mocha": "^10.7.3",
     "nyc": "^17.0.0",
     "prettier": "^3.3.3",
-    "textlint-tester": "^14.0.5"
+    "textlint-tester": "^14.2.0"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
