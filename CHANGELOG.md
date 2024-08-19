@@ -1,5 +1,7 @@
 # textlint-rule-allowed-uris
 
-## v0.0.0 (2024-08-XX)
+## v1.0.0 (2024-08-19)
 
-First Release🔥
+First Release.🔥
+
+See [`README.md`](/README.md) for more information.
