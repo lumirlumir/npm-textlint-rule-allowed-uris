@@ -1,8 +1,9 @@
 # textlint-rule-allowed-uris
 
-![lint](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml/badge.svg)
-![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)
+[![lint](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml)
+[![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris/graph/badge.svg?token=69BF05THA2)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
+[![NPM Version](https://img.shields.io/npm/v/textlint-rule-allowed-uris)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
