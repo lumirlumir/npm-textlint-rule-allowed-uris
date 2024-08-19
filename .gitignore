@@ -1,9 +1,14 @@
 # dependencies
-/node_modules
+node_modules
 
 # production
-/build
+build
+
+# env
+.env
+.env.development
+.env.production
 
 # tests
-/.nyc_output
-/coverage
+.nyc_output
+coverage
