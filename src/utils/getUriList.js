@@ -51,9 +51,15 @@ const getUriListHtml = node => {
     const tag = $(elem).prop('tagName').toLowerCase();
 
     if (tag === 'a') {
-      uriList.push($(elem).attr('href'), 'link');
+      const href = $(elem).attr('href');
+      if (href) {
+        uriList.push(href, 'link');
+      }
     } else if (tag === 'img') {
-      uriList.push($(elem).attr('src'), 'image');
+      const src = $(elem).attr('src');
+      if (src) {
+        uriList.push(src, 'image');
+      }
     }
   });
 
