@@ -28,6 +28,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.github/labeler.yml
   - source: ./.github/PULL_REQUEST_TEMPLATE.md
     dest: ./configs/.github/PULL_REQUEST_TEMPLATE.md
+  - source: ./.github/release.yml
+    dest: ./configs/.github/release.yml
   # ./.husky
   - source: ./.husky/pre-commit
     dest: ./configs/.husky/pre-commit
