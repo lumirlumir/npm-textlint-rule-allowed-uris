@@ -61,7 +61,7 @@ labels:
     include:
       - '\btest\b'
     exclude: []
-  'release:':
+  'release':
     include:
       - '\brelease\b'
     exclude: []
