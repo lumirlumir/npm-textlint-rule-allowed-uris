@@ -15,6 +15,9 @@ jobs:
   bump:
     runs-on: ubuntu-latest
 
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+
     steps:
       - name: Set up checkout
         uses: actions/checkout@v4
@@ -68,5 +71,3 @@ jobs:
             -f "body=Bump \`${{ github.repository }}\` from v${{ env.OLD_VERSION }} to v${{ env.NEW_VERSION }} :tada:" \
             -f "head=${{ github.repository_owner }}:release-${{ inputs.type }}-${{ env.SHORT_SHA }}" \
             -f "base=main"
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
