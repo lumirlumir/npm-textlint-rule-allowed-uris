@@ -9,6 +9,8 @@ lumirlumir/lumirlumir-configs:
   - source: ./.github/ISSUE_TEMPLATE/suggestion.md
     dest: ./configs/.github/ISSUE_TEMPLATE/suggestion.md
   # ./.github/workflows
+  - source: ./.github/workflows/labeler.yml
+    dest: ./configs/.github/workflows/labeler.yml
   - source: ./.github/workflows/lint.yml
     dest: ./configs/.github/workflows/lint.yml
   - source: ./.github/workflows/publish.yml
@@ -22,6 +24,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.github/dependabot.yml
   - source: ./.github/FUNDING.yml
     dest: ./configs/.github/FUNDING.yml
+  - source: ./.github/labeler.yml
+    dest: ./configs/.github/labeler.yml
   - source: ./.github/PULL_REQUEST_TEMPLATE.md
     dest: ./configs/.github/PULL_REQUEST_TEMPLATE.md
   # ./.husky
