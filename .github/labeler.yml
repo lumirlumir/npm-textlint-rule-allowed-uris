@@ -5,63 +5,48 @@ enable:
   prs: true
 
 comments:
-  prs: |
-    Labels have been automatically applied based on the [conventional commit types](https://www.conventionalcommits.org/en/v1.0.0/) and [personal commit types](https://blog.lumir.page/docs/conventions/git/convention-of-git-commit-message) in this pull request.🏷️
+  prs: 'Labels have been automatically applied based on the [conventional commit types](https://www.conventionalcommits.org/en/v1.0.0/) and [personal commit rules](https://blog.lumir.page/docs/conventions/git/convention-of-git-commit-message).🏷️'
 
 labels:
   'build':
     include:
       - '\bbuild\b'
-    exclude: []
   'chore':
     include:
       - '\bchore\b'
-    exclude: []
   'ci':
     include:
       - '\bci\b'
-    exclude: []
   'design':
     include:
       - '\bdesign\b'
-    exclude: []
   'docs':
     include:
       - '\bdocs\b'
-    exclude: []
   'feat':
     include:
       - '\bfeat\b'
-    exclude: []
   'fix':
     include:
       - '\bfix\b'
-    exclude: []
   'perf':
     include:
       - '\bperf\b'
-    exclude: []
   'refactor':
     include:
       - '\brefactor\b'
-    exclude: []
   'remove':
     include:
       - '\bremove\b'
-    exclude: []
   'rename':
     include:
       - '\brename\b'
-    exclude: []
   'style':
     include:
       - '\bstyle\b'
-    exclude: []
   'test':
     include:
       - '\btest\b'
-    exclude: []
   'release':
     include:
       - '\brelease\b'
-    exclude: []
