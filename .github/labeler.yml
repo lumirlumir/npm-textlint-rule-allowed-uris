@@ -11,53 +11,57 @@ comments:
 labels:
   'build':
     include:
-      - '^build\b'
+      - '\bbuild\b'
     exclude: []
   'chore':
     include:
-      - '^chore\b'
+      - '\bchore\b'
     exclude: []
   'ci':
     include:
-      - '^ci\b'
+      - '\bci\b'
     exclude: []
   'design':
     include:
-      - '^design\b'
+      - '\bdesign\b'
     exclude: []
   'docs':
     include:
-      - '^docs\b'
+      - '\bdocs\b'
     exclude: []
   'feat':
     include:
-      - '^feat\b'
+      - '\bfeat\b'
     exclude: []
   'fix':
     include:
-      - '^fix\b'
+      - '\bfix\b'
     exclude: []
   'perf':
     include:
-      - '^perf\b'
+      - '\bperf\b'
     exclude: []
   'refactor':
     include:
-      - '^refactor\b'
+      - '\brefactor\b'
     exclude: []
   'remove':
     include:
-      - '^remove\b'
+      - '\bremove\b'
     exclude: []
   'rename':
     include:
-      - '^rename\b'
+      - '\brename\b'
     exclude: []
   'style':
     include:
-      - '^style\b'
+      - '\bstyle\b'
     exclude: []
   'test':
     include:
-      - '^test\b'
+      - '\btest\b'
+    exclude: []
+  'release':
+    include:
+      - '\brelease\b'
     exclude: []
