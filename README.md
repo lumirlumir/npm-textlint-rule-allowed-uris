@@ -416,13 +416,13 @@ After that, refer to the comments in source codes. It contains a lot of useful i
 1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is needed!)
 
     ```bash
-    git clone https://github.com/lumirlumir/textlint-rule-allowed-uris.git
+    git clone https://github.com/lumirlumir/npm-textlint-rule-allowed-uris.git
     ```
 
-1. Move to the `textlint-rule-allowed-uris` directory.
+1. Move to the `npm-textlint-rule-allowed-uris` directory.
 
     ```bash
-    cd textlint-rule-allowed-uris
+    cd npm-textlint-rule-allowed-uris
     ```
 
 1. Install npm packages. ([Node.js](https://nodejs.org/en) is needed!)
