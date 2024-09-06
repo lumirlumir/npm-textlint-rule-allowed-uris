@@ -499,7 +499,7 @@ You can see detailed parsed AST Tree in [here](https://textlint.github.io/astexp
 
 ## Versioning
 
-This project adheres to [Semantic Versioning](https://semver.org/). For details, please refer to the [`CHANGELOG.md`](/CHANGELOG.md) or [tags](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tags).
+This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Change Log
 
