@@ -402,7 +402,7 @@ Email links like `<example@gmail.com>` are interpreted as `mailto:example@gmail.
 
 ## Contributing
 
-Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcomed.🎉
+Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcome.🎉
 
 I recommend you to read [textlint guides](https://textlint.github.io/) before contributing.
 
