@@ -413,7 +413,8 @@ After that, refer to the comments in source codes. It contains a lot of useful i
 ### Installation
 
 1. Fork it.
-1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is needed!)
+
+1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is required.)
 
     ```bash
     git clone https://github.com/lumirlumir/npm-textlint-rule-allowed-uris.git
@@ -425,7 +426,7 @@ After that, refer to the comments in source codes. It contains a lot of useful i
     cd npm-textlint-rule-allowed-uris
     ```
 
-1. Install npm packages. ([Node.js](https://nodejs.org/en) is needed!)
+1. Install npm packages. ([Node.js](https://nodejs.org/en) is required.)
 
     ```bash
     npm install
@@ -433,23 +434,19 @@ After that, refer to the comments in source codes. It contains a lot of useful i
 
 1. Edit codes.
 
-1. Create `feature` branch.
+1. Create `my-branch` branch.
 
     ```bash
-    git switch -c feature
+    git switch -c my-branch
     ```
 
 1. Commit your changes. (`husky` and `lint-staged` will lint and test your changed files!)
 
     ```bash
-    git commit -am "feat: feature"
+    git commit -am "commit type: title"
     ```
 
 1. Push them to your remote branch.
-
-    ```bash
-    git push --set-upstream origin feature
-    ```
 
 1. Submit a pull request.👍
 
