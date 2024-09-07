@@ -30,7 +30,7 @@ You can use any ***link*** or ***image*** formats which are supported by Markdow
 
 ### Only URIs are inspected?
 
-No! We check not only for URIs, but also for **local paths**! Below patterns are inspected too.
+No! We check not only for URIs, but also for **local paths**. Below patterns are inspected too.
 
 ```text
 README.md (Relative path)
@@ -38,8 +38,7 @@ README.md (Relative path)
 ../README.md (Relative path)
 /learn/start-a-new-react-project#can-i-use-react-without-a-framework (With hash)
 /images/languages/javascript/composition-of-javascript/2.png?raw=true (With query parameters)
-
-And more!!!
+And more...
 ```
 
 ### Patterns
@@ -52,7 +51,7 @@ Only **regular expressions** are used for URIs pattern matching. You can define 
 
 Allowed URIs act like an <u>**whitelist**</u>. Only those written on the whitelist **can** pass through.
 
-For example, If you pass an empty array to the option, it allows nothing. i.e. Every ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs))
+For example, If you pass an empty array to the option, it allows nothing. i.e. Every ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs).)
 
 ### Disallowed URIs
 
@@ -60,7 +59,7 @@ For example, If you pass an empty array to the option, it allows nothing. i.e. E
 
 On the contrary, disallowed URIs act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
 
-For example, If you pass an empty array to the option, it allows everything. i.e. no ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs))
+For example, If you pass an empty array to the option, it allows everything. i.e. no ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs).)
 
 ## Installation
 
@@ -153,7 +152,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
 1. `disallowed.links`: `RegExp[]`, Optional
     - Disallowed `links` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
-    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too😯)
+    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
         ```javascript
         /* .textlintrc.js */
@@ -178,7 +177,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
 1. `disallowed.images`: `RegExp[]`, Optional
     - Disallowed `images` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
-    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too😯)
+    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
         ```javascript
         /* .textlintrc.js */
@@ -402,18 +401,19 @@ Email links like `<example@gmail.com>` are interpreted as `mailto:example@gmail.
 
 ## Contributing
 
-Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcomed.🎉
+Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcome.🎉
 
 I recommend you to read [textlint guides](https://textlint.github.io/) before contributing.
 
 And check out the [Installation](#installation) and [Concepts of `textlint-rule-allowed-uris`](#concepts-of-textlint-rule-allowed-uris) guides below. It will help you to understand how this package works.
 
-After that, refer to the comments in source codes. It contains a lot of useful information to help you.
+After that, refer to the comments in source codes. It contains useful information to help you.
 
 ### Installation
 
 1. Fork it.
-1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is needed!)
+
+1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is required.)
 
     ```bash
     git clone https://github.com/lumirlumir/npm-textlint-rule-allowed-uris.git
@@ -425,7 +425,7 @@ After that, refer to the comments in source codes. It contains a lot of useful i
     cd npm-textlint-rule-allowed-uris
     ```
 
-1. Install npm packages. ([Node.js](https://nodejs.org/en) is needed!)
+1. Install npm packages. ([Node.js](https://nodejs.org/en) is required.)
 
     ```bash
     npm install
@@ -433,23 +433,19 @@ After that, refer to the comments in source codes. It contains a lot of useful i
 
 1. Edit codes.
 
-1. Create `feature` branch.
+1. Create `my-branch` branch.
 
     ```bash
-    git switch -c feature
+    git switch -c my-branch
     ```
 
 1. Commit your changes. (`husky` and `lint-staged` will lint and test your changed files!)
 
     ```bash
-    git commit -am "feat: feature"
+    git commit -am "commit type: title"
     ```
 
 1. Push them to your remote branch.
-
-    ```bash
-    git push --set-upstream origin feature
-    ```
 
 1. Submit a pull request.👍
 
@@ -499,7 +495,7 @@ You can see detailed parsed AST Tree in [here](https://textlint.github.io/astexp
 
 ## Versioning
 
-This project adheres to [Semantic Versioning](https://semver.org/). For details, please refer to the [`CHANGELOG.md`](/CHANGELOG.md) or [tags](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tags).
+This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Change Log
 
