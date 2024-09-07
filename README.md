@@ -30,7 +30,7 @@ You can use any ***link*** or ***image*** formats which are supported by Markdow
 
 ### Only URIs are inspected?
 
-No! We check not only for URIs, but also for **local paths**! Below patterns are inspected too.
+No! We check not only for URIs, but also for **local paths**. Below patterns are inspected too.
 
 ```text
 README.md (Relative path)
@@ -38,8 +38,7 @@ README.md (Relative path)
 ../README.md (Relative path)
 /learn/start-a-new-react-project#can-i-use-react-without-a-framework (With hash)
 /images/languages/javascript/composition-of-javascript/2.png?raw=true (With query parameters)
-
-And more!!!
+And more...
 ```
 
 ### Patterns
@@ -52,7 +51,7 @@ Only **regular expressions** are used for URIs pattern matching. You can define 
 
 Allowed URIs act like an <u>**whitelist**</u>. Only those written on the whitelist **can** pass through.
 
-For example, If you pass an empty array to the option, it allows nothing. i.e. Every ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs))
+For example, If you pass an empty array to the option, it allows nothing. i.e. Every ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs).)
 
 ### Disallowed URIs
 
@@ -60,7 +59,7 @@ For example, If you pass an empty array to the option, it allows nothing. i.e. E
 
 On the contrary, disallowed URIs act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
 
-For example, If you pass an empty array to the option, it allows everything. i.e. no ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs))
+For example, If you pass an empty array to the option, it allows everything. i.e. no ***links*** or ***images*** will be detected. (For a detailed explanation, see [Configs](#configs).)
 
 ## Installation
 
@@ -153,7 +152,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
 1. `disallowed.links`: `RegExp[]`, Optional
     - Disallowed `links` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
-    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too😯)
+    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
         ```javascript
         /* .textlintrc.js */
@@ -178,7 +177,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
 1. `disallowed.images`: `RegExp[]`, Optional
     - Disallowed `images` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
-    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too😯)
+    - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
         ```javascript
         /* .textlintrc.js */
@@ -408,7 +407,7 @@ I recommend you to read [textlint guides](https://textlint.github.io/) before co
 
 And check out the [Installation](#installation) and [Concepts of `textlint-rule-allowed-uris`](#concepts-of-textlint-rule-allowed-uris) guides below. It will help you to understand how this package works.
 
-After that, refer to the comments in source codes. It contains a lot of useful information to help you.
+After that, refer to the comments in source codes. It contains useful information to help you.
 
 ### Installation
 
