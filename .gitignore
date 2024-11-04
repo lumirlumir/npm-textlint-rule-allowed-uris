@@ -13,3 +13,7 @@ build
 # tests
 .nyc_output
 coverage
+
+# packages
+packages/**/LICENSE
+packages/**/README.md
