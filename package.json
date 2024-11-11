@@ -29,6 +29,7 @@
   },
   "scripts": {
     "prepare": "husky",
+    "publish": "npm publish",
     "prepublishOnly": "npm run build",
     "build": "npx babel src -d build --no-comments --compact true --minified",
     "test": "concurrently \"npm:test-*\"",
