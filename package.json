@@ -31,7 +31,7 @@
     "prepare": "husky",
     "publish-package": "npm publish",
     "prepublishOnly": "npm run build",
-    "build": "npx babel src -d build --no-comments --compact true --minified",
+    "build": "npx babel src -d build",
     "test": "concurrently \"npm:test:*\"",
     "test:tests": "npx mocha ./tests --inline-diffs true",
     "test:classes": "npx mocha ./tests/classes --inline-diffs true",
