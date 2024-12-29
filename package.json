@@ -1,6 +1,7 @@
 {
   "name": "textlint-rule-allowed-uris",
   "version": "1.0.7",
+  "packageManager": "npm@10.9.2",
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/textlint-rule-allowed-uris.js",
   "files": [
