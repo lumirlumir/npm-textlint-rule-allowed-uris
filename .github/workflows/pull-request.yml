@@ -5,7 +5,7 @@ on:
     types: [opened, edited, synchronize]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
@@ -142,7 +142,7 @@ jobs:
       scope: ${{ steps.lint-pull-request-title.outputs.scope }}
 
   labeler:
-    if: github.event.action == 'opened' || github.event.changes.title
+    if: github.event.action == 'opened' || github.event.changes.title || github.event.action == 'synchronize'
 
     runs-on: ubuntu-latest
 
