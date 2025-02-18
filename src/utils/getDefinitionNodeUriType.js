@@ -23,7 +23,7 @@ const getMimeType = async uri => {
         ),
       );
     // fetch failed. (i.e. Local URI links)
-    return mime.lookup(url.parse(uri).pathname) || 'application/octet-stream';
+    return mime.lookup(url.parse(uri).pathname) || 'application/octet-stream'; // eslint-disable-line -- TODO: Remove this comment.
   }
 };
 

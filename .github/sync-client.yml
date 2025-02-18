@@ -24,12 +24,12 @@ lumirlumir/lumirlumir-configs:
   # ./.github
   - source: ./.github/CODEOWNERS
     dest: ./configs/.github/CODEOWNERS
-  - source: ./.github/dependabot.yml
-    dest: ./configs/.github/dependabot.yml
   - source: ./.github/FUNDING.yml
     dest: ./configs/.github/FUNDING.yml
   - source: ./.github/PULL_REQUEST_TEMPLATE.md
     dest: ./configs/.github/PULL_REQUEST_TEMPLATE.md
+  - source: ./.github/dependabot.yml
+    dest: ./configs/.github/dependabot.yml
   - source: ./.github/release.yml
     dest: ./configs/.github/release.yml
   # ./.husky
@@ -43,10 +43,6 @@ lumirlumir/lumirlumir-configs:
   # ./
   - source: ./.editorconfig
     dest: ./configs/.editorconfig
-  - source: ./.eslintignore
-    dest: ./configs/.eslintignore
-  - source: ./.eslintrc.js
-    dest: ./configs/.eslintrc.js
   - source: ./.gitattributes
     dest: ./configs/.gitattributes
   - source: ./.gitignore
@@ -61,11 +57,13 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.prettierignore
   - source: ./.prettierrc.js
     dest: ./configs/.prettierrc.js
-  - source: ./babel.config.js
-    dest: ./configs/babel.config.js
   - source: ./CODE_OF_CONDUCT.md
     dest: ./configs/CODE_OF_CONDUCT.md
   - source: ./LICENSE.md
     dest: ./configs/LICENSE.md
   - source: ./VScode.code-workspace
     dest: ./configs/VScode.code-workspace
+  - source: ./babel.config.js
+    dest: ./configs/babel.config.js
+  - source: ./eslint.config.js
+    dest: ./configs/eslint.config.js
