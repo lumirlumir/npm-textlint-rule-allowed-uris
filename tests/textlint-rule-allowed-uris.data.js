@@ -1,5 +1,5 @@
 /**
- * `testCases` for `textlint-rule-allowed-uris.spec.js`
+ * `testCases` for `textlint-rule-allowed-uris.test.js`
  */
 module.exports = [
   /* Totally empty */
