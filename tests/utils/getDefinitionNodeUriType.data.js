@@ -1,5 +1,5 @@
 /**
- * `testCases` for `getDefinitionNodeUriType.spec.js`
+ * `testCases` for `getDefinitionNodeUriType.test.js`
  */
 module.exports = [
   /* comment */

@@ -1,5 +1,5 @@
 /**
- * `testCases` for `getUriList.spec.js`
+ * `testCases` for `getUriList.test.js`
  */
 module.exports = [
   /* type: link */
