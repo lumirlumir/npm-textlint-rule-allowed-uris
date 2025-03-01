@@ -15,7 +15,6 @@ updates:
         patterns:
           - 'bananass-utils-vitepress'
           - 'eslint-config-bananass'
-          - 'eslint-config-bananass-react'
           - 'prettier-config-bananass'
       babel:
         patterns:
@@ -28,6 +27,9 @@ updates:
         patterns:
           - 'next'
           - '@next/*'
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
     open-pull-requests-limit: 3
     reviewers:
       - 'lumirlumir'

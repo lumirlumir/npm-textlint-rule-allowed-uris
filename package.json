@@ -1,6 +1,6 @@
 {
   "name": "textlint-rule-allowed-uris",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "packageManager": "npm@10.9.2",
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/textlint-rule-allowed-uris.js",
@@ -63,19 +63,19 @@
     "c8": "^10.1.3",
     "concurrently": "^9.0.0",
     "editorconfig-checker": "^6.0.0",
-    "eslint": "^9.20.1",
-    "eslint-config-bananass": "^0.0.2",
+    "eslint": "^9.21.0",
+    "eslint-config-bananass": "^0.0.5",
     "husky": "^9.1.4",
     "lint-staged": "^15.4.3",
     "markdownlint-cli": "^0.44.0",
     "mocha": "^11.1.0",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "prettier-config-bananass": "^0.0.1",
     "textlint-tester": "^14.2.0"
   },
   "dependencies": {
     "ansi-colors": "^4.1.3",
-    "axios": "^1.7.4",
+    "axios": "^1.8.1",
     "cheerio": "^1.0.0",
     "mime-types": "^2.1.35"
   }
