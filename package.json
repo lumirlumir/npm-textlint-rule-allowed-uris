@@ -28,6 +28,9 @@
   "bugs": {
     "url": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/issues"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
     "prepare": "husky",
     "publish-package": "npm publish",
