@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('node:assert');
 const testCases = require('./getDefinitionNodeUriType.data');
 const getDefinitionNodeUriType = require('../../src/utils/getDefinitionNodeUriType');
 

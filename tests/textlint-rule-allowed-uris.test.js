@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 const TextLintTester = require('textlint-tester').default;
 const allowedUris = require('../src/textlint-rule-allowed-uris');
 const testCases = require('./textlint-rule-allowed-uris.data');

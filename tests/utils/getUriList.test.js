@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('node:assert');
 const testCases = require('./getUriList.data');
 const getUriList = require('../../src/utils/getUriList');
 
