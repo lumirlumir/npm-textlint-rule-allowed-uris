@@ -1,4 +1,4 @@
-const url = require('url');
+const url = require('node:url');
 const c = require('ansi-colors');
 const mime = require('mime-types');
 const axios = require('axios');
