@@ -40,6 +40,7 @@
     "test:tests": "npx mocha ./tests --inline-diffs true",
     "test:classes": "npx mocha ./tests/classes --inline-diffs true",
     "test:utils": "npx mocha ./tests/utils --inline-diffs true",
+    "test:integration": "npm run textlint-pretty && npm run textlint-stylish && npm run textlint-json",
     "coverage": "npx c8 --reporter=lcov npm run test",
     "lint": "concurrently \"npm:lint:*\"",
     "lint:eslint": "npx eslint",

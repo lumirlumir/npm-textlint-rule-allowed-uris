@@ -1,3 +1,9 @@
+/**
+ * @fileoverview
+ *
+ * IMPORTANT: It is crucial that the filename of this file MUST be changed to `index.js`, as it is used as a RULE ID.
+ */
+
 const c = require('ansi-colors');
 const getUriList = require('./utils/getUriList');
 
