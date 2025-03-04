@@ -1,7 +1,21 @@
+/**
+ * @fileoverview Retrieves the type of a given URI.
+ */
+
+// --------------------------------------------------------------------------------
+// Require
+// --------------------------------------------------------------------------------
+
 const url = require('node:url');
-const c = require('ansi-colors');
+
 const mime = require('mime-types');
 const axios = require('axios');
+
+const { error } = require('./theme');
+
+// --------------------------------------------------------------------------------
+// Helpers
+// --------------------------------------------------------------------------------
 
 /**
  * Retrieves the MIME type of a given URI.
@@ -18,7 +32,7 @@ const getMimeType = async uri => {
     // fetch failed. (Internet connection)
     if (err.code === 'ENOTFOUND')
       throw new Error(
-        c.red.bold(
+        error(
           'The linting process includes an HTTP request, so an internet connection is required',
         ),
       );
@@ -26,6 +40,10 @@ const getMimeType = async uri => {
     return mime.lookup(url.parse(uri).pathname) || 'application/octet-stream'; // eslint-disable-line -- TODO: Remove this comment.
   }
 };
+
+// --------------------------------------------------------------------------------
+// Exports
+// --------------------------------------------------------------------------------
 
 /**
  * Retrieves the type of a given URI.

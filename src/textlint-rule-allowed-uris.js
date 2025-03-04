@@ -4,8 +4,16 @@
  * IMPORTANT: It is crucial that the filename of this file MUST be changed to `index.js`, as it is used as a RULE ID.
  */
 
-const c = require('ansi-colors');
+// --------------------------------------------------------------------------------
+// Require
+// --------------------------------------------------------------------------------
+
+const { error, highlight, strikethrough } = require('./utils/theme');
 const getUriList = require('./utils/getUriList');
+
+// --------------------------------------------------------------------------------
+// Helpers
+// --------------------------------------------------------------------------------
 
 /**
  * The main reporter function that processes the node and reports any issues based on the specified options.
@@ -50,7 +58,7 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
         report(
           node,
           new RuleError(
-            `${c.red.bold(`${key}.${type}s`)}\n${c.bold.red('-')} problem: '${c.strikethrough.bold.white(uri)}'\n${c.bold.red('-')} ${key} regular expressions: '${c.bold.white(regexes[key][`${type}s`].join(' or '))}'`,
+            `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${highlight(regexes[key][`${type}s`].join(' or '))}'`,
             {
               padding: locator.at(0),
             },
@@ -59,6 +67,10 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
     });
   });
 };
+
+// --------------------------------------------------------------------------------
+// Exports
+// --------------------------------------------------------------------------------
 
 /**
  * The module export function that returns an object mapping node types to the `reporter` function.
