@@ -14,33 +14,41 @@ const UriTypes = require('./uri-types');
 const getDefinitionNodeUriType = require('./getDefinitionNodeUriType');
 
 // --------------------------------------------------------------------------------
+// Typedefs
+// --------------------------------------------------------------------------------
+
+/**
+ * @typedef {import('@textlint/ast-node-types').TxtLinkNode} TxtLinkNode
+ * @typedef {import('@textlint/ast-node-types').TxtImageNode} TxtImageNode
+ * @typedef {import('@textlint/ast-node-types').TxtDefinitionNode} TxtDefinitionNode
+ * @typedef {import('@textlint/ast-node-types').TxtHtmlNode} TxtHtmlNode
+ */
+
+// --------------------------------------------------------------------------------
 // Helpers
 // --------------------------------------------------------------------------------
 
 /**
  * Retrieves URI from a given `Link` node and returns an instance of `UriTypes`.
  *
- * @param {object} node `Link` type node.
- * @param {string} node.url The URI of the node.
+ * @param {TxtLinkNode} node `Link` type node.
  */
-const getUriListLink = ({ url }) => new UriTypes().push({ uri: url, type: 'link' });
+const getUriTypesLink = ({ url }) => new UriTypes().push({ uri: url, type: 'link' });
 
 /**
  * Retrieves URI from a given `Image` node and returns an instance of `UriTypes`.
  *
- * @param {object} node `Image` type node.
- * @param {string} node.url The URI of the node.
+ * @param {TxtImageNode} node `Image` type node.
  */
-const getUriListImage = ({ url }) => new UriTypes().push({ uri: url, type: 'image' });
+const getUriTypesImage = ({ url }) => new UriTypes().push({ uri: url, type: 'image' });
 
 /**
  * Retrieves URI from a given `Definition` node and returns an instance of `UriTypes`.
  *
- * @param {object} node `Definition` type node.
- * @param {string} node.url The URI of the node.
+ * @param {TxtDefinitionNode} node `Definition` type node.
  * @async
  */
-const getUriListDefinition = async ({ url }) => {
+const getUriTypesDefinition = async ({ url }) => {
   const type = await getDefinitionNodeUriType(url);
 
   return ['link', 'image'].includes(type)
@@ -52,10 +60,9 @@ const getUriListDefinition = async ({ url }) => {
 /**
  * Parses the HTML content of the given node and retrieves all the `<a>` and `<img>` tag's URIs.
  *
- * @param {object} node `Html` type node.
- * @param {string} node.value The raw HTML string.
+ * @param {TxtHtmlNode} node `Html` type node.
  */
-const getUriListHtml = ({ value }) => {
+const getUriTypesHtml = ({ value }) => {
   const uriTypes = new UriTypes();
   const $ = cheerio.load(value);
 
@@ -86,28 +93,23 @@ const getUriListHtml = ({ value }) => {
 /**
  * Retrieves the URI and creates an instance of `UriTypes` from a given `node`.
  *
+ * @param {TxtLinkNode | TxtImageNode | TxtDefinitionNode | TxtHtmlNode} node The node from which to retrieve the URI.
+ * @throws {TypeError} Throws an `TypeError` if `node.type` is not one of `Link`, `Image`, `Definition`, or `Html`.
  * @async
- * @param {Object} node The node from which to retrieve the URI.
- * @param {string} node.type The type of the node, which should be `Link`, `Image`, `Definition`, or `Html`.
- * @throws Throws an `TypeError` error if `node.type` is not one of `Link`, `Image`, `Definition`, or `Html`.
  */
-module.exports = async node => {
+module.exports = async function getUriTypes(node) {
   switch (node.type) {
     case 'Link':
-      // @ts-ignore -- TODO
-      return getUriListLink(node);
+      return getUriTypesLink(node);
     case 'Image':
-      // @ts-ignore -- TODO
-      return getUriListImage(node);
+      return getUriTypesImage(node);
     case 'Definition':
-      // @ts-ignore -- TODO
-      return getUriListDefinition(node);
+      return getUriTypesDefinition(node);
     case 'Html':
-      // @ts-ignore -- TODO
-      return getUriListHtml(node);
+      return getUriTypesHtml(node);
     default:
       throw new TypeError(
-        `'${node.type}' is an invalid 'node.type' parameter. It should be 'Link', 'Image', 'Definition', or 'Html'`,
+        'Invalid `node.type` parameter. It should be `Link`, `Image`, `Definition`, or `Html`',
       );
   }
 };
