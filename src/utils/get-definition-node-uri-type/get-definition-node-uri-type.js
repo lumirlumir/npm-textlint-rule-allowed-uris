@@ -11,7 +11,7 @@ const url = require('node:url');
 const mime = require('mime-types');
 const axios = require('axios');
 
-const { error } = require('./theme');
+const { error } = require('../theme');
 
 // --------------------------------------------------------------------------------
 // Helpers
