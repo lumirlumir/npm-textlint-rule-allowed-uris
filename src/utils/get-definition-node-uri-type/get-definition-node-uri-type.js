@@ -11,7 +11,7 @@ const url = require('node:url');
 const mime = require('mime-types');
 const axios = require('axios');
 
-const { error } = require('./theme');
+const { error } = require('../theme');
 
 // --------------------------------------------------------------------------------
 // Helpers
@@ -20,9 +20,9 @@ const { error } = require('./theme');
 /**
  * Retrieves the MIME type of a given URI.
  *
- * @async
  * @param {string} uri The URI to check. It can be a remote or local URI.
- * @returns {Promise<string>} A promise that resolves to the MIME type of the URI. Defaults to `application/octet-stream` if the MIME type can't be determined.
+ * @returns {Promise<string>} Resolves to the MIME type of the URI. Defaults to `application/octet-stream` if the MIME type can't be determined.
+ * @async
  */
 const getMimeType = async uri => {
   try {
@@ -48,9 +48,9 @@ const getMimeType = async uri => {
 /**
  * Retrieves the type of a given URI.
  *
- * @async
  * @param {string} uri The URI to check. It can be a remote or local URI.
- * @returns {Promise<string>} A promise that resolves to `'comment'` for empty(` `) or hash-only(`#`) URIs, `'image'` if the URI's MIME type is an image, and `'link'` for other types of URIs.
+ * @returns {Promise<'comment' | 'image' | 'link'>} Resolves to `'comment'` for empty(` `) or hash-only(`#`) URIs, `'image'` if the URI's MIME type is an image, and `'link'` for other types of URIs.
+ * @async
  */
 module.exports = async uri => {
   if (['', '#'].includes(uri)) return 'comment';
