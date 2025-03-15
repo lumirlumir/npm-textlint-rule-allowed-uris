@@ -10,8 +10,8 @@
 
 const cheerio = require('cheerio');
 
-const UriTypes = require('./uri-types');
-const getDefinitionNodeUriType = require('./get-definition-node-uri-type');
+const UriTypes = require('../uri-types');
+const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
 
 // --------------------------------------------------------------------------------
 // Typedefs
