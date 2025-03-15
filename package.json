@@ -36,7 +36,7 @@
     "publish-package": "npm publish",
     "prepublishOnly": "npm run build",
     "build": "npx babel src -d build",
-    "test": "concurrently \"npm:test:*\"",
+    "test": "concurrently \"npm:test:*\" && node --test src",
     "test:tests": "npx mocha ./tests --inline-diffs true",
     "test:utils": "npx mocha ./tests/utils --inline-diffs true",
     "test:integration": "npm run textlint-pretty && npm run textlint-stylish && npm run textlint-json",

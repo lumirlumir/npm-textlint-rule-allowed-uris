@@ -7,8 +7,9 @@
 // --------------------------------------------------------------------------------
 
 const { deepStrictEqual, throws } = require('node:assert');
+const { describe, it } = require('node:test');
 
-const UriTypes = require('../../src/utils/uri-types');
+const UriTypes = require('./uri-types');
 
 // --------------------------------------------------------------------------------
 // Test
