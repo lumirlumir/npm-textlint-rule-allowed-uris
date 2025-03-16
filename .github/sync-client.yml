@@ -61,6 +61,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/CODE_OF_CONDUCT.md
   - source: ./LICENSE.md
     dest: ./configs/LICENSE.md
+  - source: ./SECURITY.md
+    dest: ./configs/SECURITY.md
   - source: ./VScode.code-workspace
     dest: ./configs/VScode.code-workspace
   - source: ./babel.config.js
