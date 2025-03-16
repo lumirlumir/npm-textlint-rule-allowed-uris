@@ -442,7 +442,7 @@ After that, refer to the comments in source code. It contains useful information
 1. Commit your changes. (`husky` and `lint-staged` will lint and test your changed files!)
 
     ```bash
-    git commit -am "<type>[optional scope]: <description>"
+    git commit -am "<type>[scope]: <description>"
     ```
 
 1. Push them to your remote branch.
