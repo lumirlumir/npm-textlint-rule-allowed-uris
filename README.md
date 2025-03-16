@@ -24,7 +24,7 @@ A textlint rule for checking **allowed or disallowed URIs** in ***links*** and *
 
 You can use any ***link*** or ***image*** formats which are supported by Markdown. (Even **HTML tags** are available!)
 
-- [Click to see detailed Markdown examples](/tests/textlint-rule-allowed-uris.data.md). Look at **raw** codes. these all types are considered.
+- [Click to see detailed Markdown examples](/tests/textlint-rule-allowed-uris.data.md). Look at **raw** code. these all types are considered.
 
 - You can also check out the [AST Tree of the above examples](https://textlint.github.io/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNC4wLjXCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJezwhLS0gxK_EscSZxYJ0LWRpc2FixZYgxbU-CgojIyBMxJBrc8aHxbPFtcW3xYXEssSedcScxYJrLXJhd8aELcaGCmjEpHBzOi8vd8aqLmdvb2fFli7FrW3Gh8SMxZlwxZZAZ8SUxZXGsm_GtArGkcW2xbjFhsSaYcaXb8aZLWLGnGNrZXTGn8ahPMajdMalxqfGqcarxq3Gr8axxrPHk8a2bca4Zca6xrxsxr5tx5PFtMeDxpTFh8SQxYJlx5LGh1vHm8awZV0ox5XHl8aoxqp3xqzGrse1x6cgIkhlbGxvIEfHv8WWIinHsse0xZbHtykgx4IgZcehdHkgxpnHsQpbxKXEjse2KCNoZWHFvm5nyJPIlWjEn2goZsacxrvFl3TIk8aFx7JSRUFETUUubWTHty4uL8i5yLvIvci_ZMirx6ogcsiFYcSlxLkgxIJ0aMidyJXHhMaVyY5mxIbFl8WhLWZ1yIbIncezyIvHtlvGmTFdx7LJqV06IMe5xqbHu8eayabIgciDyIXIh8iJyaYixpDJjMmZxYfJm8mdbsmfxa3IhmHGpcWqyaTGmTJdW8mryJ7Ki8muybDGpMmyx5nHvciQxaLGs8iCyITIhsiIyIrHnGXJvMeByb7HrMSayoHJjsqDZS1zaG9ydGPGl8qKxo0zyo_JqMq0ypLJsceYx7zHvsqgybbKnMm5yp_HtcqiyKx0bWzJl2HJsMmbPSLKusmzypfJtcazIj7KmDwvYcahxokgScSUZ2XGj8qjxpLJv8Sax67EkMewyLcKIVvHoMeix7fLjy91xrhvyKcud2lracWaxb5hLsquZ8apy7hpcMWqaWEvxZfLmMuYOS9FeMa3xrFqcGfIgsyOzJDHsMudYcufyI3JvcujyqXGm8WnyoLJn8mhyaPLqcury63IkVvLusyaZcmqx7LMq8ufyarJr8uwy7LIh8u1y7fLucu7zIbLvnLMgMy4zIPMhcyHzInMh2HMjMyWx6HMkcyTzJXMj82IzJjLnsqhzJ3Hq8Swx4XMoMmcyqjKhMeJbMqHxIVkyJ3Lq8ywZcqMyo7Mr82PyozMs8qUx5jMtcu0ZMu2zILMusu9y7_Mgcu5zITLvMyIbsyKzYXMjc2Mx6IuzJLMlCLNh8eiy5zNj8uEyqTNk8mazKHNl8qqyqzKrsqwyrLMpsyqzY_Ktc2kzKzKtc2nx5bKlc2qzLfNrs2BzLzMvsyCzbTMhs22zbjNhs27zYnNv86BxoPMmcybzZHKk8uHyZfLusyUc8Wgy43MtMuzzpvMuc6dzbHMv86hzYLNt82EzqXMl829zJPLlMaQxb52PjzOsSDOs2POtc2oxqjOms2szL_Nr86ezbLNgM21zYPMi826z4LNvsuUz4ptzrLOtMuOz5DLsc63z5POnMu8z5bOvM2BzqPPgM-czY3Pg2fPny_Ph8eTz7YKIMiUz4vPjc-PzpjNqc-nza3Ouc-qzrvOoM-tz5rNuc6pxaLPnsaGz7rPoM-iz47PpM-_z5HQgc-UzrrMvc-Xzr3Prs-b0IrPss-Fy5fPuMaIxorOq8ewy7fJlSDLisaZx7LMp86myKLOtsy2z6jQg8y70IXNs9CHzr_QnNCtz7LNi8yXzoPMrMiNy6_PpcWX0ILPmNCz0JjMvy9GxZVlOtCdzb7IjtCiIEPGv8WaxJHLoVvGqMqSxoooVGjFvyBiZcitxLlzyJvLuMewy4rGs9GUyLXIntGYya_GiiLRnNGe0aDRosug0aXHj9CoINGpyLTJvNGXL9GZICfRsdGk0bNh0aPRttGn0bnRk8i0J8ie0brEkcqSPD4g0ZvRndKD0aHShdG1xI_Rt9Go0orEkciOW9KOdNKQ0pLRsNKV0Z_Sl9KG0prSiNKh0bzSodKj0oDSgtKn0bTRpNKq0bjSodKM0ZBPyZXEusmsxo1Mb2NhbMyuypDSvtOA04LMsiDJhci6yLzIvsmAypvJuMiIyYbTjcqiW8WpxLlyVc2cypIvTElDRU5TRciC05fEhtOaxarLhM-40I7PvM-j0K_Nq9GDz5XQtNGEzr7OpM-wzbzQjDzHjNCNyJTLimjLjNCSx7rKlsq9yIDLk8uVyabLl8uZ07py07zQj8-M067Ppc-S07HQl86f0LXPmdC30InQudO507vHgc-1ac-ICg}).
 
@@ -247,7 +247,7 @@ npx textlint -f pretty-error file.md
 
 ## Sample Outputs
 
-When configured like below.
+When configured like below:
 
 ```javascript
 module.exports = {
@@ -407,7 +407,7 @@ I recommend you to read [textlint guides](https://textlint.github.io/) before co
 
 And check out the [Installation](#installation) and [Concepts of `textlint-rule-allowed-uris`](#concepts-of-textlint-rule-allowed-uris) guides below. It will help you to understand how this package works.
 
-After that, refer to the comments in source codes. It contains useful information to help you.
+After that, refer to the comments in source code. It contains useful information to help you.
 
 ### Installation
 
@@ -431,7 +431,7 @@ After that, refer to the comments in source codes. It contains useful informatio
     npm install
     ```
 
-1. Edit codes.
+1. Edit code.
 
 1. Create `my-branch` branch.
 
@@ -442,12 +442,12 @@ After that, refer to the comments in source codes. It contains useful informatio
 1. Commit your changes. (`husky` and `lint-staged` will lint and test your changed files!)
 
     ```bash
-    git commit -am "commit type: title"
+    git commit -am "<type>[optional scope]: <description>"
     ```
 
 1. Push them to your remote branch.
 
-1. Submit a pull request.👍
+1. Submit a pull request.
 
 ### Concepts of `textlint-rule-allowed-uris`
 
@@ -469,7 +469,7 @@ After that, refer to the comments in source codes. It contains useful informatio
 
 > [!NOTE]
 >
-> `LinkReference`, `ImageReference` and `Definition` are types parsed by [`@textlint/text-to-ast`](https://github.com/textlint/textlint/tree/master/packages/@textlint/markdown-to-ast/). But, It is not defined in [`@textlint/ast-node-types`](https://github.com/textlint/textlint/tree/master/packages/%40textlint/ast-node-types).
+> `LinkReference`, `ImageReference` and `Definition` are types parsed by [`@textlint/text-to-ast`](https://github.com/textlint/textlint/tree/master/packages/@textlint/markdown-to-ast/). But, It is not defined in [`@textlint/ast-node-types`](https://github.com/textlint/textlint/tree/master/packages/%40textlint/ast-node-types). (NOTE: Textlint started [supporting these types since `v14.5.0`](https://github.com/textlint/textlint/pull/1459)!)
 >
 > However, you can use these three node types. It is described in [textlint guides](https\://github.com/textlint/textlint/blob/master/docs/txtnode.md). See below.
 >
