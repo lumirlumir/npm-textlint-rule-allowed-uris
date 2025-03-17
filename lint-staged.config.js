@@ -4,5 +4,5 @@ module.exports = {
     'npx editorconfig-checker -config .editorconfig-checker.json',
   ],
   '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,md}': 'npx eslint',
-  '*.md': 'npx markdownlint',
+  '*.md': ['npx markdownlint', 'npx textlint -f pretty-error'],
 };
