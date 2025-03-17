@@ -2,6 +2,9 @@
   "name": "textlint-rule-allowed-uris",
   "version": "1.0.8",
   "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "."
+  ],
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/textlint-rule-allowed-uris.js",
   "files": [
@@ -46,6 +49,7 @@
     "lint:prettier": "npx prettier . --check",
     "lint:editorconfig": "npx editorconfig-checker -config .editorconfig-checker.json",
     "lint:markdownlint": "npx markdownlint **/*.md",
+    "lint:textlint": "npx textlint -f pretty-error **/*.md",
     "textlint-pretty": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f pretty-error",
     "textlint-stylish": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f stylish",
     "textlint-json": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f json"
