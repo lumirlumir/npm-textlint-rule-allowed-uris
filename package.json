@@ -36,7 +36,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "publish-package": "npm publish",
+    "publish-package": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
     "prepublishOnly": "npm run build",
     "build": "npx babel src -d build",
     "test": "node --test && concurrently \"npm:textlint-*\"",
