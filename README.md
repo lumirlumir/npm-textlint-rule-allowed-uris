@@ -13,7 +13,7 @@ A textlint rule for checking **allowed or disallowed URIs** in ***links*** and *
 > 1. The linting process includes HTTP requests, so an <u>**internet connection is required**</u>. Otherwise, an error will occur.
 > 1. Note that every URIs should be recognized by Markdown. URIs which are not recognized by Markdown cannot be inspected. For example, URIs without `https://...` or `http://...`.
 >
->     ```markdown
+>     ```md
 >     www.google.com
 >     <www.google.com>
 >     ```
@@ -32,7 +32,7 @@ You can use any ***link*** or ***image*** formats which are supported by Markdow
 
 No! We check not only for URIs, but also for **local paths**. Below patterns are inspected too.
 
-```text
+```txt
 README.md (Relative path)
 /README.md (Absolute path)
 ../README.md (Relative path)
@@ -65,13 +65,13 @@ For example, If you pass an empty array to the option, it allows everything. i.e
 
 ### `npm`
 
-```bash
+```sh
 npm install --save-dev textlint-rule-allowed-uris
 ```
 
 ### `yarn`
 
-```bash
+```sh
 yarn add --dev textlint-rule-allowed-uris
 ```
 
@@ -81,7 +81,7 @@ yarn add --dev textlint-rule-allowed-uris
 
 Every options are optional. If you pass nothing, then nothing just happens!
 
-```typescript
+```ts
 {
   rules: {
     "allowed-uris": {
@@ -104,7 +104,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
     - Allowed `links` act like an <u>**whitelist**</u>. Only those written on the whitelist can pass through.
     - If you want to turn off this option, then pass nothing. **NOTE: DO NOT PASS AN EMPTY ARRAY TO TURN OFF THIS OPTION.**
 
-        ```javascript
+        ```js
         /* .textlintrc.js */
         // Correct way of turning off this option.
         module.exports = {
@@ -129,7 +129,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
     - Allowed `images` act like an <u>**whitelist**</u>. Only those written on the whitelist can pass through.
     - If you want to turn off this option, then pass nothing. **NOTE: DO NOT PASS AN EMPTY ARRAY TO TURN OFF THIS OPTION.**
 
-        ```javascript
+        ```js
         /* .textlintrc.js */
         // Correct way of turning off this option.
         module.exports = {
@@ -154,7 +154,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
     - Disallowed `links` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
     - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
-        ```javascript
+        ```js
         /* .textlintrc.js */
         // Correct way of turning off this option.
         module.exports = {
@@ -179,7 +179,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
     - Disallowed `images` act like an <u>**blacklist**</u>. Only those written on the blacklist **cannot** pass through.
     - If you want to turn off this option, then pass nothing. or here, you can pass an empty array. (because the default value passed is an empty array too.)
 
-        ```javascript
+        ```js
         /* .textlintrc.js */
         // Correct way of turning off this option.
         module.exports = {
@@ -202,7 +202,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
 ### Example (`.textlintrc.js`)
 
-```javascript
+```js
 module.exports = {
   rules: {
     "allowed-uris": {
@@ -229,19 +229,19 @@ module.exports = {
 
 ## Usages
 
-```bash
+```sh
 textlint [options] file.md [file|dir|glob*]
 ```
 
 ### Without a config file
 
-```bash
+```sh
 npx textlint --rule allowed-uris -f pretty-error file.md
 ```
 
 ### With a config file
 
-```bash
+```sh
 npx textlint -f pretty-error file.md
 ```
 
@@ -249,7 +249,7 @@ npx textlint -f pretty-error file.md
 
 When configured like below:
 
-```javascript
+```js
 module.exports = {
   rules: {
     "allowed-uris": {
@@ -266,7 +266,7 @@ module.exports = {
 <details>
 <summary> Click to see sample outputs </summary>
 
-```text
+```txt
 > npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f pretty-error
 
 textlint-rule-allowed-uris: allowed.links
@@ -359,7 +359,7 @@ textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md:103:1
 <details>
 <summary> Click to see sample outputs </summary>
 
-```text
+```txt
 > npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f stylish
 
 textlint-rule-allowed-uris/tests/textlint-rule-allowed-uris.data.md
@@ -415,19 +415,19 @@ After that, refer to the comments in source code. It contains useful information
 
 1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is required.)
 
-    ```bash
+    ```sh
     git clone https://github.com/lumirlumir/npm-textlint-rule-allowed-uris.git
     ```
 
 1. Move to the `npm-textlint-rule-allowed-uris` directory.
 
-    ```bash
+    ```sh
     cd npm-textlint-rule-allowed-uris
     ```
 
 1. Install npm packages. ([Node.js](https://nodejs.org/en) is required.)
 
-    ```bash
+    ```sh
     npm install
     ```
 
@@ -435,13 +435,13 @@ After that, refer to the comments in source code. It contains useful information
 
 1. Create `my-branch` branch.
 
-    ```bash
+    ```sh
     git switch -c my-branch
     ```
 
 1. Commit your changes. (`husky` and `lint-staged` will lint and test your changed files!)
 
-    ```bash
+    ```sh
     git commit -am "<type>[scope]: <description>"
     ```
 
