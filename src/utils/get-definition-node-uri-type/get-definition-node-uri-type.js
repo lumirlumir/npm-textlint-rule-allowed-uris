@@ -27,6 +27,7 @@ const { error } = require('../theme');
 const getMimeType = async uri => {
   try {
     // fetch succeeded. (i.e. Remote URI links)
+    // @ts-expect-error -- TODO
     return (await axios.head(uri)).headers['content-type'];
   } catch (err) {
     // fetch failed. (Internet connection)
