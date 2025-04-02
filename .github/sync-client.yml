@@ -75,3 +75,5 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/eslint.config.mjs
   - source: ./lint-staged.config.mjs
     dest: ./configs/lint-staged.config.mjs
+  - source: ./tsconfig.json
+    dest: ./configs/tsconfig.json
