@@ -3,18 +3,10 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
-// --------------------------------------------------------------------------------
-
-const c = require('ansi-colors');
-
-// --------------------------------------------------------------------------------
 // Exports
 // --------------------------------------------------------------------------------
 
-/** Console error theme. */
-module.exports.error = c.red.bold;
-/** Console highlight theme. */
-module.exports.highlight = c.white.bold;
-/** Console strikethrough theme. */
-module.exports.strikethrough = c.white.bold.strikethrough;
+/** Console error theme. @param {string} str */
+module.exports.error = str => `\u001b[31m${str}\u001b[0m`;
+/** Console strikethrough theme. @param {string} str */
+module.exports.strikethrough = str => `\u001b[9m${str}\u001b[0m`;

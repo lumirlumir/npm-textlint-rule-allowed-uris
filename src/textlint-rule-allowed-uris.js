@@ -7,7 +7,7 @@
 // Require
 // --------------------------------------------------------------------------------
 
-const { error, highlight, strikethrough } = require('./utils/theme');
+const { error, strikethrough } = require('./utils/theme');
 const getUriTypes = require('./utils/get-uri-types');
 
 // --------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ const reporter = async ({ report, locator, RuleError }, options, node) => {
         report(
           node,
           new RuleError(
-            `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${highlight(regexes[key][`${type}s`].join(' or '))}'`,
+            `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${regexes[key][`${type}s`].join(' or ')}'`,
             {
               padding: locator.at(0),
             },
