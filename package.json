@@ -38,7 +38,7 @@
     "prepare": "husky",
     "publish-package": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
     "prepublishOnly": "npm run build",
-    "build": "npx babel src -d build",
+    "build": "npx babel src -d build && npx tsc",
     "test": "node --test && concurrently \"npm:textlint-*\"",
     "coverage": "npx c8 --reporter=lcov npm run test",
     "fix": "concurrently \"npm:fix:*\"",

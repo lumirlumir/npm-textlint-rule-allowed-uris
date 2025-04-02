@@ -19,7 +19,6 @@ const { error } = require('../theme');
 
 /**
  * Retrieves the MIME type of a given URI.
- *
  * @param {string} uri The URI to check. It can be a remote or local URI.
  * @returns {Promise<string>} Resolves to the MIME type of the URI. Defaults to `application/octet-stream` if the MIME type can't be determined.
  * @async
@@ -48,7 +47,6 @@ const getMimeType = async uri => {
 
 /**
  * Retrieves the type of a given URI.
- *
  * @param {string} uri The URI to check. It can be a remote or local URI.
  * @returns {Promise<'comment' | 'image' | 'link'>} Resolves to `'comment'` for empty(` `) or hash-only(`#`) URIs, `'image'` if the URI's MIME type is an image, and `'link'` for other types of URIs.
  * @async

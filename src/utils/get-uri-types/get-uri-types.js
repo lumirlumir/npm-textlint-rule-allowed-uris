@@ -2,8 +2,6 @@
  * @fileoverview Retrieves the URI and creates an instance of `UriTypes` from a given `node`.
  */
 
-// @ts-check
-
 // --------------------------------------------------------------------------------
 // Require
 // --------------------------------------------------------------------------------
@@ -30,21 +28,18 @@ const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
 
 /**
  * Retrieves URI from a given `Link` node and returns an instance of `UriTypes`.
- *
  * @param {TxtLinkNode} node `Link` type node.
  */
 const getUriTypesLink = ({ url }) => new UriTypes().push({ uri: url, type: 'link' });
 
 /**
  * Retrieves URI from a given `Image` node and returns an instance of `UriTypes`.
- *
  * @param {TxtImageNode} node `Image` type node.
  */
 const getUriTypesImage = ({ url }) => new UriTypes().push({ uri: url, type: 'image' });
 
 /**
  * Retrieves URI from a given `Definition` node and returns an instance of `UriTypes`.
- *
  * @param {TxtDefinitionNode} node `Definition` type node.
  * @async
  */
@@ -59,7 +54,6 @@ const getUriTypesDefinition = async ({ url }) => {
 
 /**
  * Parses the HTML content of the given node and retrieves all the `<a>` and `<img>` tag's URIs.
- *
  * @param {TxtHtmlNode} node `Html` type node.
  */
 const getUriTypesHtml = ({ value }) => {
@@ -92,7 +86,6 @@ const getUriTypesHtml = ({ value }) => {
 
 /**
  * Retrieves the URI and creates an instance of `UriTypes` from a given `node`.
- *
  * @param {TxtLinkNode | TxtImageNode | TxtDefinitionNode | TxtHtmlNode} node The node from which to retrieve the URI.
  * @throws {TypeError} Throws an `TypeError` if `node.type` is not one of `Link`, `Image`, `Definition`, or `Html`.
  * @async

@@ -1,11 +1,8 @@
 /**
  * @fileoverview Manage an array of `UriType` objects.
- *
  * - The `UriTypes` class is introduced to manage `UriType` in a CONSISTENT manner.
  * - In the case of the `getUriTypesHtml` function in `get-uri-types.js` file, it can return multiple `UriType`, so the `UriTypes` class is used to manage them.
  */
-
-// @ts-check
 
 // --------------------------------------------------------------------------------
 // Typedefs
