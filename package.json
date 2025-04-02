@@ -72,7 +72,7 @@
     "markdownlint-cli": "^0.44.0",
     "prettier": "^3.5.3",
     "prettier-config-bananass": "^0.0.1",
-    "textlint": "^14.5.0",
+    "textlint": "^14.6.0",
     "textlint-tester": "^14.5.0"
   },
   "dependencies": {
