@@ -6,7 +6,7 @@
 // Require
 // --------------------------------------------------------------------------------
 
-const { deepStrictEqual, rejects } = require('node:assert');
+const { deepStrictEqual } = require('node:assert');
 const { describe, it } = require('node:test');
 
 const getUriTypes = require('./get-uri-types');
@@ -606,7 +606,7 @@ describe('get-uri-types.js', () => {
   });
 
   describe('Invalid node type', () => {
-    it('Invalid node type should throw an error', async () => {
+    it('Invalid node type should return `undefined`', async () => {
       const actual = {
         type: 'Document',
         raw: '',
@@ -624,9 +624,7 @@ describe('get-uri-types.js', () => {
         children: [],
       };
 
-      await rejects(async () => {
-        await getUriTypes(actual);
-      });
+      deepStrictEqual(await getUriTypes(actual), undefined);
     });
   });
 });

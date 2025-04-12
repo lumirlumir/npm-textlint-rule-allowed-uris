@@ -61,7 +61,6 @@ const getUriTypesHtml = ({ value }) => {
   const $ = cheerio.load(value);
 
   $('a, img').each((_, elem) => {
-    // @ts-ignore -- TODO
     const tag = $(elem).prop('tagName').toLowerCase();
 
     if (tag === 'a') {
@@ -87,7 +86,6 @@ const getUriTypesHtml = ({ value }) => {
 /**
  * Retrieves the URI and creates an instance of `UriTypes` from a given `node`.
  * @param {TxtLinkNode | TxtImageNode | TxtDefinitionNode | TxtHtmlNode} node The node from which to retrieve the URI.
- * @throws {TypeError} Throws an `TypeError` if `node.type` is not one of `Link`, `Image`, `Definition`, or `Html`.
  * @async
  */
 module.exports = async function getUriTypes(node) {
@@ -100,9 +98,7 @@ module.exports = async function getUriTypes(node) {
       return getUriTypesDefinition(node);
     case 'Html':
       return getUriTypesHtml(node);
-    default:
-      throw new TypeError(
-        'Invalid `node.type` parameter. It should be `Link`, `Image`, `Definition`, or `Html`',
-      );
+    default: // Unreachable
+      return undefined;
   }
 };
