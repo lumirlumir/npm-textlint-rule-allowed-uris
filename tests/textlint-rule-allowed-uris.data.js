@@ -5,19 +5,6 @@ module.exports = [
   /* Totally empty */
   {
     options: {
-      // allowed: {
-      //   links: [],
-      //   images: [],
-      // },
-      // disallowed: {
-      //   links: [],
-      //   images: [],
-      // },
-    },
-    lines: [],
-  },
-  {
-    options: {
       allowed: {
         // links: [],
         // images: [],

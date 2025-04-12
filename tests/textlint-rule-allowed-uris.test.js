@@ -8,11 +8,11 @@
 
 const { readFileSync } = require('node:fs');
 const { resolve } = require('node:path');
-const { describe } = require('node:test');
+const { test } = require('node:test');
 
 const TextLintTester = require('textlint-tester').default;
 
-const allowedUris = require('../src/textlint-rule-allowed-uris');
+const rule = require('../src/textlint-rule-allowed-uris');
 const testCases = require('./textlint-rule-allowed-uris.data');
 
 // --------------------------------------------------------------------------------
@@ -20,55 +20,48 @@ const testCases = require('./textlint-rule-allowed-uris.data');
 // --------------------------------------------------------------------------------
 
 const tester = new TextLintTester();
-const testCasesMarkdown = readFileSync(
+const text = readFileSync(
   resolve(__dirname, 'textlint-rule-allowed-uris.data.md'),
   'utf-8',
 );
+
+/** @param {number[]} lines */
+const createErrors = lines => lines.map(line => ({ line }));
 
 // --------------------------------------------------------------------------------
 // Test
 // --------------------------------------------------------------------------------
 
-describe('textlint-rule-allowed-uris', () => {
+test('textlint-rule-allowed-uris', () => {
+  tester.run('textlint-rule-allowed-uris', rule, {
+    invalid: [
+      {
+        name: 'Totally Empty - 1',
+        text,
+        options: {
+          // allowed: {
+          //   links: [],
+          //   images: [],
+          // },
+          // disallowed: {
+          //   links: [],
+          //   images: [],
+          // },
+        },
+        errors: createErrors([]),
+      },
+    ],
+  });
+
   testCases.forEach(({ options, lines }) => {
-    /* Initialization */
-    const testConfig = {
-      rules: [
+    tester.run('textlint-rule-allowed-uris', rule, {
+      invalid: [
         {
-          ruleId: 'textlint-rule-allowed-uris',
-          rule: allowedUris,
+          text,
           options,
+          errors: lines.map(line => ({ line })),
         },
       ],
-    };
-    const invalid = [
-      {
-        text: testCasesMarkdown,
-        errors: lines.map(line => ({ line })),
-      },
-    ];
-
-    /* Test */
-    tester.run(
-      `
-      allowed links: ${options?.allowed?.links?.join(' or ')}
-      allowed images: ${options?.allowed?.images?.join(' or ')}
-      disallowed links: ${options?.disallowed?.links?.join(' or ')}
-      disallowed images: ${options?.disallowed?.links?.join(' or ')}
-      lines: ${lines.join(', ')}
-      `,
-      testConfig,
-      {
-        invalid,
-      },
-    );
-
-    console.log(`
-      allowed links: ${options?.allowed?.links?.join(' or ')}
-      allowed images: ${options?.allowed?.images?.join(' or ')}
-      disallowed links: ${options?.disallowed?.links?.join(' or ')}
-      disallowed images: ${options?.disallowed?.links?.join(' or ')}
-      lines: ${lines.join(', ')}
-      `);
+    });
   });
 });
