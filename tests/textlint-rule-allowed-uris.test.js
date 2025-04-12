@@ -13,7 +13,6 @@ const { test } = require('node:test');
 const TextLintTester = require('textlint-tester').default;
 
 const rule = require('../src/textlint-rule-allowed-uris');
-const testCases = require('./textlint-rule-allowed-uris.data');
 
 // --------------------------------------------------------------------------------
 // Helpers
@@ -134,6 +133,21 @@ test('textlint-rule-allowed-uris', () => {
           },
         },
       },
+
+      {
+        name: 'Pass Values - `allowed.images` - 1',
+        text,
+        options: {
+          allowed: {
+            // links: [],
+            images: [/wiki/],
+          },
+          // disallowed: {
+          //   links: [],
+          //   images: [],
+          // },
+        },
+      },
     ],
 
     invalid: [
@@ -233,18 +247,101 @@ test('textlint-rule-allowed-uris', () => {
         },
         errors: createErrors([21, 23, 86, 103]),
       },
-    ],
-  });
 
-  testCases.forEach(({ options, lines }) => {
-    tester.run('textlint-rule-allowed-uris', rule, {
-      invalid: [
-        {
-          text,
-          options,
-          errors: lines.map(line => ({ line })),
+      {
+        name: 'Pass Values - `disallowed.links` - 1',
+        text,
+        options: {
+          // allowed: {
+          //   links: [],
+          //   images: [],
+          // },
+          disallowed: {
+            links: [/google/],
+            // images: [],
+          },
         },
-      ],
-    });
+        errors: createErrors([7, 13, 19, 31, 37, 43, 47, 105]),
+      },
+      {
+        name: 'Pass Values - `disallowed.links` - 2',
+        text,
+        options: {
+          // allowed: {
+          //   links: [],
+          //   images: [],
+          // },
+          disallowed: {
+            links: [/google/, /gmail/],
+            // images: [],
+          },
+        },
+        errors: createErrors([7, 9, 13, 15, 19, 31, 37, 43, 47, 105]),
+      },
+      {
+        name: 'Pass Values - `disallowed.links` - 3',
+        text,
+        options: {
+          // allowed: {
+          //   links: [],
+          //   images: [],
+          // },
+          disallowed: {
+            links: [/google/, /gmail/, /README.md/],
+            // images: [],
+          },
+        },
+        errors: createErrors([7, 9, 13, 15, 19, 25, 31, 37, 43, 47, 101, 105]),
+      },
+
+      {
+        name: 'Pass Values - `disallowed.images` - 1',
+        text,
+        options: {
+          // allowed: {
+          //   links: [],
+          //   images: [],
+          // },
+          disallowed: {
+            // links: [],
+            images: [/wiki/],
+          },
+        },
+        errors: createErrors([53, 59, 65, 71, 75, 77, 79, 86, 105]),
+      },
+
+      {
+        name: 'Pass same values to `allowed` and `disallowed` - 1',
+        text,
+        options: {
+          allowed: {
+            links: [/google/],
+            // images: [],
+          },
+          disallowed: {
+            links: [/google/],
+            // images: [],
+          },
+        },
+        errors: createErrors([
+          7, 9, 13, 15, 19, 21, 23, 25, 31, 37, 43, 47, 86, 101, 103, 105,
+        ]), // Every `links` will be detected.
+      },
+      {
+        name: 'Pass same values to `allowed` and `disallowed` - 2',
+        text,
+        options: {
+          allowed: {
+            // links: [],
+            images: [/wiki/],
+          },
+          disallowed: {
+            // links: [],
+            images: [/wiki/],
+          },
+        },
+        errors: createErrors([53, 59, 65, 71, 75, 77, 79, 86, 105]), // Every `images` will be detected.
+      },
+    ],
   });
 });
