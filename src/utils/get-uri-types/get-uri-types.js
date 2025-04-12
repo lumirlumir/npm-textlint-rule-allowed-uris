@@ -61,7 +61,6 @@ const getUriTypesHtml = ({ value }) => {
   const $ = cheerio.load(value);
 
   $('a, img').each((_, elem) => {
-    // @ts-ignore -- TODO
     const tag = $(elem).prop('tagName').toLowerCase();
 
     if (tag === 'a') {

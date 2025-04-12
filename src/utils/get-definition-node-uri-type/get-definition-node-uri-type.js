@@ -7,10 +7,7 @@
 // --------------------------------------------------------------------------------
 
 const url = require('node:url');
-
 const mime = require('mime-types');
-const axios = require('axios');
-
 const { error } = require('../theme');
 
 // --------------------------------------------------------------------------------
@@ -26,11 +23,11 @@ const { error } = require('../theme');
 const getMimeType = async uri => {
   try {
     // fetch succeeded. (i.e. Remote URI links)
-    // @ts-expect-error -- TODO
-    return (await axios.head(uri)).headers['content-type'];
+    const response = await fetch(uri, { method: 'HEAD' });
+    return response.headers.get('content-type');
   } catch (err) {
     // fetch failed. (Internet connection)
-    if (err.code === 'ENOTFOUND')
+    if (err?.cause?.code === 'ENOTFOUND')
       throw new Error(
         error(
           'The linting process includes an HTTP request, so an internet connection is required',
