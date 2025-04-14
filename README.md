@@ -487,7 +487,7 @@ After that, refer to the comments in source code. It contains useful information
 > > };
 > > ```
 >
-> i.e. you can use other node types that is not defined in `@textlint/ast-node-types`. like `Definition` type.
+> In other words, you can use other node types that is not defined in `@textlint/ast-node-types`. like `Definition` type.
 
 #### AST Tree
 
