@@ -83,7 +83,7 @@
     "prettier": "^3.5.3",
     "prettier-config-bananass": "^0.1.0-canary.5",
     "textlint": "^14.7.1",
-    "textlint-tester": "^14.6.0"
+    "textlint-tester": "^14.7.1"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
