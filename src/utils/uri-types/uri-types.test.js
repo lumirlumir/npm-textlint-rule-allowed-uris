@@ -15,7 +15,7 @@ const UriTypes = require('./uri-types');
 // Test
 // --------------------------------------------------------------------------------
 
-describe('uri-types.js', () => {
+describe('uri-types', () => {
   // deepStrictEqual
   it('Method: new UriTypes()', () => {
     deepStrictEqual([], new UriTypes().uriTypes);

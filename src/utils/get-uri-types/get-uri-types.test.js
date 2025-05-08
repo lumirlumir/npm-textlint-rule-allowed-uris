@@ -15,7 +15,7 @@ const getUriTypes = require('./get-uri-types');
 // Test
 // --------------------------------------------------------------------------------
 
-describe('get-uri-types.js', () => {
+describe('get-uri-types', () => {
   describe('Link', () => {
     describe('`Link` node', () => {
       it('A `Link` node starting with `https://` should have type `link` in `UriType`', async () => {

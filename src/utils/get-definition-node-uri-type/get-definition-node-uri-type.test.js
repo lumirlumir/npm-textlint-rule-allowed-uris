@@ -15,7 +15,7 @@ const getDefinitionNodeUriType = require('./get-definition-node-uri-type');
 // Test
 // --------------------------------------------------------------------------------
 
-describe('get-definition-node-uri-type.js', () => {
+describe('get-definition-node-uri-type', () => {
   describe('comment', () => {
     it("The empty `''` character should be a `comment`", async () => {
       const actual = '';
