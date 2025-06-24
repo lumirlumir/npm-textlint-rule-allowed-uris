@@ -15,12 +15,9 @@ const getUriTypes = require('./utils/get-uri-types');
 // --------------------------------------------------------------------------------
 
 /**
- * @typedef {import('@textlint/types').TextlintRuleContext} TextlintRuleContext
- * @typedef {import('@textlint/ast-node-types').TxtLinkNode} TxtLinkNode
- * @typedef {import('@textlint/ast-node-types').TxtImageNode} TxtImageNode
- * @typedef {import('@textlint/ast-node-types').TxtDefinitionNode} TxtDefinitionNode
- * @typedef {import('@textlint/ast-node-types').TxtHtmlNode} TxtHtmlNode
- * @typedef {import('./types').Options} Options
+ * @import { TextlintRuleContext } from '@textlint/types';
+ * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
+ * @import { Options } from './types';
  */
 
 // --------------------------------------------------------------------------------

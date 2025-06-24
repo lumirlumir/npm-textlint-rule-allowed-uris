@@ -9,7 +9,7 @@
 // --------------------------------------------------------------------------------
 
 /**
- * @typedef {import('../../types/index.js').UriType} UriType
+ * @import { UriType } from '../../types';
  */
 
 // --------------------------------------------------------------------------------
@@ -18,7 +18,6 @@
 
 /**
  * Manage an array of `UriType` objects.
- *
  * @example
  * [
  *   // ...
@@ -47,7 +46,6 @@ class UriTypes {
 
   /**
    * Pushes a new `UriType` object.
-   *
    * @param {UriType} uriType The `UriType` object.
    * @returns {this} The current instance of `UriTypes` to allow for method chaining.
    */
@@ -74,7 +72,6 @@ class UriTypes {
 
   /**
    * Returns an array of `UriType` objects.
-   *
    * @example
    * [
    *   // ...

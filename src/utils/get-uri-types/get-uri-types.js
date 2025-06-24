@@ -16,10 +16,7 @@ const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
 // --------------------------------------------------------------------------------
 
 /**
- * @typedef {import('@textlint/ast-node-types').TxtLinkNode} TxtLinkNode
- * @typedef {import('@textlint/ast-node-types').TxtImageNode} TxtImageNode
- * @typedef {import('@textlint/ast-node-types').TxtDefinitionNode} TxtDefinitionNode
- * @typedef {import('@textlint/ast-node-types').TxtHtmlNode} TxtHtmlNode
+ * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
  */
 
 // --------------------------------------------------------------------------------
