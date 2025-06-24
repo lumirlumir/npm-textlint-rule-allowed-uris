@@ -83,7 +83,8 @@
     "prettier": "^3.6.0",
     "prettier-config-bananass": "^0.1.2",
     "textlint": "^14.7.2",
-    "textlint-tester": "^14.7.2"
+    "textlint-tester": "^14.7.2",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "cheerio": "^1.1.0",
