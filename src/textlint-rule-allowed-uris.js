@@ -1,6 +1,6 @@
 /**
- * @fileoverview Entry file for the `textlint-rule-allowed-uris`.
- * IMPORTANT: It is crucial that the filename of this file MUST NOT be changed to `index.js`, as it is used as a RULE ID.
+ * @fileoverview Entry point for the `textlint-rule-allowed-uris`.
+ * DO NOT rename this file to `index.js`, as it is used as a RULE ID.
  */
 
 // --------------------------------------------------------------------------------
@@ -8,7 +8,12 @@
 // --------------------------------------------------------------------------------
 
 const { error, strikethrough } = require('./utils/theme');
-const getUriTypes = require('./utils/get-uri-types');
+const {
+  getUriTypesLink,
+  getUriTypesImage,
+  getUriTypesDefinition,
+  getUriTypesHtml,
+} = require('./utils/get-uri-types');
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -17,78 +22,81 @@ const getUriTypes = require('./utils/get-uri-types');
 /**
  * @import { TextlintRuleContext } from '@textlint/types';
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
- * @import { Options } from './types';
+ * @import { UriType, Options } from './types';
  */
-
-// --------------------------------------------------------------------------------
-// Helpers
-// --------------------------------------------------------------------------------
-
-/**
- * The main reporter function that processes the node and reports any issues based on the specified options.
- * @param {TextlintRuleContext} context The context object provided to the `reporter`.
- * @param {Options} options Configuration options containing `allowed` and `disallowed` URI patterns.
- * @param {TxtLinkNode | TxtImageNode | TxtDefinitionNode | TxtHtmlNode} node The node to be processed, containing potential URIs.
- * @returns {Promise<void>}
- * @async
- */
-const reporter = async ({ report, locator, RuleError }, options, node) => {
-  // ------------------------------------------------------------------------------
-  // Initialize Options
-  // ------------------------------------------------------------------------------
-
-  /** @type {Options} */
-  const regexes = {
-    allowed: {
-      links: options?.allowed?.links ?? [/.*/],
-      images: options?.allowed?.images ?? [/.*/],
-    },
-    disallowed: {
-      links: options?.disallowed?.links ?? [],
-      images: options?.disallowed?.images ?? [],
-    },
-  };
-
-  // ------------------------------------------------------------------------------
-  // Report
-  // ------------------------------------------------------------------------------
-
-  (await getUriTypes(node)).uriTypes.forEach(({ uri, type }) => {
-    Object.keys(regexes).forEach(key => {
-      // The `some` method returns `true` if any element in the array satisfies the given condition.
-      // In the case of an empty array, there are no elements to satisfy the condition, so the method returns `false`.
-      // Therefore, calling the `some` method on an empty array will always return `false`.
-      if (
-        key === 'allowed'
-          ? !regexes[key][`${type}s`].some(regex => regex.test(uri))
-          : regexes[key][`${type}s`].some(regex => regex.test(uri))
-      )
-        report(
-          node,
-          new RuleError(
-            `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${regexes[key][`${type}s`].join(' or ')}'`,
-            {
-              padding: locator.at(0),
-            },
-          ),
-        );
-    });
-  });
-};
 
 // --------------------------------------------------------------------------------
 // Exports
 // --------------------------------------------------------------------------------
 
 /**
- * The module export function that returns an object mapping node types to the `reporter` function.
- * @param {TextlintRuleContext} context The context object provided to the `reporter`.
- * @param {Options} options Configuration options for the `reporter`.
+ * Entry point for the `textlint-rule-allowed-uris` rule.
+ * @param {TextlintRuleContext} context Context object.
+ * @param {Options} rawOptions Configuration options.
  */
-module.exports = (context, options) =>
-  Object.fromEntries(
-    ['Link', 'Image', 'Definition', 'Html'].map(type => [
-      type,
-      async node => reporter(context, options, node),
-    ]),
-  );
+module.exports = (context, rawOptions) => {
+  /** @type {Options} */
+  const options = {
+    allowed: {
+      links: rawOptions?.allowed?.links ?? [/.*/],
+      images: rawOptions?.allowed?.images ?? [/.*/],
+    },
+    disallowed: {
+      links: rawOptions?.disallowed?.links ?? [],
+      images: rawOptions?.disallowed?.images ?? [],
+    },
+  };
+
+  /**
+   * The main reporter function that processes the node and reports any issues based on the specified options.
+   * @param {TxtLinkNode | TxtImageNode | TxtDefinitionNode | TxtHtmlNode} node
+   * @param {UriType[]} uriTypes
+   * @returns {Promise<void>}
+   * @async
+   */
+  const report = async (node, uriTypes) => {
+    uriTypes.forEach(({ uri, type }) => {
+      Object.keys(options).forEach(key => {
+        // The `some` method returns `true` if any element in the array satisfies the given condition.
+        // In the case of an empty array, there are no elements to satisfy the condition, so the method returns `false`.
+        // Therefore, calling the `some` method on an empty array will always return `false`.
+        if (
+          key === 'allowed'
+            ? !options[key][`${type}s`].some(regex => regex.test(uri))
+            : options[key][`${type}s`].some(regex => regex.test(uri))
+        )
+          context.report(
+            node,
+            new context.RuleError(
+              `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][`${type}s`].join(' or ')}'`,
+              {
+                padding: context.locator.at(0),
+              },
+            ),
+          );
+      });
+    });
+  };
+
+  return {
+    /** @param {TxtLinkNode} node */
+    Link(node) {
+      return report(node, getUriTypesLink(node).uriTypes);
+    },
+
+    /** @param {TxtImageNode} node */
+    Image(node) {
+      return report(node, getUriTypesImage(node).uriTypes);
+    },
+
+    /** @param {TxtDefinitionNode} node */
+    async Definition(node) {
+      return report(node, (await getUriTypesDefinition(node)).uriTypes);
+    },
+
+    /** @param {TxtHtmlNode} node */
+    Html(node) {
+      return report(node, getUriTypesHtml(node).uriTypes);
+    },
+  };
+};
