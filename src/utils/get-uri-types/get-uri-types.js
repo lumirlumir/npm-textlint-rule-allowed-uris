@@ -7,7 +7,6 @@
 // --------------------------------------------------------------------------------
 
 import * as cheerio from 'cheerio';
-import UriTypes from '../uri-types/index.js';
 import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 
 // --------------------------------------------------------------------------------
@@ -24,23 +23,21 @@ import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 // --------------------------------------------------------------------------------
 
 /**
- * Retrieves URI from a given `Link` node and returns an instance of `UriTypes`.
+ * Retrieves URI from a given `Link` node and returns `UriType` array.
  * @param {TxtLinkNode} node `Link` type node.
  * @return {UriType[]}
  */
-export const getUriTypesLink = ({ url }) =>
-  new UriTypes().push({ uri: url, type: 'link' }).uriTypes;
+export const getUriTypesLink = ({ url }) => [{ uri: url, type: 'link' }];
 
 /**
- * Retrieves URI from a given `Image` node and returns an instance of `UriTypes`.
+ * Retrieves URI from a given `Image` node and returns `UriType` array.
  * @param {TxtImageNode} node `Image` type node.
  * @return {UriType[]}
  */
-export const getUriTypesImage = ({ url }) =>
-  new UriTypes().push({ uri: url, type: 'image' }).uriTypes;
+export const getUriTypesImage = ({ url }) => [{ uri: url, type: 'image' }];
 
 /**
- * Retrieves URI from a given `Definition` node and returns an instance of `UriTypes`.
+ * Retrieves URI from a given `Definition` node and returns `UriType` array.
  * @param {TxtDefinitionNode} node `Definition` type node.
  * @return {Promise<UriType[]>}
  * @async
@@ -48,9 +45,7 @@ export const getUriTypesImage = ({ url }) =>
 export const getUriTypesDefinition = async ({ url }) => {
   const type = await getDefinitionNodeUriType(url);
 
-  return type === 'link' || type === 'image'
-    ? new UriTypes().push({ uri: url, type }).uriTypes
-    : new UriTypes().uriTypes;
+  return type === 'link' || type === 'image' ? [{ uri: url, type }] : [];
 };
 
 /**
@@ -59,7 +54,8 @@ export const getUriTypesDefinition = async ({ url }) => {
  * @return {UriType[]}
  */
 export const getUriTypesHtml = ({ value }) => {
-  const uriTypes = new UriTypes();
+  /** @type {UriType[]} */
+  const uriTypes = [];
   const $ = cheerio.load(value);
 
   $('a, img').each((_, elem) => {
@@ -78,5 +74,5 @@ export const getUriTypesHtml = ({ value }) => {
     }
   });
 
-  return uriTypes.uriTypes;
+  return uriTypes;
 };
