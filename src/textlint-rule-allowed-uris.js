@@ -85,9 +85,6 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
             node,
             new context.RuleError(
               `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][`${type}s`].join(' or ')}'`,
-              {
-                padding: context.locator.at(0),
-              },
             ),
           );
       });
