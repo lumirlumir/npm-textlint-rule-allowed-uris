@@ -7,7 +7,7 @@
     "."
   ],
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
-  "main": "build/textlint-rule-allowed-uris.js",
+  "main": "src/textlint-rule-allowed-uris.js",
   "types": "build/textlint-rule-allowed-uris.d.ts",
   "typesVersions": {
     "*": {
@@ -18,6 +18,7 @@
   },
   "files": [
     "build",
+    "src",
     "LICENSE",
     "README.md"
   ],
@@ -65,7 +66,7 @@
     "textlint-json": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f json"
   },
   "peerDependencies": {
-    "textlint": "^14.0.4"
+    "textlint": "^14.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.0",
