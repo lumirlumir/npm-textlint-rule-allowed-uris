@@ -7,13 +7,8 @@
 // Import
 // --------------------------------------------------------------------------------
 
-import { error, strikethrough } from './utils/theme/index.js';
-import {
-  getUriTypesLink,
-  getUriTypesImage,
-  getUriTypesDefinition,
-  getUriTypesHtml,
-} from './utils/get-uri-types/index.js';
+import { error, strikethrough } from './utils/theme.js';
+import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/index.js';
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -22,7 +17,7 @@ import {
 /**
  * @import { TextlintRuleContext } from '@textlint/types';
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
- * @import { UriType, Options } from './types/index.js';
+ * @import { UriType, Options } from './utils/types.js';
  */
 
 // --------------------------------------------------------------------------------
@@ -81,22 +76,22 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
   return {
     /** @param {TxtLinkNode} node */
     Link(node) {
-      return report(node, getUriTypesLink(node).uriTypes);
+      return report(node, [{ uri: node.url, type: 'link' }]);
     },
 
     /** @param {TxtImageNode} node */
     Image(node) {
-      return report(node, getUriTypesImage(node).uriTypes);
+      return report(node, [{ uri: node.url, type: 'image' }]);
     },
 
     /** @param {TxtDefinitionNode} node */
     async Definition(node) {
-      return report(node, (await getUriTypesDefinition(node)).uriTypes);
+      return report(node, await getUriTypesDefinition(node));
     },
 
     /** @param {TxtHtmlNode} node */
     Html(node) {
-      return report(node, getUriTypesHtml(node).uriTypes);
+      return report(node, getUriTypesHtml(node));
     },
   };
 }

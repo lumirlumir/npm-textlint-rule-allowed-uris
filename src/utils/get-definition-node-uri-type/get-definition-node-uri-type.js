@@ -8,7 +8,7 @@
 
 import url from 'node:url';
 import mime from 'mime-types';
-import { error } from '../theme/index.js';
+import { error } from '../theme.js';
 
 // --------------------------------------------------------------------------------
 // Helpers
