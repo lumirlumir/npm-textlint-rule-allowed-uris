@@ -1,4 +1,13 @@
 {
+  "include": [
+    "src/**/*.js",
+    "src/**/*.mjs",
+    "src/**/*.cjs",
+    "src/**/*.ts",
+    "src/**/*.mts",
+    "src/**/*.cts"
+  ],
+  "exclude": ["src/**/*.test.js", "src/**/*.test.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
@@ -10,7 +19,5 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "skipLibCheck": true
-  },
-  "include": ["src/**/*.js", "src/**/*.mjs", "src/**/*.cjs"],
-  "exclude": ["src/**/*.test.js"]
+  }
 }

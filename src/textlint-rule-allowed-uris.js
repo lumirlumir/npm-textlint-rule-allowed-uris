@@ -22,7 +22,7 @@ import {
 /**
  * @import { TextlintRuleContext } from '@textlint/types';
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
- * @import { UriType, Options } from './types/index.js';
+ * @import { UriType, Options } from './utils/types.js';
  */
 
 // --------------------------------------------------------------------------------

@@ -15,7 +15,7 @@ import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 
 /**
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
- * @import { UriType } from '../../types/index.js';
+ * @import { UriType } from '../types.js';
  */
 
 // --------------------------------------------------------------------------------
