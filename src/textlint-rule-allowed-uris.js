@@ -70,7 +70,7 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
    * @returns {Promise<void>}
    * @async
    */
-  const report = async (node, uriTypes) => {
+  async function report(node, uriTypes) {
     uriTypes.forEach(({ uri, type }) => {
       Object.keys(options).forEach(key => {
         // The `some` method returns `true` if any element in the array satisfies the given condition.
@@ -92,7 +92,7 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
           );
       });
     });
-  };
+  }
 
   return {
     /** @param {TxtLinkNode} node */
