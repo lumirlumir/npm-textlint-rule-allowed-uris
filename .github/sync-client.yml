@@ -63,8 +63,6 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/SECURITY.md
   - source: ./VScode.code-workspace
     dest: ./configs/VScode.code-workspace
-  - source: ./babel.config.mjs
-    dest: ./configs/babel.config.mjs
   - source: ./eslint.config.mjs
     dest: ./configs/eslint.config.mjs
   - source: ./lint-staged.config.mjs
