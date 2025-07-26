@@ -8,12 +8,7 @@
 // --------------------------------------------------------------------------------
 
 import { error, strikethrough } from './utils/theme.js';
-import {
-  getUriTypesLink,
-  getUriTypesImage,
-  getUriTypesDefinition,
-  getUriTypesHtml,
-} from './utils/get-uri-types/index.js';
+import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/index.js';
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -81,12 +76,12 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
   return {
     /** @param {TxtLinkNode} node */
     Link(node) {
-      return report(node, getUriTypesLink(node));
+      return report(node, [{ uri: node.url, type: 'link' }]);
     },
 
     /** @param {TxtImageNode} node */
     Image(node) {
-      return report(node, getUriTypesImage(node));
+      return report(node, [{ uri: node.url, type: 'image' }]);
     },
 
     /** @param {TxtDefinitionNode} node */

@@ -14,27 +14,13 @@ import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 // --------------------------------------------------------------------------------
 
 /**
- * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
+ * @import { TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
  * @import { UriType } from '../types.js';
  */
 
 // --------------------------------------------------------------------------------
 // Export
 // --------------------------------------------------------------------------------
-
-/**
- * Retrieves URI from a given `Link` node and returns `UriType` array.
- * @param {TxtLinkNode} node `Link` type node.
- * @return {UriType[]}
- */
-export const getUriTypesLink = ({ url }) => [{ uri: url, type: 'link' }];
-
-/**
- * Retrieves URI from a given `Image` node and returns `UriType` array.
- * @param {TxtImageNode} node `Image` type node.
- * @return {UriType[]}
- */
-export const getUriTypesImage = ({ url }) => [{ uri: url, type: 'image' }];
 
 /**
  * Retrieves URI from a given `Definition` node and returns `UriType` array.
