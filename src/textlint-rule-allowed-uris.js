@@ -7,7 +7,7 @@
 // Import
 // --------------------------------------------------------------------------------
 
-import { error, strikethrough } from './utils/theme/index.js';
+import { error, strikethrough } from './utils/theme.js';
 import {
   getUriTypesLink,
   getUriTypesImage,
