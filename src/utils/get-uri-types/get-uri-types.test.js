@@ -66,7 +66,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
 
       it('A `Link` node starting with `https://` and with a title should have type `link` in `UriType`', async () => {
@@ -112,7 +112,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
 
       it('A `Link` node starting with `mailto:` should have type `link` in `UriType`', async () => {
@@ -158,7 +158,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
 
       it('A `link` node with empty URL should have type `link` in `UriType`', async () => {
@@ -204,7 +204,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
 
       it('A `link` node with only `#` hash fragment should have type `link` in `UriType`', async () => {
@@ -250,7 +250,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
 
       it('A `link` node whose URL is a relative path should have type `link` in `UriType`', async () => {
@@ -296,7 +296,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesLink(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesLink(actual), expected);
       });
     });
 
@@ -328,7 +328,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual((await getUriTypesDefinition(actual)).uriTypes, expected);
+        deepStrictEqual(await getUriTypesDefinition(actual), expected);
       });
     });
 
@@ -357,7 +357,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual((await getUriTypesHtml(actual)).uriTypes, expected);
+        deepStrictEqual(await getUriTypesHtml(actual), expected);
       });
     });
   });
@@ -390,7 +390,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesImage(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesImage(actual), expected);
       });
     });
 
@@ -422,7 +422,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual((await getUriTypesDefinition(actual)).uriTypes, expected);
+        deepStrictEqual(await getUriTypesDefinition(actual), expected);
       });
     });
 
@@ -451,7 +451,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesHtml(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesHtml(actual), expected);
       });
 
       it('Nested `Html` node with `div` and `img` tags should have type `image` in `UriType` - 1', async () => {
@@ -483,7 +483,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesHtml(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesHtml(actual), expected);
       });
 
       it('Nested `Html` node with `div` and `img` tags should have type `image` in `UriType` - 2', async () => {
@@ -515,7 +515,7 @@ describe('get-uri-types', () => {
           },
         ];
 
-        deepStrictEqual(getUriTypesHtml(actual).uriTypes, expected);
+        deepStrictEqual(getUriTypesHtml(actual), expected);
       });
     });
   });
@@ -554,7 +554,7 @@ describe('get-uri-types', () => {
         },
       ];
 
-      deepStrictEqual(getUriTypesHtml(actual).uriTypes, expected);
+      deepStrictEqual(getUriTypesHtml(actual), expected);
     });
   });
 
@@ -581,7 +581,7 @@ describe('get-uri-types', () => {
       };
       const expected = [];
 
-      deepStrictEqual((await getUriTypesDefinition(actual)).uriTypes, expected);
+      deepStrictEqual(await getUriTypesDefinition(actual), expected);
     });
 
     it('[comment]: <> (This behaves like a comment)', async () => {
@@ -606,7 +606,7 @@ describe('get-uri-types', () => {
       };
       const expected = [];
 
-      deepStrictEqual((await getUriTypesDefinition(actual)).uriTypes, expected);
+      deepStrictEqual(await getUriTypesDefinition(actual), expected);
     });
   });
 });

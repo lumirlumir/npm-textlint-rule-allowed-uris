@@ -16,6 +16,7 @@ import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 
 /**
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
+ * @import { UriType } from '../../types/index.js';
  */
 
 // --------------------------------------------------------------------------------
@@ -25,37 +26,37 @@ import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 /**
  * Retrieves URI from a given `Link` node and returns an instance of `UriTypes`.
  * @param {TxtLinkNode} node `Link` type node.
- * @return {UriTypes}
+ * @return {UriType[]}
  */
 export const getUriTypesLink = ({ url }) =>
-  new UriTypes().push({ uri: url, type: 'link' });
+  new UriTypes().push({ uri: url, type: 'link' }).uriTypes;
 
 /**
  * Retrieves URI from a given `Image` node and returns an instance of `UriTypes`.
  * @param {TxtImageNode} node `Image` type node.
- * @return {UriTypes}
+ * @return {UriType[]}
  */
 export const getUriTypesImage = ({ url }) =>
-  new UriTypes().push({ uri: url, type: 'image' });
+  new UriTypes().push({ uri: url, type: 'image' }).uriTypes;
 
 /**
  * Retrieves URI from a given `Definition` node and returns an instance of `UriTypes`.
  * @param {TxtDefinitionNode} node `Definition` type node.
- * @return {Promise<UriTypes>}
+ * @return {Promise<UriType[]>}
  * @async
  */
 export const getUriTypesDefinition = async ({ url }) => {
   const type = await getDefinitionNodeUriType(url);
 
   return type === 'link' || type === 'image'
-    ? new UriTypes().push({ uri: url, type })
-    : new UriTypes();
+    ? new UriTypes().push({ uri: url, type }).uriTypes
+    : new UriTypes().uriTypes;
 };
 
 /**
  * Parses the HTML content of the given node and retrieves all the `<a>` and `<img>` tag's URIs.
  * @param {TxtHtmlNode} node `Html` type node.
- * @return {UriTypes}
+ * @return {UriType[]}
  */
 export const getUriTypesHtml = ({ value }) => {
   const uriTypes = new UriTypes();
@@ -77,5 +78,5 @@ export const getUriTypesHtml = ({ value }) => {
     }
   });
 
-  return uriTypes;
+  return uriTypes.uriTypes;
 };

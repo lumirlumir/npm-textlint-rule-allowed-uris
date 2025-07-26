@@ -81,22 +81,22 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
   return {
     /** @param {TxtLinkNode} node */
     Link(node) {
-      return report(node, getUriTypesLink(node).uriTypes);
+      return report(node, getUriTypesLink(node));
     },
 
     /** @param {TxtImageNode} node */
     Image(node) {
-      return report(node, getUriTypesImage(node).uriTypes);
+      return report(node, getUriTypesImage(node));
     },
 
     /** @param {TxtDefinitionNode} node */
     async Definition(node) {
-      return report(node, (await getUriTypesDefinition(node)).uriTypes);
+      return report(node, await getUriTypesDefinition(node));
     },
 
     /** @param {TxtHtmlNode} node */
     Html(node) {
-      return report(node, getUriTypesHtml(node).uriTypes);
+      return report(node, getUriTypesHtml(node));
     },
   };
 }
