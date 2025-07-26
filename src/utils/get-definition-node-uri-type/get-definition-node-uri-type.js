@@ -8,7 +8,6 @@
 
 import url from 'node:url';
 import mime from 'mime-types';
-import { error } from '../theme.js';
 
 // --------------------------------------------------------------------------------
 // Helpers
@@ -29,9 +28,7 @@ const getMimeType = async uri => {
     // fetch failed. (Internet connection)
     if (err?.cause?.code === 'ENOTFOUND')
       throw new Error(
-        error(
-          'The linting process includes an HTTP request, so an internet connection is required',
-        ),
+        'The linting process includes an HTTP request, so an internet connection is required',
       );
     // fetch failed. (i.e. Local URI links)
     return mime.lookup(url.parse(uri).pathname) || 'application/octet-stream'; // eslint-disable-line -- TODO: Remove this comment.

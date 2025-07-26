@@ -165,9 +165,17 @@ test('textlint-rule-allowed-uris', () => {
             // images: [],
           },
         },
-        errors: createErrors([
-          7, 9, 13, 15, 19, 21, 23, 25, 31, 37, 43, 47, 86, 101, 103, 105,
-        ]),
+        errors: [
+          {
+            line: 7,
+            range: [97, 119],
+          },
+          {
+            line: 9,
+            range: [121, 138],
+          },
+          ...createErrors([13, 15, 19, 21, 23, 25, 31, 37, 43, 47, 86, 101, 103, 105]),
+        ],
       },
       {
         name: 'Pass Empty Array - 2',

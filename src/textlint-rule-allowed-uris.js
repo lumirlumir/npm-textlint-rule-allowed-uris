@@ -7,7 +7,6 @@
 // Import
 // --------------------------------------------------------------------------------
 
-import { error, strikethrough } from './utils/theme.js';
 import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/index.js';
 
 // --------------------------------------------------------------------------------
@@ -19,6 +18,28 @@ import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/in
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
  * @import { UriType, Options } from './utils/types.js';
  */
+
+// --------------------------------------------------------------------------------
+// Helpers
+// --------------------------------------------------------------------------------
+
+/**
+ * Console error theme.
+ * @param {string} str
+ * @return {string}
+ */
+function error(str) {
+  return `\u001b[31m${str}\u001b[0m`;
+}
+
+/**
+ * Console strikethrough theme.
+ * @param {string} str
+ * @return {string}
+ */
+function strikethrough(str) {
+  return `\u001b[9m${str}\u001b[0m`;
+}
 
 // --------------------------------------------------------------------------------
 // Export
@@ -49,7 +70,7 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
    * @returns {Promise<void>}
    * @async
    */
-  const report = async (node, uriTypes) => {
+  async function report(node, uriTypes) {
     uriTypes.forEach(({ uri, type }) => {
       Object.keys(options).forEach(key => {
         // The `some` method returns `true` if any element in the array satisfies the given condition.
@@ -64,14 +85,11 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
             node,
             new context.RuleError(
               `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][`${type}s`].join(' or ')}'`,
-              {
-                padding: context.locator.at(0),
-              },
             ),
           );
       });
     });
-  };
+  }
 
   return {
     /** @param {TxtLinkNode} node */
