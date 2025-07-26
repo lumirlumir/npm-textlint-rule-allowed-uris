@@ -1,3 +1,3 @@
-const getDefinitionNodeUriType = require('./get-definition-node-uri-type');
+import getDefinitionNodeUriType from './get-definition-node-uri-type.js';
 
-module.exports = getDefinitionNodeUriType;
+export default getDefinitionNodeUriType;

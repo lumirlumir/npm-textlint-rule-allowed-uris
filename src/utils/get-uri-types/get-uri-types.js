@@ -3,13 +3,12 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
+// Import
 // --------------------------------------------------------------------------------
 
-const cheerio = require('cheerio');
-
-const UriTypes = require('../uri-types');
-const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
+import * as cheerio from 'cheerio';
+import UriTypes from '../uri-types/index.js';
+import getDefinitionNodeUriType from '../get-definition-node-uri-type/index.js';
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -20,7 +19,7 @@ const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
  */
 
 // --------------------------------------------------------------------------------
-// Helpers
+// Export
 // --------------------------------------------------------------------------------
 
 /**
@@ -28,14 +27,16 @@ const getDefinitionNodeUriType = require('../get-definition-node-uri-type');
  * @param {TxtLinkNode} node `Link` type node.
  * @return {UriTypes}
  */
-const getUriTypesLink = ({ url }) => new UriTypes().push({ uri: url, type: 'link' });
+export const getUriTypesLink = ({ url }) =>
+  new UriTypes().push({ uri: url, type: 'link' });
 
 /**
  * Retrieves URI from a given `Image` node and returns an instance of `UriTypes`.
  * @param {TxtImageNode} node `Image` type node.
  * @return {UriTypes}
  */
-const getUriTypesImage = ({ url }) => new UriTypes().push({ uri: url, type: 'image' });
+export const getUriTypesImage = ({ url }) =>
+  new UriTypes().push({ uri: url, type: 'image' });
 
 /**
  * Retrieves URI from a given `Definition` node and returns an instance of `UriTypes`.
@@ -43,7 +44,7 @@ const getUriTypesImage = ({ url }) => new UriTypes().push({ uri: url, type: 'ima
  * @return {Promise<UriTypes>}
  * @async
  */
-const getUriTypesDefinition = async ({ url }) => {
+export const getUriTypesDefinition = async ({ url }) => {
   const type = await getDefinitionNodeUriType(url);
 
   return type === 'link' || type === 'image'
@@ -56,7 +57,7 @@ const getUriTypesDefinition = async ({ url }) => {
  * @param {TxtHtmlNode} node `Html` type node.
  * @return {UriTypes}
  */
-const getUriTypesHtml = ({ value }) => {
+export const getUriTypesHtml = ({ value }) => {
   const uriTypes = new UriTypes();
   const $ = cheerio.load(value);
 
@@ -77,15 +78,4 @@ const getUriTypesHtml = ({ value }) => {
   });
 
   return uriTypes;
-};
-
-// --------------------------------------------------------------------------------
-// Exports
-// --------------------------------------------------------------------------------
-
-module.exports = {
-  getUriTypesLink,
-  getUriTypesImage,
-  getUriTypesDefinition,
-  getUriTypesHtml,
 };

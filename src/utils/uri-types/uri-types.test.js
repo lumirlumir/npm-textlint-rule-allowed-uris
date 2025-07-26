@@ -3,13 +3,13 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
+// Import
 // --------------------------------------------------------------------------------
 
-const { deepStrictEqual, throws } = require('node:assert');
-const { describe, it } = require('node:test');
+import { deepStrictEqual, throws } from 'node:assert';
+import { describe, it } from 'node:test';
 
-const UriTypes = require('./uri-types');
+import UriTypes from './uri-types.js';
 
 // --------------------------------------------------------------------------------
 // Test

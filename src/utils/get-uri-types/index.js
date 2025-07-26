@@ -1,3 +1,1 @@
-const getUriTypes = require('./get-uri-types');
-
-module.exports = getUriTypes;
+export * from './get-uri-types.js';

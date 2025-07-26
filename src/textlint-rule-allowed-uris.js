@@ -4,16 +4,16 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
+// Import
 // --------------------------------------------------------------------------------
 
-const { error, strikethrough } = require('./utils/theme');
-const {
+import { error, strikethrough } from './utils/theme/index.js';
+import {
   getUriTypesLink,
   getUriTypesImage,
   getUriTypesDefinition,
   getUriTypesHtml,
-} = require('./utils/get-uri-types');
+} from './utils/get-uri-types/index.js';
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -22,11 +22,11 @@ const {
 /**
  * @import { TextlintRuleContext } from '@textlint/types';
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
- * @import { UriType, Options } from './types';
+ * @import { UriType, Options } from './types/index.js';
  */
 
 // --------------------------------------------------------------------------------
-// Exports
+// Export
 // --------------------------------------------------------------------------------
 
 /**
@@ -34,7 +34,7 @@ const {
  * @param {TextlintRuleContext} context Context object.
  * @param {Options} rawOptions Configuration options.
  */
-module.exports = (context, rawOptions) => {
+export default function textlintRuleAllowedUris(context, rawOptions) {
   /** @type {Options} */
   const options = {
     allowed: {
@@ -99,4 +99,4 @@ module.exports = (context, rawOptions) => {
       return report(node, getUriTypesHtml(node).uriTypes);
     },
   };
-};
+}

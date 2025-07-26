@@ -3,12 +3,12 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
+// Import
 // --------------------------------------------------------------------------------
 
-const url = require('node:url');
-const mime = require('mime-types');
-const { error } = require('../theme');
+import url from 'node:url';
+import mime from 'mime-types';
+import { error } from '../theme/index.js';
 
 // --------------------------------------------------------------------------------
 // Helpers
@@ -48,8 +48,8 @@ const getMimeType = async uri => {
  * @returns {Promise<'comment' | 'image' | 'link'>} Resolves to `'comment'` for empty(` `) or hash-only(`#`) URIs, `'image'` if the URI's MIME type is an image, and `'link'` for other types of URIs.
  * @async
  */
-module.exports = async uri => {
+export default async function getDefinitionNodeUriType(uri) {
   if (['', '#'].includes(uri)) return 'comment';
   if ((await getMimeType(uri)).startsWith('image/')) return 'image';
   return 'link';
-};
+}
