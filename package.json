@@ -1,6 +1,7 @@
 {
   "name": "textlint-rule-allowed-uris",
   "version": "1.1.1",
+  "type": "module",
   "packageManager": "npm@10.9.2",
   "workspaces": [
     "."

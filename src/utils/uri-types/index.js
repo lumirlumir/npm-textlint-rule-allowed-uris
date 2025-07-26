@@ -1,3 +1,3 @@
-const UriTypes = require('./uri-types');
+import UriTypes from './uri-types.js';
 
-module.exports = UriTypes;
+export default UriTypes;

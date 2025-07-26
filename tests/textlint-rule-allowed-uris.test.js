@@ -3,16 +3,17 @@
  */
 
 // --------------------------------------------------------------------------------
-// Require
+// Import
 // --------------------------------------------------------------------------------
 
-const { readFileSync } = require('node:fs');
-const { resolve } = require('node:path');
-const { test } = require('node:test');
+import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { test } from 'node:test';
 
-const TextLintTester = require('textlint-tester').default;
+import rule from '../src/textlint-rule-allowed-uris.js';
 
-const rule = require('../src/textlint-rule-allowed-uris');
+const TextLintTester = createRequire(import.meta.url)('textlint-tester').default;
 
 // --------------------------------------------------------------------------------
 // Helpers
@@ -20,7 +21,7 @@ const rule = require('../src/textlint-rule-allowed-uris');
 
 const tester = new TextLintTester();
 const text = readFileSync(
-  resolve(__dirname, 'textlint-rule-allowed-uris.data.md'),
+  resolve(import.meta.dirname, 'textlint-rule-allowed-uris.data.md'),
   'utf-8',
 );
 
