@@ -7,7 +7,6 @@
 // Import
 // --------------------------------------------------------------------------------
 
-import { error, strikethrough } from './utils/theme.js';
 import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/index.js';
 
 // --------------------------------------------------------------------------------
@@ -19,6 +18,28 @@ import { getUriTypesDefinition, getUriTypesHtml } from './utils/get-uri-types/in
  * @import { TxtLinkNode, TxtImageNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
  * @import { UriType, Options } from './utils/types.js';
  */
+
+// --------------------------------------------------------------------------------
+// Helpers
+// --------------------------------------------------------------------------------
+
+/**
+ * Console error theme.
+ * @param {string} str
+ * @return {string}
+ */
+function error(str) {
+  return `\u001b[31m${str}\u001b[0m`;
+}
+
+/**
+ * Console strikethrough theme.
+ * @param {string} str
+ * @return {string}
+ */
+function strikethrough(str) {
+  return `\u001b[9m${str}\u001b[0m`;
+}
 
 // --------------------------------------------------------------------------------
 // Export
