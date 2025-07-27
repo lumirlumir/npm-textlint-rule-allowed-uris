@@ -95,7 +95,7 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
   /** @type {Set<string>} Set to track used image identifiers */
   const usedImageIdentifiers = new Set();
 
-  /** @type {Set<TxtDefinitionNode>} Array to store definition nodes */
+  /** @type {Set<TxtDefinitionNode>} Set to store definition nodes */
   const definitions = new Set();
 
   return {
