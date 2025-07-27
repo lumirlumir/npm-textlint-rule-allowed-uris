@@ -91,7 +91,7 @@ function errorMessage(
   uri: string,
   options: Options,
 ): string {
-  return `${error(`${key}.${type}s`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][`${type}s`].join(' or ')}'`;
+  return `${error(`${key}.${type}`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][type].join(' or ')}'`;
 }
 
 // --------------------------------------------------------------------------------
