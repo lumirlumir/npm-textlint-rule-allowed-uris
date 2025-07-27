@@ -154,6 +154,14 @@ test('textlint-rule-allowed-uris', () => {
         name: 'Do not report unused definitions by default',
         text: '[link1]: https://www.google.com',
       },
+
+      {
+        name: 'Do not report used definitions',
+        text: '[google][link1]\n\n[link1]: https://www.google.com "Hello Google"',
+        options: {
+          checkUnusedDefinitions: true,
+        },
+      },
     ],
 
     invalid: [
