@@ -1,16 +1,19 @@
 # textlint-rule-allowed-uris
 
-[![lint](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml)
-[![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris/graph/badge.svg?token=69BF05THA2)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
-[![NPM Version](https://img.shields.io/npm/v/textlint-rule-allowed-uris)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
+[![lint](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/lint.yml?label=lint&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml)
+[![test](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/test.yml?label=test&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
+[![test-cross-platform](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/test-cross-platform.yml?label=test-cross-platform&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test-cross-platform.yml)
+[![codecov](https://img.shields.io/codecov/c/gh/lumirlumir/npm-textlint-rule-allowed-uris?token=2zUCHlMFT3&label=Codecov&color=6FB8CE&labelColor=333333&logo=codecov)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
+[![npm package textlint-rule-allowed-uris latest version](https://img.shields.io/npm/v/textlint-rule-allowed-uris?label=textlint-rule-allowed-uris@latest&color=6FB8CE&labelColor=333333&logo=npm)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
+[Click here to view the documentation for `textlint-rule-allowed-uris@1`](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tree/v1.1.1#readme).
+
 > [!IMPORTANT]
 >
+> 1. Support both [`textlint`](https://github.com/textlint/textlint) v14 and v15. (Supports current and previous major versions of `textlint`.)
 > 1. This rule only supports **Markdown(`.md` or `.mdx`)** files. Note that it does not recognize URIs in **~~Text~~(`.txt`)** files.
-> 1. The linting process includes HTTP requests, so an <u>**internet connection is required**</u>. Otherwise, an error will occur.
 > 1. Note that every URIs should be recognized by Markdown. URIs which are not recognized by Markdown cannot be inspected. For example, URIs without `https://...` or `http://...`.
 >
 >     ```md
@@ -26,11 +29,11 @@ You can use any ***link*** or ***image*** formats which are supported by Markdow
 
 - [Click to see detailed Markdown examples](/src/textlint-rule-allowed-uris.md). Look at **raw** code. these all types are considered.
 
-- You can also check out the [AST Tree of the above examples](https://textlint.github.io/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNC4wLjXCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJezwhLS0gxK_EscSZxYJ0LWRpc2FixZYgxbU-CgojIyBMxJBrc8aHxbPFtcW3xYXEssSedcScxYJrLXJhd8aELcaGCmjEpHBzOi8vd8aqLmdvb2fFli7FrW3Gh8SMxZlwxZZAZ8SUxZXGsm_GtArGkcW2xbjFhsSaYcaXb8aZLWLGnGNrZXTGn8ahPMajdMalxqfGqcarxq3Gr8axxrPHk8a2bca4Zca6xrxsxr5tx5PFtMeDxpTFh8SQxYJlx5LGh1vHm8awZV0ox5XHl8aoxqp3xqzGrse1x6cgIkhlbGxvIEfHv8WWIinHsse0xZbHtykgx4IgZcehdHkgxpnHsQpbxKXEjse2KCNoZWHFvm5nyJPIlWjEn2goZsacxrvFl3TIk8aFx7JSRUFETUUubWTHty4uL8i5yLvIvci_ZMirx6ogcsiFYcSlxLkgxIJ0aMidyJXHhMaVyY5mxIbFl8WhLWZ1yIbIncezyIvHtlvGmTFdx7LJqV06IMe5xqbHu8eayabIgciDyIXIh8iJyaYixpDJjMmZxYfJm8mdbsmfxa3IhmHGpcWqyaTGmTJdW8mryJ7Ki8muybDGpMmyx5nHvciQxaLGs8iCyITIhsiIyIrHnGXJvMeByb7HrMSayoHJjsqDZS1zaG9ydGPGl8qKxo0zyo_JqMq0ypLJsceYx7zHvsqgybbKnMm5yp_HtcqiyKx0bWzJl2HJsMmbPSLKusmzypfJtcazIj7KmDwvYcahxokgScSUZ2XGj8qjxpLJv8Sax67EkMewyLcKIVvHoMeix7fLjy91xrhvyKcud2lracWaxb5hLsquZ8apy7hpcMWqaWEvxZfLmMuYOS9FeMa3xrFqcGfIgsyOzJDHsMudYcufyI3JvcujyqXGm8WnyoLJn8mhyaPLqcury63IkVvLusyaZcmqx7LMq8ufyarJr8uwy7LIh8u1y7fLucu7zIbLvnLMgMy4zIPMhcyHzInMh2HMjMyWx6HMkcyTzJXMj82IzJjLnsqhzJ3Hq8Swx4XMoMmcyqjKhMeJbMqHxIVkyJ3Lq8ywZcqMyo7Mr82PyozMs8qUx5jMtcu0ZMu2zILMusu9y7_Mgcu5zITLvMyIbsyKzYXMjc2Mx6IuzJLMlCLNh8eiy5zNj8uEyqTNk8mazKHNl8qqyqzKrsqwyrLMpsyqzY_Ktc2kzKzKtc2nx5bKlc2qzLfNrs2BzLzMvsyCzbTMhs22zbjNhs27zYnNv86BxoPMmcybzZHKk8uHyZfLusyUc8Wgy43MtMuzzpvMuc6dzbHMv86hzYLNt82EzqXMl829zJPLlMaQxb52PjzOsSDOs2POtc2oxqjOms2szL_Nr86ezbLNgM21zYPMi826z4LNvsuUz4ptzrLOtMuOz5DLsc63z5POnMu8z5bOvM2BzqPPgM-czY3Pg2fPny_Ph8eTz7YKIMiUz4vPjc-PzpjNqc-nza3Ouc-qzrvOoM-tz5rNuc6pxaLPnsaGz7rPoM-iz47PpM-_z5HQgc-UzrrMvc-Xzr3Prs-b0IrPss-Fy5fPuMaIxorOq8ewy7fJlSDLisaZx7LMp86myKLOtsy2z6jQg8y70IXNs9CHzr_QnNCtz7LNi8yXzoPMrMiNy6_PpcWX0ILPmNCz0JjMvy9GxZVlOtCdzb7IjtCiIEPGv8WaxJHLoVvGqMqSxoooVGjFvyBiZcitxLlzyJvLuMewy4rGs9GUyLXIntGYya_GiiLRnNGe0aDRosug0aXHj9CoINGpyLTJvNGXL9GZICfRsdGk0bNh0aPRttGn0bnRk8i0J8ie0brEkcqSPD4g0ZvRndKD0aHShdG1xI_Rt9Go0orEkciOW9KOdNKQ0pLRsNKV0Z_Sl9KG0prSiNKh0bzSodKj0oDSgtKn0bTRpNKq0bjSodKM0ZBPyZXEusmsxo1Mb2NhbMyuypDSvtOA04LMsiDJhci6yLzIvsmAypvJuMiIyYbTjcqiW8WpxLlyVc2cypIvTElDRU5TRciC05fEhtOaxarLhM-40I7PvM-j0K_Nq9GDz5XQtNGEzr7OpM-wzbzQjDzHjNCNyJTLimjLjNCSx7rKlsq9yIDLk8uVyabLl8uZ07py07zQj8-M067Ppc-S07HQl86f0LXPmdC30InQudO507vHgc-1ac-ICg}).
+- You can also check out the [AST Tree of the above examples](https://textlint.org/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNS4yLjHCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJwoQ8IS0tIMSvxLHEmcWCdC1kaXNhYsWWIMW1PiDFs8W1IGVzxbvFvcW_xoHGg8aFCgojIyBMxJBrc8aTxojFtsW4xYbEmmF1xJzFgmstcmF3xoQtPsaTaMSkcHM6Ly93xrYuZ29vZ8WWLsWtbcaTxIzFmXDFlkBnxJTFlca-b8eACsadxbfFhcSyxJ7Go2_GpS1ixqhja2V0xqvGrceNxq90xrHGs8a1xrfGuca7xr3Gv8eePMeCbceEZceGx4hsx4ptx6rFtMaex5DFh8SQxYJlx53Gk1vHpsa8ZV0ox6DHosa0xrZ3xrjGusiBx7MgIkhlbGxvIEfIi8WWIinHvsiAxZbIgynGh8e2xorHrXR5IMalx70KW8SlxI7IgigjaGVhxb5uZ8ifx45oxJ9oKGbGqMeHxZd0yJ_GksipUkVBRE1FLm1kyIMuLi_JhMmGyYjJimTItsihcsiRYcSlxLkgxIJ0aMiox47Gn8eRyZhmxIbFl8WhLWZ1yJLIqMe_yJfIglvGpTFdx77Js106IMiFxrLIh8elybDIjciPyJHIk8iVybAixpzIocmjxYfJpcmnbsmpxa3IkmHGscWqya7GpTJdW8m1yKnKlcm4ybrGsMm8x6TIicicxaLGv8iOyJDIksiUyJbHp2XKhseNyojHuMSayovJmMqNZS1zaG9ydGPGo8qUxpkzypnJssq-ypzJu8ejyIjIisqqyoDKpsqDyqnIgcqsyLd0bWzJoWHJusmlPSLLhMm9yqHJv8a_Ij7KojwvYceexpUgScSUZ8aLyofGicqJxJrHusSQx7zJgiFbx6zHrsiDy5kvdceEb8iyLndpa2nFmsW-YS7KuGfGtcyAaXDFqmlhL8WXy6LLojkvRXjHg8a9anBnyI7MlsyYx7zLp2HLqciZy6vHt8SwxqDGp8WnyozJqcmrya3Lssu0zJfHrcidW8yCzKJlybTHvsy1y6nJtMm5y7jLusiTy73Lv8yBzIPMjsyGcsyIzYLMi8yNzI_MkcyPYcyUzJ7MssWizJrMnCLNkceuy6bLqMqrzKXHj8ynyaTMqsqyyo7HlGzKkcSFZMioy7PMumXKlsqYzLnNmsqWzL3KnsejzL_LvGTLvsyKzYTMhcyHzInMgcyMzITMkG7Mks2PzJXMsceuLs2UzJ3OhcaDzKHMo82cy63MqcmmzaHKtMq2yrjKusq8zK_Nqsq_za7Mtsq_zbHHocqfzbTNgc24zYvNhs2IzIrNvsyOzoDOgs2QzorNk8ybzonMn82ZzLbLjsihxq_LkcmhzILMnHPFoMuXzL7Lu86izYPOpM27zYnOqM2MzoHNjs6szJ_Oh8yby57GnMW-dj48zrkgzrtjzr3Nssa0zqHNts2JzbnOpc28zYrNv82NzJPOhM-KzZTLns-Sbc66zrzLmM-Yy7nOv8-bzqPMhM-ez4TNi86qz4jPpM2Sz4tnz6cvz4_Hqs--CiDGh8-Tz5XPl86fzbPPr823z4HPss-DzqfPtc-izoPNl8yZz4zGrdCCz6jPqs-Wz6zQh8-Z0InPnM-CzYfPn8-Fz7bPo9CSzq7Pu8aty6HQgMaUxpbOjMe8y7_JnyDLlMalx77Ls8u1yJ3IhM-tz5rQisyC0J_Ops290I_Ph9Ckzq3Pus6wzZLOssyjKcu3z63Fl9C7z4XPs8yKL0bFlWU60KXPusia0KsgQ8eLxZrEkcabyKnGtMqcxpYoVGjFvyBiZci4xLlzyKbMgMe8y5TGv9GdyYDRoC_RosiO0aXRp9Gp0avGi9Gux5rQsSDRssi_yoZb0aHJucaWJ9G50a3Ru2HRrNG-0bDSgdGcyL8n0bXKnDzGhtGk0abSi9Gq0o3RvcSP0b_RsdKSxJHImtKF0bbJudKX0bjSmtGo0pzSjtKf0pDSgsSR0oTShsaHxobSidKq0ozSrdGv0oDSsHTSlNGZT8mfxLrJtsaZTG9jYWzMuMqa04TThtOIzLwgyZDJhcmHyYnJi8qlyoLIlMmR05PKrFvFqcS5clXNpsqcL0xJQ0VOU0XIjtOdxIbToMWqy47QgNCW0ITPq86-zYDPsNCLzYXQjdC_z6HRgdCR0YPPps-Rx5fQlcaHy5Roy5bQmsiGyqDLh8iMy53Ln8mwy6HLozzUgtCB0IPPqc-U07TQudCdz7HTudCgz7TTvM6rz7jOhtSA1JJy0KjPvWnPkAo}).
 
 ### Only URIs are inspected?
 
-No! We check not only for URIs, but also for **local paths**. Below patterns are inspected too.
+No! This rule checks not only for URIs, but also for **local paths**. Below patterns are inspected too.
 
 ```txt
 README.md (Relative path)
@@ -66,13 +69,13 @@ For example, If you pass an empty array to the option, it allows everything. i.e
 ### `npm`
 
 ```sh
-npm install --save-dev textlint-rule-allowed-uris
+npm install --save-dev textlint-rule-allowed-uris@latest
 ```
 
 ### `yarn`
 
 ```sh
-yarn add --dev textlint-rule-allowed-uris
+yarn add --dev textlint-rule-allowed-uris@latest
 ```
 
 ## Configs
@@ -93,9 +96,18 @@ Every options are optional. If you pass nothing, then nothing just happens!
         links?: RegExp[], // Optional
         images?: RegExp[], // Optional
       },
+      checkUnusedDefinitions?: boolean, // Optional
     }
   }
 }
+```
+
+### Types
+
+You can import `Options` type from `textlint-rule-allowed-uris` package.
+
+```ts
+import type { Options } from "textlint-rule-allowed-uris";
 ```
 
 ### Options
@@ -200,6 +212,17 @@ Every options are optional. If you pass nothing, then nothing just happens!
 
     - Default value passed: `[]`
 
+1. `checkUnusedDefinitions`: `boolean`, Optional
+    - If set to `true`, the rule will check for [unused definitions](https://github.com/eslint/markdown/blob/main/docs/rules/no-unused-definitions.md) and report them as problems.
+    - If set to `false` or not specified, the rule will not check for unused definitions.
+    - Definitions that use `//` are treated as comments and always ignored.
+
+        ```md
+        [//]: # (This behaves like a comment)
+        ```
+
+    - Default value passed: `false`
+
 ### Example (`.textlintrc.js`)
 
 ```js
@@ -222,6 +245,7 @@ module.exports = {
           // regular expressions
         ],
       },
+      checkUnusedDefinitions: true, // Optional, default is `false`
     }
   }
 }
@@ -339,17 +363,7 @@ textlint-rule-allowed-uris/src/textlint-rule-allowed-uris.md:101:1
     102.
          ^
 
-textlint-rule-allowed-uris: allowed.links
-- problem: '/LICENSE'
-- allowed regular expressions: '/google/'
-textlint-rule-allowed-uris/src/textlint-rule-allowed-uris.md:103:1
-         v
-    102.
-    103. [neverUsed]: /LICENSE "neverUsed"
-    104.
-         ^
-
-✖ 8 problems (8 errors, 0 warnings)
+✖ 7 problems (7 errors, 0 warnings)
 ```
 
 </details>
@@ -384,11 +398,8 @@ textlint-rule-allowed-uris/src/textlint-rule-allowed-uris.md
   101:1  error  allowed.links
 - problem: '/README.md'
 - allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
-  103:1  error  allowed.links
-- problem: '/LICENSE'
-- allowed regular expressions: '/google/'                    textlint-rule-allowed-uris
 
-✖ 8 problems (8 errors, 0 warnings)
+✖ 7 problems (7 errors, 0 warnings)
 ```
 
 </details>
@@ -401,7 +412,7 @@ Email links like `<example@gmail.com>` are interpreted as `mailto:example@gmail.
 
 ## Contributing
 
-Thanks for having attention to this package.🙇‍♂️ Issues and PRs are always welcome.🎉
+Thanks for having attention to this package. Issues and PRs are always welcome.🎉
 
 I recommend you to read [textlint guides](https://textlint.github.io/) before contributing.
 
@@ -491,7 +502,7 @@ After that, refer to the comments in source code. It contains useful information
 
 #### AST Tree
 
-You can see detailed parsed [AST Tree in here](https://textlint.github.io/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNC4wLjXCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJezwhLS0gxK_EscSZxYJ0LWRpc2FixZYgxbU-CgojIyBMxJBrc8aHxbPFtcW3xYXEssSedcScxYJrLXJhd8aELcaGCmjEpHBzOi8vd8aqLmdvb2fFli7FrW3Gh8SMxZlwxZZAZ8SUxZXGsm_GtArGkcW2xbjFhsSaYcaXb8aZLWLGnGNrZXTGn8ahPMajdMalxqfGqcarxq3Gr8axxrPHk8a2bca4Zca6xrxsxr5tx5PFtMeDxpTFh8SQxYJlx5LGh1vHm8awZV0ox5XHl8aoxqp3xqzGrse1x6cgIkhlbGxvIEfHv8WWIinHsse0xZbHtykgx4IgZcehdHkgxpnHsQpbxKXEjse2KCNoZWHFvm5nyJPIlWjEn2goZsacxrvFl3TIk8aFx7JSRUFETUUubWTHty4uL8i5yLvIvci_ZMirx6ogcsiFYcSlxLkgxIJ0aMidyJXHhMaVyY5mxIbFl8WhLWZ1yIbIncezyIvHtlvGmTFdx7LJqV06IMe5xqbHu8eayabIgciDyIXIh8iJyaYixpDJjMmZxYfJm8mdbsmfxa3IhmHGpcWqyaTGmTJdW8mryJ7Ki8muybDGpMmyx5nHvciQxaLGs8iCyITIhsiIyIrHnGXJvMeByb7HrMSayoHJjsqDZS1zaG9ydGPGl8qKxo0zyo_JqMq0ypLJsceYx7zHvsqgybbKnMm5yp_HtcqiyKx0bWzJl2HJsMmbPSLKusmzypfJtcazIj7KmDwvYcahxokgScSUZ2XGj8qjxpLJv8Sax67EkMewyLcKIVvHoMeix7fLjy91xrhvyKcud2lracWaxb5hLsquZ8apy7hpcMWqaWEvxZfLmMuYOS9FeMa3xrFqcGfIgsyOzJDHsMudYcufyI3JvcujyqXGm8WnyoLJn8mhyaPLqcury63IkVvLusyaZcmqx7LMq8ufyarJr8uwy7LIh8u1y7fLucu7zIbLvnLMgMy4zIPMhcyHzInMh2HMjMyWx6HMkcyTzJXMj82IzJjLnsqhzJ3Hq8Swx4XMoMmcyqjKhMeJbMqHxIVkyJ3Lq8ywZcqMyo7Mr82PyozMs8qUx5jMtcu0ZMu2zILMusu9y7_Mgcu5zITLvMyIbsyKzYXMjc2Mx6IuzJLMlCLNh8eiy5zNj8uEyqTNk8mazKHNl8qqyqzKrsqwyrLMpsyqzY_Ktc2kzKzKtc2nx5bKlc2qzLfNrs2BzLzMvsyCzbTMhs22zbjNhs27zYnNv86BxoPMmcybzZHKk8uHyZfLusyUc8Wgy43MtMuzzpvMuc6dzbHMv86hzYLNt82EzqXMl829zJPLlMaQxb52PjzOsSDOs2POtc2oxqjOms2szL_Nr86ezbLNgM21zYPMi826z4LNvsuUz4ptzrLOtMuOz5DLsc63z5POnMu8z5bOvM2BzqPPgM-czY3Pg2fPny_Ph8eTz7YKIMiUz4vPjc-PzpjNqc-nza3Ouc-qzrvOoM-tz5rNuc6pxaLPnsaGz7rPoM-iz47PpM-_z5HQgc-UzrrMvc-Xzr3Prs-b0IrPss-Fy5fPuMaIxorOq8ewy7fJlSDLisaZx7LMp86myKLOtsy2z6jQg8y70IXNs9CHzr_QnNCtz7LNi8yXzoPMrMiNy6_PpcWX0ILPmNCz0JjMvy9GxZVlOtCdzb7IjtCiIEPGv8WaxJHLoVvGqMqSxoooVGjFvyBiZcitxLlzyJvLuMewy4rGs9GUyLXIntGYya_GiiLRnNGe0aDRosug0aXHj9CoINGpyLTJvNGXL9GZICfRsdGk0bNh0aPRttGn0bnRk8i0J8ie0brEkcqSPD4g0ZvRndKD0aHShdG1xI_Rt9Go0orEkciOW9KOdNKQ0pLRsNKV0Z_Sl9KG0prSiNKh0bzSodKj0oDSgtKn0bTRpNKq0bjSodKM0ZBPyZXEusmsxo1Mb2NhbMyuypDSvtOA04LMsiDJhci6yLzIvsmAypvJuMiIyYbTjcqiW8WpxLlyVc2cypIvTElDRU5TRciC05fEhtOaxarLhM-40I7PvM-j0K_Nq9GDz5XQtNGEzr7OpM-wzbzQjDzHjNCNyJTLimjLjNCSx7rKlsq9yIDLk8uVyabLl8uZ07py07zQj8-M067Ppc-S07HQl86f0LXPmdC30InQudO507vHgc-1ac-ICg}). (Already mentioned above.) Look which kind of types are exist for ***links*** and ***images***.
+You can see detailed parsed [AST Tree in here](https://textlint.org/astexplorer/#/snippet/woXCqHBhcnNlcklEwrh0ZXh0bGludDptxINrZG93bi10by1hc3TCqMSFdHTEkGdzwoHEisSMxI7EkMSSxJRyxJbEmMSaxJzEnsSgw4DCqHbEhnNpb27EqMSqxI3Ej8SRxJPElcSXxJnEm8SdxJ90wqYxNS4yLjHCqGZpbGVuYW1lwrBzb3VyY2UudW5kZcWUbmVkwqRjb8Wmw5oJwoQ8IS0tIMSvxLHEmcWCdC1kaXNhYsWWIMW1PiDFs8W1IGVzxbvFvcW_xoHGg8aFCgojIyBMxJBrc8aTxojFtsW4xYbEmmF1xJzFgmstcmF3xoQtPsaTaMSkcHM6Ly93xrYuZ29vZ8WWLsWtbcaTxIzFmXDFlkBnxJTFlca-b8eACsadxbfFhcSyxJ7Go2_GpS1ixqhja2V0xqvGrceNxq90xrHGs8a1xrfGuca7xr3Gv8eePMeCbceEZceGx4hsx4ptx6rFtMaex5DFh8SQxYJlx53Gk1vHpsa8ZV0ox6DHosa0xrZ3xrjGusiBx7MgIkhlbGxvIEfIi8WWIinHvsiAxZbIgynGh8e2xorHrXR5IMalx70KW8SlxI7IgigjaGVhxb5uZ8ifx45oxJ9oKGbGqMeHxZd0yJ_GksipUkVBRE1FLm1kyIMuLi_JhMmGyYjJimTItsihcsiRYcSlxLkgxIJ0aMiox47Gn8eRyZhmxIbFl8WhLWZ1yJLIqMe_yJfIglvGpTFdx77Js106IMiFxrLIh8elybDIjciPyJHIk8iVybAixpzIocmjxYfJpcmnbsmpxa3IkmHGscWqya7GpTJdW8m1yKnKlcm4ybrGsMm8x6TIicicxaLGv8iOyJDIksiUyJbHp2XKhseNyojHuMSayovJmMqNZS1zaG9ydGPGo8qUxpkzypnJssq-ypzJu8ejyIjIisqqyoDKpsqDyqnIgcqsyLd0bWzJoWHJusmlPSLLhMm9yqHJv8a_Ij7KojwvYceexpUgScSUZ8aLyofGicqJxJrHusSQx7zJgiFbx6zHrsiDy5kvdceEb8iyLndpa2nFmsW-YS7KuGfGtcyAaXDFqmlhL8WXy6LLojkvRXjHg8a9anBnyI7MlsyYx7zLp2HLqciZy6vHt8SwxqDGp8WnyozJqcmrya3Lssu0zJfHrcidW8yCzKJlybTHvsy1y6nJtMm5y7jLusiTy73Lv8yBzIPMjsyGcsyIzYLMi8yNzI_MkcyPYcyUzJ7MssWizJrMnCLNkceuy6bLqMqrzKXHj8ynyaTMqsqyyo7HlGzKkcSFZMioy7PMumXKlsqYzLnNmsqWzL3KnsejzL_LvGTLvsyKzYTMhcyHzInMgcyMzITMkG7Mks2PzJXMsceuLs2UzJ3OhcaDzKHMo82cy63MqcmmzaHKtMq2yrjKusq8zK_Nqsq_za7Mtsq_zbHHocqfzbTNgc24zYvNhs2IzIrNvsyOzoDOgs2QzorNk8ybzonMn82ZzLbLjsihxq_LkcmhzILMnHPFoMuXzL7Lu86izYPOpM27zYnOqM2MzoHNjs6szJ_Oh8yby57GnMW-dj48zrkgzrtjzr3Nssa0zqHNts2JzbnOpc28zYrNv82NzJPOhM-KzZTLns-Sbc66zrzLmM-Yy7nOv8-bzqPMhM-ez4TNi86qz4jPpM2Sz4tnz6cvz4_Hqs--CiDGh8-Tz5XPl86fzbPPr823z4HPss-DzqfPtc-izoPNl8yZz4zGrdCCz6jPqs-Wz6zQh8-Z0InPnM-CzYfPn8-Fz7bPo9CSzq7Pu8aty6HQgMaUxpbOjMe8y7_JnyDLlMalx77Ls8u1yJ3IhM-tz5rQisyC0J_Ops290I_Ph9Ckzq3Pus6wzZLOssyjKcu3z63Fl9C7z4XPs8yKL0bFlWU60KXPusia0KsgQ8eLxZrEkcabyKnGtMqcxpYoVGjFvyBiZci4xLlzyKbMgMe8y5TGv9GdyYDRoC_RosiO0aXRp9Gp0avGi9Gux5rQsSDRssi_yoZb0aHJucaWJ9G50a3Ru2HRrNG-0bDSgdGcyL8n0bXKnDzGhtGk0abSi9Gq0o3RvcSP0b_RsdKSxJHImtKF0bbJudKX0bjSmtGo0pzSjtKf0pDSgsSR0oTShsaHxobSidKq0ozSrdGv0oDSsHTSlNGZT8mfxLrJtsaZTG9jYWzMuMqa04TThtOIzLwgyZDJhcmHyYnJi8qlyoLIlMmR05PKrFvFqcS5clXNpsqcL0xJQ0VOU0XIjtOdxIbToMWqy47QgNCW0ITPq86-zYDPsNCLzYXQjdC_z6HRgdCR0YPPps-Rx5fQlcaHy5Roy5bQmsiGyqDLh8iMy53Ln8mwy6HLozzUgtCB0IPPqc-U07TQudCdz7HTudCgz7TTvM6rz7jOhtSA1JJy0KjPvWnPkAo}). (Already mentioned above.) Look which kind of types are exist for ***links*** and ***images***.
 
 ## Versioning
 
