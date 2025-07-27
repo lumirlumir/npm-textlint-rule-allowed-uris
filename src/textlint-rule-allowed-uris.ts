@@ -65,7 +65,7 @@ export interface Options {
 
   /**
    * If `true`, the rule will check for unused definitions.
-   * @default true
+   * @default false
    */
   checkUnusedDefinitions?: boolean;
 }
@@ -111,7 +111,7 @@ export default function textlintRuleAllowedUris(
       links: rawOptions?.disallowed?.links ?? [],
       images: rawOptions?.disallowed?.images ?? [],
     },
-    checkUnusedDefinitions: rawOptions?.checkUnusedDefinitions ?? true,
+    checkUnusedDefinitions: rawOptions?.checkUnusedDefinitions ?? false,
   };
 
   const links = new Set<{
