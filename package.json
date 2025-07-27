@@ -7,11 +7,11 @@
     "."
   ],
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
-  "main": "build/textlint-rule-allowed-uris.js",
+  "main": "src/textlint-rule-allowed-uris.js",
   "exports": {
     ".": {
       "types": "./build/textlint-rule-allowed-uris.d.ts",
-      "default": "./build/textlint-rule-allowed-uris.js"
+      "default": "./src/textlint-rule-allowed-uris.js"
     }
   },
   "types": "build/textlint-rule-allowed-uris.d.ts",
@@ -26,7 +26,8 @@
     }
   },
   "files": [
-    "build",
+    "build/textlint-rule-allowed-uris.d.ts",
+    "src/textlint-rule-allowed-uris.js",
     "LICENSE",
     "README.md"
   ],
@@ -56,7 +57,7 @@
     "prepare": "husky",
     "publish-package": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
     "prepublishOnly": "npm run build",
-    "build": "npx tsc --emitDeclarationOnly false",
+    "build": "npx tsc",
     "test": "node --test && concurrently \"npm:textlint-*\"",
     "coverage": "npx c8 --reporter=lcov npm run test",
     "fix": "concurrently \"npm:fix:*\"",
@@ -69,16 +70,14 @@
     "lint:editorconfig": "npx editorconfig-checker -config .editorconfig-checker.json",
     "lint:markdownlint": "npx markdownlint **/*.md",
     "lint:textlint": "npx textlint -f pretty-error **/*.md",
-    "textlint-pretty": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f pretty-error",
-    "textlint-stylish": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f stylish",
-    "textlint-json": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f json"
+    "textlint-pretty": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f pretty-error",
+    "textlint-stylish": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f stylish",
+    "textlint-json": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f json"
   },
   "peerDependencies": {
     "textlint": "^14.0.0"
   },
   "devDependencies": {
-    "@textlint/ast-node-types": "^14.7.2",
-    "@textlint/types": "^14.7.2",
     "@types/node": "^24.0.12",
     "c8": "^10.1.3",
     "concurrently": "^9.2.0",
