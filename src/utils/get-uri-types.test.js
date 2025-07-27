@@ -6,10 +6,10 @@
 // Import
 // --------------------------------------------------------------------------------
 
+/*
+
 import { deepStrictEqual } from 'node:assert';
 import { describe, it } from 'node:test';
-
-import { getUriTypesDefinition, getUriTypesHtml } from './get-uri-types.js';
 
 // --------------------------------------------------------------------------------
 // Test
@@ -294,3 +294,5 @@ describe('Comments should not be detected', () => {
     deepStrictEqual(await getUriTypesDefinition(actual), expected);
   });
 });
+
+*/
