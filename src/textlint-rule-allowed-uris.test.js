@@ -1,5 +1,5 @@
 /**
- * @fileoverview Test for `textlint-rule-allowed-uris.ts`.
+ * @fileoverview Test for `textlint-rule-allowed-uris.js`.
  */
 
 // --------------------------------------------------------------------------------
@@ -8,7 +8,6 @@
 
 import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { test } from 'node:test';
 
 import rule from './textlint-rule-allowed-uris.js';
@@ -21,7 +20,7 @@ const TextLintTester = createRequire(import.meta.url)('textlint-tester').default
 
 const tester = new TextLintTester();
 const text = readFileSync(
-  resolve(import.meta.dirname, 'textlint-rule-allowed-uris.md'),
+  new URL('./textlint-rule-allowed-uris.md', import.meta.url),
   'utf-8',
 );
 
@@ -161,7 +160,6 @@ test('textlint-rule-allowed-uris', () => {
           },
         },
       },
-
       {
         name: 'HTML node - 2',
         text: '<img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">',
@@ -171,7 +169,6 @@ test('textlint-rule-allowed-uris', () => {
           },
         },
       },
-
       {
         name: 'HTML node - 3',
         text: '<div><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"></div>',
@@ -188,7 +185,6 @@ test('textlint-rule-allowed-uris', () => {
         name: 'Do not report unused definitions by default',
         text: '[link1]: https://www.google.com',
       },
-
       {
         name: 'Do not report `//` unused definitions by default - 1',
         text: '[//]: # (This behaves like a comment)',
@@ -196,7 +192,6 @@ test('textlint-rule-allowed-uris', () => {
           checkUnusedDefinitions: true,
         },
       },
-
       {
         name: 'Do not report `//` unused definitions by default - 2',
         text: '[//]: <> (This behaves like a comment)',
@@ -204,7 +199,6 @@ test('textlint-rule-allowed-uris', () => {
           checkUnusedDefinitions: true,
         },
       },
-
       {
         name: 'Do not report used definitions',
         text: '[google][link1]\n\n[link1]: https://www.google.com "Hello Google"',
