@@ -7,6 +7,8 @@
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
+[Click here to view the documentation for `textlint-rule-allowed-uris@1`](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tree/v1.1.1#readme).
+
 > [!IMPORTANT]
 >
 > 1. Support both [`textlint`](https://github.com/textlint/textlint) v14 and v15. (v15 is the latest version of `textlint`.)
