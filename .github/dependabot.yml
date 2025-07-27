@@ -18,6 +18,11 @@ updates:
       babel:
         patterns:
           - '@babel/*'
+      textlint:
+        patterns:
+          - 'textlint'
+          - 'textlint-tester'
+          - '@textlint/*'
       react:
         patterns:
           - 'react'
