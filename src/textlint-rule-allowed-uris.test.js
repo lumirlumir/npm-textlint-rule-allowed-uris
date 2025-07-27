@@ -11,7 +11,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { test } from 'node:test';
 
-import rule from '../build/textlint-rule-allowed-uris.js';
+import rule from './textlint-rule-allowed-uris.js';
 
 const TextLintTester = createRequire(import.meta.url)('textlint-tester').default;
 
