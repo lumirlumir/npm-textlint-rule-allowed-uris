@@ -69,9 +69,9 @@
     "lint:editorconfig": "npx editorconfig-checker -config .editorconfig-checker.json",
     "lint:markdownlint": "npx markdownlint **/*.md",
     "lint:textlint": "npx textlint -f pretty-error **/*.md",
-    "textlint-pretty": "npx textlint src/textlint-rule-allowed-uris.data.md --rule allowed-uris ./build -f pretty-error",
-    "textlint-stylish": "npx textlint src/textlint-rule-allowed-uris.data.md --rule allowed-uris ./build -f stylish",
-    "textlint-json": "npx textlint src/textlint-rule-allowed-uris.data.md --rule allowed-uris ./build -f json"
+    "textlint-pretty": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f pretty-error",
+    "textlint-stylish": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f stylish",
+    "textlint-json": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./build -f json"
   },
   "peerDependencies": {
     "textlint": "^14.0.0"

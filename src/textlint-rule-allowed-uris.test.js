@@ -21,7 +21,7 @@ const TextLintTester = createRequire(import.meta.url)('textlint-tester').default
 
 const tester = new TextLintTester();
 const text = readFileSync(
-  resolve(import.meta.dirname, 'textlint-rule-allowed-uris.data.md'),
+  resolve(import.meta.dirname, 'textlint-rule-allowed-uris.md'),
   'utf-8',
 );
 
