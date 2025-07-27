@@ -90,9 +90,9 @@ example@gmail.com
 [//]: # (This behaves like a comment)
 [//]: # "This behaves like a comment"
 [//]: # 'This behaves like a comment'
-[comment]: <> (This behaves like a comment)
-[comment]: <> "This behaves like a comment"
-[comment]: <> 'This behaves like a comment'
+[//]: <> (This behaves like a comment)
+[//]: <> "This behaves like a comment"
+[//]: <> 'This behaves like a comment'
 
 ## Others
 

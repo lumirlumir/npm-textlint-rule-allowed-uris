@@ -8,17 +8,26 @@
   ],
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "src/textlint-rule-allowed-uris.js",
+  "exports": {
+    ".": {
+      "types": "./build/textlint-rule-allowed-uris.d.ts",
+      "default": "./src/textlint-rule-allowed-uris.js"
+    }
+  },
   "types": "build/textlint-rule-allowed-uris.d.ts",
   "typesVersions": {
     "*": {
       "*": [
         "./build/*"
+      ],
+      ".": [
+        "./build/textlint-rule-allowed-uris.d.ts"
       ]
     }
   },
   "files": [
-    "build",
-    "src",
+    "build/textlint-rule-allowed-uris.d.ts",
+    "src/textlint-rule-allowed-uris.js",
     "LICENSE",
     "README.md"
   ],
@@ -61,9 +70,9 @@
     "lint:editorconfig": "npx editorconfig-checker -config .editorconfig-checker.json",
     "lint:markdownlint": "npx markdownlint **/*.md",
     "lint:textlint": "npx textlint -f pretty-error **/*.md",
-    "textlint-pretty": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f pretty-error",
-    "textlint-stylish": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f stylish",
-    "textlint-json": "npx textlint tests/textlint-rule-allowed-uris.data.md --rulesdir ./src -f json"
+    "textlint-pretty": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f pretty-error",
+    "textlint-stylish": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f stylish",
+    "textlint-json": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f json"
   },
   "peerDependencies": {
     "textlint": "^14.0.0"
@@ -86,7 +95,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "cheerio": "^1.1.2",
-    "mime-types": "^3.0.1"
+    "cheerio": "^1.1.2"
   }
 }
