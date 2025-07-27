@@ -6,18 +6,6 @@
 // Typedefs
 // --------------------------------------------------------------------------------
 
-export interface UriType {
-  /**
-   * The URI. It should be `string` type.
-   */
-  uri: string;
-
-  /**
-   * The type of URI. It should be either `'link'` or `'image'`.
-   */
-  type: 'link' | 'image';
-}
-
 /**
  * Options for the rule.
  */
@@ -28,11 +16,13 @@ export interface Options {
   allowed?: {
     /**
      * Array of regular expressions for allowed links URIs.
+     * @default [new RegExp('.*', 'u')]
      */
     links?: RegExp[];
 
     /**
      * Array of regular expressions for allowed images URIs.
+     * @default [new RegExp('.*', 'u')]
      */
     images?: RegExp[];
   };
@@ -43,12 +33,20 @@ export interface Options {
   disallowed?: {
     /**
      * Array of regular expressions for disallowed links URIs.
+     * @default []
      */
     links?: RegExp[];
 
     /**
      * Array of regular expressions for disallowed images URIs.
+     * @default []
      */
     images?: RegExp[];
   };
+
+  /**
+   * If `true`, the rule will check for unused definitions.
+   * @default true
+   */
+  checkUnusedDefinitions?: boolean;
 }
