@@ -8,11 +8,20 @@
   ],
   "description": "A textlint rule for checking allowed URIs in links and images of Markdown.🔥",
   "main": "build/textlint-rule-allowed-uris.js",
+  "exports": {
+    ".": {
+      "types": "./build/textlint-rule-allowed-uris.d.ts",
+      "default": "./build/textlint-rule-allowed-uris.js"
+    }
+  },
   "types": "build/textlint-rule-allowed-uris.d.ts",
   "typesVersions": {
     "*": {
       "*": [
         "./build/*"
+      ],
+      ".": [
+        "./build/textlint-rule-allowed-uris.d.ts"
       ]
     }
   },
