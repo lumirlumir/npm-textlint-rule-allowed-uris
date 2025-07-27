@@ -1,9 +1,10 @@
 # textlint-rule-allowed-uris
 
-[![lint](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml)
-[![test](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml/badge.svg)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris/graph/badge.svg?token=69BF05THA2)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
-[![NPM Version](https://img.shields.io/npm/v/textlint-rule-allowed-uris)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
+[![lint](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/lint.yml?label=lint&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/lint.yml)
+[![test](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/test.yml?label=test&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
+[![test-cross-platform](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/test-cross-platform.yml?label=test-cross-platform&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test-cross-platform.yml)
+[![codecov](https://img.shields.io/codecov/c/gh/lumirlumir/npm-textlint-rule-allowed-uris?token=2zUCHlMFT3&label=Codecov&color=6FB8CE&labelColor=333333&logo=codecov)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
+[![npm package textlint-rule-allowed-uris latest version](https://img.shields.io/npm/v/textlint-rule-allowed-uris?label=textlint-rule-allowed-uris@latest&color=6FB8CE&labelColor=333333&logo=npm)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
