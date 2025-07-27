@@ -84,7 +84,7 @@ function strikethrough(str: string): string {
   return `\u001b[9m${str}\u001b[0m`;
 }
 
-/** Generates an error message for the specified key, type, URI, and options. */
+/** Generates an error message for the specified `key`, `type`, `uri`, and `options`. */
 function errorMessage(
   key: 'allowed' | 'disallowed',
   type: 'links' | 'images',
@@ -114,10 +114,14 @@ export default function textlintRuleAllowedUris(
     checkUnusedDefinitions: rawOptions?.checkUnusedDefinitions ?? true,
   };
 
-  const links: { node: TxtLinkNode | TxtDefinitionNode | TxtHtmlNode; uri: string }[] =
-    [];
-  const images: { node: TxtImageNode | TxtDefinitionNode | TxtHtmlNode; uri: string }[] =
-    [];
+  const links = new Set<{
+    node: TxtLinkNode | TxtDefinitionNode | TxtHtmlNode;
+    uri: string;
+  }>();
+  const images = new Set<{
+    node: TxtImageNode | TxtDefinitionNode | TxtHtmlNode;
+    uri: string;
+  }>();
 
   /** Set to track used link identifiers */
   const usedLinkIdentifiers = new Set<string>();
@@ -125,15 +129,15 @@ export default function textlintRuleAllowedUris(
   const usedImageIdentifiers = new Set<string>();
 
   /** Array to store definition nodes */
-  const definitions: TxtDefinitionNode[] = [];
+  const definitions = new Set<TxtDefinitionNode>();
 
   return {
     Link(node: TxtLinkNode) {
-      links.push({ node, uri: node.url });
+      links.add({ node, uri: node.url });
     },
 
     Image(node: TxtImageNode) {
-      images.push({ node, uri: node.url });
+      images.add({ node, uri: node.url });
     },
 
     Html(node: TxtHtmlNode) {
@@ -145,12 +149,12 @@ export default function textlintRuleAllowedUris(
         if (tag === 'a') {
           const href = $(elem).attr('href');
           if (href) {
-            links.push({ node, uri: href });
+            links.add({ node, uri: href });
           }
         } else if (tag === 'img') {
           const src = $(elem).attr('src');
           if (src) {
-            images.push({ node, uri: src });
+            images.add({ node, uri: src });
           }
         }
       });
@@ -169,17 +173,17 @@ export default function textlintRuleAllowedUris(
         return;
       } // Ignore definitions with identifier '//'.
 
-      definitions.push(node);
+      definitions.add(node);
     },
 
     'Document:exit'() {
       for (const definition of definitions) {
         if (usedLinkIdentifiers.has(definition.identifier)) {
-          links.push({ node: definition, uri: definition.url });
+          links.add({ node: definition, uri: definition.url });
         }
 
         if (usedImageIdentifiers.has(definition.identifier)) {
-          images.push({ node: definition, uri: definition.url });
+          images.add({ node: definition, uri: definition.url });
         }
 
         if (
@@ -190,7 +194,7 @@ export default function textlintRuleAllowedUris(
           context.report(
             definition,
             new context.RuleError(
-              `Unexpected unused definition ${definition.identifier} found.`,
+              `Unexpected unused definition \`${definition.identifier}\` found.`,
             ),
           );
         }
