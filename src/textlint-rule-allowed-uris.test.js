@@ -150,9 +150,59 @@ test('textlint-rule-allowed-uris', () => {
         },
       },
 
+      // HTML node.
+
+      {
+        name: 'HTML node - 1',
+        text: '<a href="https://www.google.com">',
+        options: {
+          allowed: {
+            links: [/google/],
+          },
+        },
+      },
+
+      {
+        name: 'HTML node - 2',
+        text: '<img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">',
+        options: {
+          allowed: {
+            images: [/wiki/],
+          },
+        },
+      },
+
+      {
+        name: 'HTML node - 3',
+        text: '<div><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"></div>',
+        options: {
+          allowed: {
+            images: [/wiki/],
+          },
+        },
+      },
+
+      // Check unused definitions.
+
       {
         name: 'Do not report unused definitions by default',
         text: '[link1]: https://www.google.com',
+      },
+
+      {
+        name: 'Do not report `//` unused definitions by default - 1',
+        text: '[//]: # (This behaves like a comment)',
+        options: {
+          checkUnusedDefinitions: true,
+        },
+      },
+
+      {
+        name: 'Do not report `//` unused definitions by default - 2',
+        text: '[//]: <> (This behaves like a comment)',
+        options: {
+          checkUnusedDefinitions: true,
+        },
       },
 
       {
@@ -518,8 +568,114 @@ test('textlint-rule-allowed-uris', () => {
         errors: createErrors([53, 59, 65, 71, 75, 77, 79, 86, 105]), // Every `images` will be detected.
       },
 
+      // HTML node.
+
       {
-        name: 'Report unused definitions when `checkUnusedDefinitions` is true',
+        name: 'HTML node - 1',
+        text: '<a href="https://www.google.com">',
+        options: {
+          disallowed: {
+            links: [/google/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 33],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 2',
+        text: '<img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 70],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 3',
+        text: '<div><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"></div>',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 81],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 4',
+        text: '<div><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"></div>',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 151],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 5',
+        text: '<div>\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">\n</div>',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 158],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 6',
+        text: '<div>\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"><br>\n  <a href="https://www.google.com">google</a><br>\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"><br>\n</div>',
+        options: {
+          disallowed: {
+            links: [/google/],
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          // 1 for the link and 2 for the images, but since the errors on the images are the same, it's only reported once.
+          {
+            line: 1,
+            range: [0, 216],
+          },
+          {
+            line: 1,
+            range: [0, 216],
+          },
+        ],
+      },
+
+      // Check unused definitions.
+
+      {
+        name: 'Report unused definitions when `checkUnusedDefinitions` is true - 1',
         text: '[link1]: https://www.google.com',
         options: {
           checkUnusedDefinitions: true,
@@ -528,6 +684,20 @@ test('textlint-rule-allowed-uris', () => {
           {
             line: 1,
             range: [0, 31],
+          },
+        ],
+      },
+
+      {
+        name: 'Report unused definitions when `checkUnusedDefinitions` is true - 2',
+        text: '[/]: https://www.google.com',
+        options: {
+          checkUnusedDefinitions: true,
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 27],
           },
         ],
       },
