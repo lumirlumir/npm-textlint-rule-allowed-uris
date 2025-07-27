@@ -12,7 +12,7 @@ A textlint rule for checking **allowed or disallowed URIs** in ***links*** and *
 
 > [!IMPORTANT]
 >
-> 1. Support both [`textlint`](https://github.com/textlint/textlint) v14 and v15. (v15 is the latest version of `textlint`.)
+> 1. Support both [`textlint`](https://github.com/textlint/textlint) v14 and v15. (Supports current and previous major versions of `textlint`.)
 > 1. This rule only supports **Markdown(`.md` or `.mdx`)** files. Note that it does not recognize URIs in **~~Text~~(`.txt`)** files.
 > 1. Note that every URIs should be recognized by Markdown. URIs which are not recognized by Markdown cannot be inspected. For example, URIs without `https://...` or `http://...`.
 >
