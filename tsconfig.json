@@ -15,22 +15,22 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "alwaysStrict": true,
-    // "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false, // Off: TODO
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    // "noPropertyAccessFromIndexSignature": false,
-    // "noUncheckedIndexedAccess": true,
-    // "noUnusedLocals": false, // Buggy: Does not recognize JSDoc `@import` statements.
+    "noPropertyAccessFromIndexSignature": false, // Off: Prefer ESLint rule
+    "noUncheckedIndexedAccess": false, // Off: Too tight
+    "noUnusedLocals": false, // Off: Does not recognize JSDoc `@import` statements
     "noUnusedParameters": true,
-    // "strict": true,
+    "strict": false, // Off: TODO
     "strictBindCallApply": true,
     "strictBuiltinIteratorReturn": true,
     "strictFunctionTypes": true,
-    // "strictNullChecks": true,
-    // "strictPropertyInitialization": true,
+    "strictNullChecks": false, // Off: TODO
+    "strictPropertyInitialization": false, // Off: TODO
     "useUnknownInCatchVariables": true,
 
     /* Modules */
