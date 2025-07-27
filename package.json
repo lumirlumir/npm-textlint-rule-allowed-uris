@@ -75,7 +75,7 @@
     "textlint-json": "npx textlint src/textlint-rule-allowed-uris.md --rule allowed-uris ./src -f json"
   },
   "peerDependencies": {
-    "textlint": "^14.0.0"
+    "textlint": "^14.0.0 || ^15.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.0.12",
