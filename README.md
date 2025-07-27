@@ -69,13 +69,13 @@ For example, If you pass an empty array to the option, it allows everything. i.e
 ### `npm`
 
 ```sh
-npm install --save-dev textlint-rule-allowed-uris
+npm install --save-dev textlint-rule-allowed-uris@latest
 ```
 
 ### `yarn`
 
 ```sh
-yarn add --dev textlint-rule-allowed-uris
+yarn add --dev textlint-rule-allowed-uris@latest
 ```
 
 ## Configs
@@ -100,6 +100,14 @@ Every options are optional. If you pass nothing, then nothing just happens!
     }
   }
 }
+```
+
+### Types
+
+You can import `Options` type from `textlint-rule-allowed-uris` package.
+
+```ts
+import type { Options } from "textlint-rule-allowed-uris";
 ```
 
 ### Options
@@ -207,7 +215,7 @@ Every options are optional. If you pass nothing, then nothing just happens!
 1. `checkUnusedDefinitions`: `boolean`, Optional
     - If set to `true`, the rule will check for [unused definitions](https://github.com/eslint/markdown/blob/main/docs/rules/no-unused-definitions.md) and report them as problems.
     - If set to `false` or not specified, the rule will not check for unused definitions.
-    - Definitions that use `//` are treated as comments and ignored.
+    - Definitions that use `//` are treated as comments and always ignored.
 
         ```md
         [//]: # (This behaves like a comment)
