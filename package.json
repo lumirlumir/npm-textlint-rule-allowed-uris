@@ -12,7 +12,8 @@
     ".": {
       "types": "./build/textlint-rule-allowed-uris.d.ts",
       "default": "./src/textlint-rule-allowed-uris.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "types": "build/textlint-rule-allowed-uris.d.ts",
   "typesVersions": {
