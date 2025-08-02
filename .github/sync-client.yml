@@ -48,12 +48,8 @@ lumirlumir/lumirlumir-configs:
     dest: ./configs/.prettierignore
   - source: ./.textlintrc.cjs
     dest: ./configs/.textlintrc.cjs
-  - source: ./CODE_OF_CONDUCT.md
-    dest: ./configs/CODE_OF_CONDUCT.md
   - source: ./LICENSE.md
     dest: ./configs/LICENSE.md
-  - source: ./SECURITY.md
-    dest: ./configs/SECURITY.md
   - source: ./VScode.code-workspace
     dest: ./configs/VScode.code-workspace
   - source: ./eslint.config.mjs
