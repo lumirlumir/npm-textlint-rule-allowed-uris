@@ -522,4 +522,4 @@ See [Security](https://github.com/lumirlumir/.github/blob/main/SECURITY.md#secur
 
 ## License
 
-[MIT](/LICENSE)
+[MIT](/LICENSE.md)
