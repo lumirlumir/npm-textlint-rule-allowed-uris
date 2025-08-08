@@ -35,8 +35,9 @@ import { parseFragment } from 'parse5';
 // --------------------------------------------------------------------------------
 
 /**
- * @param {string} html
- * @param {string} tagName
+ * Mimics the behavior of `getElementsByTagName` in the DOM API.
+ * @param {string} html The HTML string to parse.
+ * @param {string} tagName The tag name to search for (case-insensitive).
  * @returns {Array<DefaultTreeAdapterTypes.Element | DefaultTreeAdapterTypes.Template>}
  */
 function getElementsByTagName(html, tagName) {
