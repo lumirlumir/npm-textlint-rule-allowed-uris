@@ -629,6 +629,38 @@ test('textlint-rule-allowed-uris', () => {
       },
 
       {
+        name: 'HTML node - 4-1',
+        text: '<DIV><IMG SRC=https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg><Img Src=https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg></DIV>',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 147],
+          },
+        ],
+      },
+
+      {
+        name: 'HTML node - 4-2',
+        text: '<div><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"><img></div>',
+        options: {
+          disallowed: {
+            images: [/wiki/],
+          },
+        },
+        errors: [
+          {
+            line: 1,
+            range: [0, 86],
+          },
+        ],
+      },
+
+      {
         name: 'HTML node - 5',
         text: '<div>\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">\n  <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg">\n</div>',
         options: {

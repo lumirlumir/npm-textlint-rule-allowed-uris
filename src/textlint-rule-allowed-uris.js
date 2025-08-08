@@ -7,7 +7,7 @@
 // Import
 // --------------------------------------------------------------------------------
 
-import * as cheerio from 'cheerio';
+import { parseFragment } from 'parse5';
 
 // --------------------------------------------------------------------------------
 // Typedefs
@@ -16,6 +16,7 @@ import * as cheerio from 'cheerio';
 /**
  * @import { TextlintRuleContext } from '@textlint/types';
  * @import { TxtLinkNode, TxtImageNode, TxtLinkReferenceNode, TxtImageReferenceNode, TxtDefinitionNode, TxtHtmlNode } from '@textlint/ast-node-types';
+ * @import { DefaultTreeAdapterTypes } from 'parse5';
  */
 
 /**
@@ -32,6 +33,38 @@ import * as cheerio from 'cheerio';
 // --------------------------------------------------------------------------------
 // Helpers
 // --------------------------------------------------------------------------------
+
+/**
+ * Mimics the behavior of `getElementsByTagName` in the DOM API.
+ * @param {string} html The HTML string to parse.
+ * @param {string} tagName The tag name to search for (case-insensitive).
+ * @returns {Array<DefaultTreeAdapterTypes.Element | DefaultTreeAdapterTypes.Template>}
+ */
+function getElementsByTagName(html, tagName) {
+  const ast = parseFragment(html);
+  const normalizedTagName = tagName.toLowerCase();
+
+  /** @type {Array<DefaultTreeAdapterTypes.Element | DefaultTreeAdapterTypes.Template>} */
+  const nodes = [];
+
+  /**
+   * @param {DefaultTreeAdapterTypes.Node} node
+   * @returns {void}
+   */
+  function visit(node) {
+    if ('tagName' in node && node.tagName === normalizedTagName) {
+      nodes.push(node);
+    }
+
+    if ('childNodes' in node) {
+      node.childNodes.forEach(visit);
+    }
+  }
+
+  visit(ast);
+
+  return nodes;
+}
 
 /**
  * Console error theme.
@@ -111,22 +144,22 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
 
     /** @param {TxtHtmlNode} node */
     Html(node) {
-      const $ = cheerio.load(node.value);
+      const html = node.value;
 
-      $('a, img').each((_, elem) => {
-        const tag = $(elem).prop('tagName').toLowerCase();
+      getElementsByTagName(html, 'a').forEach(({ attrs }) => {
+        attrs.forEach(({ name, value }) => {
+          if (name === 'href') {
+            links.add({ node, uri: value });
+          }
+        });
+      });
 
-        if (tag === 'a') {
-          const href = $(elem).attr('href');
-          if (href) {
-            links.add({ node, uri: href });
+      getElementsByTagName(html, 'img').forEach(({ attrs }) => {
+        attrs.forEach(({ name, value }) => {
+          if (name === 'src') {
+            images.add({ node, uri: value });
           }
-        } else if (tag === 'img') {
-          const src = $(elem).attr('src');
-          if (src) {
-            images.add({ node, uri: src });
-          }
-        }
+        });
       });
     },
 
