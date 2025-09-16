@@ -85,15 +85,15 @@ function strikethrough(str) {
 }
 
 /**
- * Generates an error message for the specified `key`, `type`, `uri`, and `options`.
+ * Generates an error message for the specified `key`, `type`, `uri`, and `regexes`.
  * @param {'allowed' | 'disallowed'} key
  * @param {'links' | 'images'} type
  * @param {string} uri
- * @param {Options} options
+ * @param {RegExp[]} regexes
  * @returns {string}
  */
-function errorMessage(key, type, uri, options) {
-  return `${error(`${key}.${type}`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${options[key][type].join(' or ')}'`;
+function errorMessage(key, type, uri, regexes) {
+  return `${error(`${key}.${type}`)}\n${error('-')} problem: '${strikethrough(uri)}'\n${error('-')} ${key} regular expressions: '${regexes.join(' or ')}'`;
 }
 
 // --------------------------------------------------------------------------------
@@ -105,8 +105,8 @@ function errorMessage(key, type, uri, options) {
  * @param {Options} rawOptions
  */
 export default function textlintRuleAllowedUris(context, rawOptions) {
-  /** @type {Options} */
-  const options = {
+  /** @satisfies {Options} */
+  const options = /** @type {const} */ ({
     allowed: {
       links: rawOptions?.allowed?.links ?? [/.*/u],
       images: rawOptions?.allowed?.images ?? [/.*/u],
@@ -116,7 +116,7 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
       images: rawOptions?.disallowed?.images ?? [],
     },
     checkUnusedDefinitions: rawOptions?.checkUnusedDefinitions ?? false,
-  };
+  });
 
   /** @type {Set<{ node: TxtLinkNode | TxtDefinitionNode | TxtHtmlNode, uri: string }>} */
   const links = new Set();
@@ -216,14 +216,18 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
         if (!options.allowed.links.some(regex => regex.test(uri))) {
           context.report(
             node,
-            new context.RuleError(errorMessage('allowed', 'links', uri, options)),
+            new context.RuleError(
+              errorMessage('allowed', 'links', uri, options.allowed.links),
+            ),
           );
         }
 
         if (options.disallowed.links.some(regex => regex.test(uri))) {
           context.report(
             node,
-            new context.RuleError(errorMessage('disallowed', 'links', uri, options)),
+            new context.RuleError(
+              errorMessage('disallowed', 'links', uri, options.disallowed.links),
+            ),
           );
         }
       }
@@ -232,14 +236,18 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
         if (!options.allowed.images.some(regex => regex.test(uri))) {
           context.report(
             node,
-            new context.RuleError(errorMessage('allowed', 'images', uri, options)),
+            new context.RuleError(
+              errorMessage('allowed', 'images', uri, options.allowed.images),
+            ),
           );
         }
 
         if (options.disallowed.images.some(regex => regex.test(uri))) {
           context.report(
             node,
-            new context.RuleError(errorMessage('disallowed', 'images', uri, options)),
+            new context.RuleError(
+              errorMessage('disallowed', 'images', uri, options.disallowed.images),
+            ),
           );
         }
       }
