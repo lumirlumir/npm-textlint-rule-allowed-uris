@@ -93,7 +93,7 @@
     "prettier-config-bananass": "^0.4.1",
     "textlint": "14.7.2",
     "textlint-tester": "14.7.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "parse5": "^8.0.0"
