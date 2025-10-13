@@ -56,7 +56,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "publish-package": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
+    "release:publish": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
     "prepublishOnly": "npm run build",
     "build": "npx tsc",
     "test": "node --test && concurrently \"npm:textlint-*\"",
