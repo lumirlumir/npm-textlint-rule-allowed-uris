@@ -78,6 +78,11 @@
   "peerDependencies": {
     "textlint": "^14.0.0 || ^15.0.0"
   },
+  "peerDependenciesMeta": {
+    "textlint": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/node": "^24.10.1",
     "c8": "^10.1.3",
