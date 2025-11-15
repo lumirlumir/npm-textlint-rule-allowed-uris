@@ -69,13 +69,13 @@ For example, If you pass an empty array to the option, it allows everything. i.e
 ### `npm`
 
 ```sh
-npm install --save-dev textlint-rule-allowed-uris@latest
+npm install --save-dev textlint-rule-allowed-uris@latest textlint@latest
 ```
 
 ### `yarn`
 
 ```sh
-yarn add --dev textlint-rule-allowed-uris@latest
+yarn add --dev textlint-rule-allowed-uris@latest textlint@latest
 ```
 
 ## Configs
