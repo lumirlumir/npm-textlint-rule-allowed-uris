@@ -98,7 +98,7 @@
     "prettier": "^3.8.3",
     "textlint": "14.7.2",
     "textlint-tester": "14.7.2",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "dependencies": {
     "parse5": "^8.0.0"
