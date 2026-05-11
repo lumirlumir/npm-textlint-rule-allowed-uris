@@ -1,13 +1,13 @@
 # textlint-rule-allowed-uris
 
-[![ci](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/ci.yml?label=ci&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/ci.yml)
-[![test](https://img.shields.io/github/actions/workflow/status/lumirlumir/npm-textlint-rule-allowed-uris/test.yml?label=test&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
-[![codecov](https://img.shields.io/codecov/c/gh/lumirlumir/npm-textlint-rule-allowed-uris?token=2zUCHlMFT3&label=Codecov&color=6FB8CE&labelColor=333333&logo=codecov)](https://codecov.io/gh/lumirlumir/npm-textlint-rule-allowed-uris)
+[![ci](https://img.shields.io/github/actions/workflow/status/lumir/npm-textlint-rule-allowed-uris/ci.yml?label=ci&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumir/npm-textlint-rule-allowed-uris/actions/workflows/ci.yml)
+[![test](https://img.shields.io/github/actions/workflow/status/lumir/npm-textlint-rule-allowed-uris/test.yml?label=test&color=6FB8CE&labelColor=333333&logo=github)](https://github.com/lumir/npm-textlint-rule-allowed-uris/actions/workflows/test.yml)
+[![codecov](https://img.shields.io/codecov/c/gh/lumir/npm-textlint-rule-allowed-uris?token=2zUCHlMFT3&label=Codecov&color=6FB8CE&labelColor=333333&logo=codecov)](https://codecov.io/gh/lumir/npm-textlint-rule-allowed-uris)
 [![npm package textlint-rule-allowed-uris latest version](https://img.shields.io/npm/v/textlint-rule-allowed-uris?label=textlint-rule-allowed-uris@latest&color=6FB8CE&labelColor=333333&logo=npm)](https://www.npmjs.com/package/textlint-rule-allowed-uris)
 
 A textlint rule for checking **allowed or disallowed URIs** in ***links*** and ***images*** of Markdown.🔥
 
-[Click here to view the documentation for `textlint-rule-allowed-uris@1`](https://github.com/lumirlumir/npm-textlint-rule-allowed-uris/tree/v1.1.1#readme).
+[Click here to view the documentation for `textlint-rule-allowed-uris@1`](https://github.com/lumir/npm-textlint-rule-allowed-uris/tree/v1.1.1#readme).
 
 > [!IMPORTANT]
 >
@@ -430,7 +430,7 @@ After that, refer to the comments in source code. It contains useful information
 1. Clone it to your local directory. ([Git](https://git-scm.com/downloads) is required.)
 
     ```sh
-    git clone https://github.com/lumirlumir/npm-textlint-rule-allowed-uris.git
+    git clone https://github.com/lumir/npm-textlint-rule-allowed-uris.git
     ```
 
 1. Move to the `npm-textlint-rule-allowed-uris` directory.
@@ -509,7 +509,7 @@ You can see detailed parsed [AST Tree in here](https://textlint.org/astexplorer/
 
 ## Code of Conduct
 
-See [Code of Conduct](https://github.com/lumirlumir/.github/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
+See [Code of Conduct](https://github.com/lumir/.github/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
 
 ## Change Log
 
@@ -521,7 +521,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Security
 
-See [Security](https://github.com/lumirlumir/.github/blob/main/SECURITY.md#security).
+See [Security](https://github.com/lumir/.github/blob/main/SECURITY.md#security).
 
 ## License
 
