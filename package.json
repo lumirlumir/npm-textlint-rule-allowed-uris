@@ -41,7 +41,7 @@
     "url",
     "checker"
   ],
-  "author": "루밀LuMir <rpfos@naver.com> (https://github.com/lumirlumir)",
+  "author": "lumir <rpfos@naver.com> (https://github.com/lumirlumir)",
   "funding": "https://github.com/sponsors/lumirlumir",
   "license": "MIT",
   "homepage": "https://github.com/lumirlumir/npm-textlint-rule-allowed-uris",
