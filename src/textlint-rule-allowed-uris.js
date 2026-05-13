@@ -146,21 +146,21 @@ export default function textlintRuleAllowedUris(context, rawOptions) {
     Html(node) {
       const html = node.value;
 
-      getElementsByTagName(html, 'a').forEach(({ attrs }) => {
-        attrs.forEach(({ name, value }) => {
+      for (const { attrs } of getElementsByTagName(html, 'a')) {
+        for (const { name, value } of attrs) {
           if (name === 'href') {
             links.add({ node, uri: value });
           }
-        });
-      });
+        }
+      }
 
-      getElementsByTagName(html, 'img').forEach(({ attrs }) => {
-        attrs.forEach(({ name, value }) => {
+      for (const { attrs } of getElementsByTagName(html, 'img')) {
+        for (const { name, value } of attrs) {
           if (name === 'src') {
             images.add({ node, uri: value });
           }
-        });
-      });
+        }
+      }
     },
 
     /** @param {TxtLinkReferenceNode} node */
