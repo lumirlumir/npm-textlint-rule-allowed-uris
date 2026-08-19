@@ -60,8 +60,9 @@
     "release:publish": "node -e \"require('child_process').execSync('npm publish ' + (require('./package.json').version.includes('-') ? '--tag next' : ''), { stdio: 'inherit' })\"",
     "prepublishOnly": "npm run build",
     "build": "tsc",
+    "precoverage": "node -e \"require('node:fs').mkdirSync('coverage', { recursive: true })\"",
+    "coverage": "node --test --experimental-test-coverage --test-coverage-exclude=\"**/build/**\" --test-coverage-exclude=\"**/*.test.{js,mjs,cjs}\" --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info && concurrently \"npm:textlint-*\"",
     "test": "node --test && concurrently \"npm:textlint-*\"",
-    "coverage": "c8 --reporter=lcov npm run test",
     "fix": "concurrently \"npm:fix:*\"",
     "fix:eslint": "eslint --fix --cache --cache-strategy content",
     "fix:prettier": "prettier . --write --ignore-unknown",
@@ -86,7 +87,6 @@
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
-    "c8": "^12.0.0",
     "concurrently": "^9.2.4",
     "editorconfig-checker": "^6.1.1",
     "eslint": "^9.39.5",
