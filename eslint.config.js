@@ -111,7 +111,7 @@ export default defineConfig([
       'md/no-shell-dollar': 'off',
       'md/no-tab': ['error', { skipCode: false, skipInlineCode: false }],
       'md/no-trailing-heading-punctuation': 'error',
-      'md/no-url-trailing-slash': 'error',
+      'md/no-url-trailing-slash': 'off', // Too tight.
       'md/require-heading-id': 'off',
       'md/require-image-title': 'off', // Too tight.
       'md/require-link-title': 'off', // Too tight.
