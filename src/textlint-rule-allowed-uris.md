@@ -1,4 +1,4 @@
-<!-- eslint-disable -->
+<!--  eslint-disable -- it's a fixture test file  -->
 
 ## Links
 
