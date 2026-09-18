@@ -61,7 +61,7 @@
     "prepublishOnly": "npm run build",
     "build": "tsc -b",
     "test": "node --test && npm-run-all -c -l -p textlint-*",
-    "test:coverage": "node -e \"require('node:fs').mkdirSync('coverage', { recursive: true })\" && node --test --experimental-test-coverage --test-coverage-exclude=\"**/build/**\" --test-coverage-exclude=\"**/*.test.{js,mjs,cjs}\" --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info && npm-run-all -c -l -p textlint-* && npm-run-all -c -l -p textlint-*",
+    "test:coverage": "node -e \"require('node:fs').mkdirSync('coverage', { recursive: true })\" && node --test --experimental-test-coverage --test-coverage-exclude=\"**/build/**\" --test-coverage-exclude=\"**/*.test.{js,mjs,cjs}\" --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info && npm-run-all -c -l -p textlint-*",
     "fix": "npm-run-all -c -l -p fix:*",
     "fix:eslint": "eslint --fix --cache --cache-strategy content",
     "fix:prettier": "prettier . --write --ignore-unknown",
