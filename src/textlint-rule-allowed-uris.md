@@ -1,4 +1,4 @@
-<!-- markdownlint-disable --> <!-- eslint-disable -->
+<!-- eslint-disable -->
 
 ## Links
 
