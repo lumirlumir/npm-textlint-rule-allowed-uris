@@ -96,6 +96,6 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "parse5": "^8.1.0"
+    "parse5": "^8.1.1"
   }
 }
